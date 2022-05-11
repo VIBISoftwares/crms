@@ -1,0 +1,71 @@
+<c-row>
+  <c-col md="1">
+    <c-form-group>
+      <label cLabel for="itineraryDay">Day</label>
+      <input cInput id="itineraryDay" placeholder="">
+    </c-form-group>
+  </c-col>
+  <c-col md="2">
+    <c-form-group>
+      <label cLabel for="itineraryDate">Date</label>
+      <input cInput id="itineraryDate" type="date" placeholder="dd-mm-yyyy">
+    </c-form-group>
+  </c-col>
+  <c-col md="3">
+    <c-form-group>
+      <label cLabel for="itineraryDayTitle">Day Title</label>
+      <input cInput id="itineraryDayTitle" type="text" placeholder="Enter title">
+    </c-form-group>
+
+  </c-col>
+  <c-col md="3">
+    <c-form-group>
+      <label cLabel for="itineraryStayDetail">Place Of Stay</label>
+      <input cInput id="itineraryStayDetail" type="text  " placeholder="Enter Place">
+    </c-form-group>
+
+  </c-col>
+
+  <c-col md="3">
+    <label cLabel for="itineraryStayDetail">Food</label>
+    <c-form-group>
+
+
+      <c-form-check inline custom variant="checkbox" class="mfe-3">
+        <input cInput type="checkbox" id="chk-c1" value="option1" checked class="custom-control-input">
+        <label class="custom-control-label" for="chk-c1">Breakfast</label>
+      </c-form-check>
+      <c-form-check inline custom variant="checkbox" class="mfe-3">
+        <input cInput type="checkbox" id="chk-c2" value="option2" class="custom-control-input">
+        <label class="custom-control-label" for="chk-c2">Lunch</label>
+      </c-form-check>
+      <c-form-check inline custom variant="checkbox" class="mfe-3">
+        <input cInput type="checkbox" id="chk-c3" value="option3" class="custom-control-input">
+        <label class="custom-control-label" for="chk-c3">Dinner</label>
+      </c-form-check>
+
+    </c-form-group>
+
+  </c-col>
+
+  <c-col md="12">
+    <c-form-group>
+      <label cLabel for="itineraryDescription">Place Of Visit & Travel Description</label>
+      <textarea cTextarea id="itineraryDescription" name="itineraryDescription" rows="7"
+        placeholder="Content.."></textarea>
+    </c-form-group>
+
+  </c-col>
+
+
+</c-row>
+<div class="pt-3">
+  <button cButton type="submit" color="primary" size="sm" class="mfe-1">
+    <c-icon name="cil-check-circle" size="sm"></c-icon>
+    <span> Submit</span>
+  </button>
+  <button cButton type="reset" color="danger" size="sm">
+    <c-icon name="cil-ban" size="sm"></c-icon>
+    <span> Reset</span>
+  </button>
+</div>

@@ -1,0 +1,110 @@
+<div class="fade-in">
+  <c-row>
+    <!--left-->
+    <c-col sm="12" md="7">
+      <c-row>
+        <c-col sm="6" md="4">
+          <c-widget-progress-icon header="12" text="International Tours" color="gradient-info">
+            <c-icon name="cil-people" height="36"></c-icon>
+          </c-widget-progress-icon>
+        </c-col>
+        <c-col sm="6" md="4">
+          <c-widget-progress-icon header="4" text="Domestic Tours" color=" gradient-success">
+            <c-icon name="cil-userFollow" height="36"></c-icon>
+          </c-widget-progress-icon>
+        </c-col>
+        <c-col sm="6" md="4">
+          <c-widget-progress-icon header="16" text="All Tours" color="gradient-warning">
+            <c-icon name="cil-basket" height="36"></c-icon>
+          </c-widget-progress-icon>
+        </c-col>
+
+
+
+      </c-row>
+
+      <!--tour table-->
+      <c-card>
+        <c-card-header>
+          Striped Table
+        </c-card-header>
+        <c-card-body>
+          <table class="table table-responsive-sm table-striped">
+            <colgroup>
+              <col class="column-1" />
+              <col class="column-2" />
+              <col class="column-3" />
+              <col class="column-4" />
+              <col class="column-5" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th>Username</th>
+                <th>Registered</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of returnedArray">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.registered }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                  <c-badge [color]="getBadge(user.status)">{{
+                    user.status
+                    }}</c-badge>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)" [itemsPerPage]="5"
+            [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true"></pagination>
+        </c-card-body>
+      </c-card>
+      <!--tour table-->
+
+    </c-col>
+    <!--left -->
+    <!--right-->
+    <c-col sm="12" md="5">
+      <c-col sm="12" md="12">
+        <c-card>
+          <c-card-header>
+            Around the World
+          </c-card-header>
+          <c-card-body>
+            <img cImg [fluid]="true" shape="rounded-0" width="512" height="240" loading="lazy"
+              src="https://picsum.photos/1024/480/?image=54" class="mb-2" placeholderColor="lightgray" />
+            <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</h4>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </c-card-body>
+        </c-card>
+
+
+        <c-card>
+
+          <c-card-body>
+            <h6>Sponsered Ads</h6>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+              laoreet dolore magna</p>
+            <c-row>
+              <c-col sm="6" md="4"> <button cButton color="primary" [block]="true" shape="square">
+                  Get Started
+                </button></c-col>
+            </c-row>
+          </c-card-body>
+        </c-card>
+      </c-col>
+
+    </c-col>
+    <!--right-->
+  </c-row>
+
+  <router-outlet></router-outlet>
+
+</div>

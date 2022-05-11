@@ -1,0 +1,91 @@
+<c-container>
+  <c-row>
+    <c-col md="5" class="mx-auto">
+      <c-card class="mx-4">
+        <c-card-body class="p-4">
+          <form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()" class="needs-validation">
+
+            <h1>Register</h1>
+            <p class="text-muted">Create your account</p>
+            <c-row>
+              <c-col md="12">
+                <c-form-group>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <c-icon name="cil-envelope-closed"></c-icon>
+                      </span>
+                    </div>
+                    <input cInput id="email" type="email" formControlName="email" placeholder="Email"
+                      autocomplete="email" required
+                      [ngClass]="{ 'is-invalid': (submitted || f.email.touched) && f.email.invalid, 'is-valid': f.email.touched && f.email.valid }" />
+                    <div *ngIf="submitted && f['email'].invalid" class="invalid-feedback">
+                      <div *ngIf="f['email'].errors.required">Email is required</div>
+                      <div *ngIf="f['email'].errors.email">{{formErrors.email.email}}</div>
+                    </div>
+                  </div>
+                </c-form-group>
+
+                <c-form-group>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <c-icon name="cil-lock-locked"></c-icon>
+                      </span>
+                    </div>
+                    <input cInput id="password" type="password" formControlName="password" placeholder="Password"
+                      autocomplete="new-password" required
+                      [ngClass]="{ 'is-invalid': (submitted || f.password.touched) && f.password.invalid, 'is-valid': f.password.touched && f.password.valid }" />
+                    <div *ngIf="submitted && f['password'].invalid" class="invalid-feedback">
+                      <div *ngIf="f['password'].errors.required">Password is required</div>
+                      <div *ngIf="f['password'].errors.minlength">{{formErrors.password.minLength}}</div>
+                      <div *ngIf="f['password'].errors.pattern">{{formErrors.password.pattern}}</div>
+                    </div>
+                  </div>
+
+                </c-form-group>
+                <c-form-group>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="cil-phone"></i>
+                      </span>
+                    </div>
+                    <input cInput id="phone" type="text" formControlName="phone" placeholder="Phone"
+                      autocomplete="phone" required
+                      [ngClass]="{ 'is-invalid': (submitted || f.phone.touched) && f.phone.invalid, 'is-valid': f.phone.touched && f.phone.valid }" />
+                    <div *ngIf="submitted && f['phone'].invalid" class="invalid-feedback">
+                      <div *ngIf="f['phone'].errors.required">Phone is required</div>
+
+                      <div *ngIf="f['phone'].errors.pattern">{{formErrors.phone.pattern}}</div>
+                    </div>
+                  </div>
+                </c-form-group>
+
+
+              </c-col>
+            </c-row>
+            <button cButton color="success" block="true" type="submit">
+              Create Account
+            </button>
+          </form>
+        </c-card-body>
+        <c-card-footer class="p-4">
+          <c-row>
+            <c-col col="6">
+              <button cButton color="facebook" block="true" [routerLink]="'/login'">
+                <span>facebook</span>
+              </button>
+            </c-col>
+            <div class="col-6">
+              <button cButton color="twitter" block="true" [routerLink]="'/login'">
+                <span>twitter</span>
+              </button>
+            </div>
+          </c-row>
+        </c-card-footer>
+      </c-card>
+    </c-col>
+
+  </c-row>
+</c-container>

@@ -1,0 +1,228 @@
+<div class="fade-in">
+  <c-row>
+    <c-col sm="12">
+
+      <c-card>
+        <c-card-header>
+          <strong>Add New</strong><small> Tour</small>
+        </c-card-header>
+        <c-card-body>
+          <c-row>
+            <c-col md="5">
+              <c-form-group>
+                <label cLabel for="name">Tour Name</label>
+                <input cInput id="name" placeholder="Enter tour name">
+              </c-form-group>
+            </c-col>
+            <c-col md="7">
+              <!-- <c-row>
+                <c-col>
+                  <h5>Tour Dates</h5>
+                </c-col>
+              </c-row> -->
+              <c-row>
+
+                <c-form-group cCol sm="4">
+                  <label for="ccmonth">From</label>
+                  <input cInput id="date-input" type="date" name="date-input" placeholder="date">
+                  <c-form-text>Please enter a valid date</c-form-text>
+                </c-form-group>
+                <c-form-group cCol sm="4">
+                  <label for="ccmonth">To</label>
+                  <input cInput id="date-input" type="date" name="date-input" placeholder="date">
+                  <c-form-text>Please enter a valid date</c-form-text>
+                </c-form-group>
+                <c-col md="4">
+                  <c-form-group>
+                    <label cLabel for="name">Visit</label>
+                    <select cSelect custom id="select1-c" name="select1-c" required>
+                      <option value="">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                    </select>
+                  </c-form-group>
+                </c-col>
+
+              </c-row>
+            </c-col>
+          </c-row>
+
+
+          <c-row class="pt-3">
+
+            <c-col md="2">
+              <c-form-group>
+                <label cLabel for="name">Number of Days</label>
+                <input cInput id="no-of-days-input" type="numer" name="date-input" placeholder="Days">
+              </c-form-group>
+            </c-col>
+            <c-col md="2">
+              <label cLabel for="name">Multi Travel</label>
+              <c-form-group>
+                <c-form-check inline custom variant="radio" class="mfe-3">
+                  <input cInput type="radio" name="radios-c" id="radio-c1" value="option1" checked
+                    class="custom-control-input">
+                  <label class="custom-control-label" for="radio-c1">Yes</label>
+                </c-form-check>
+                <c-form-check inline custom variant="radio" class="mfe-3">
+                  <input cInput type="radio" name="radios-c" id="radio-c2" value="option2" class="custom-control-input">
+                  <label class="custom-control-label" for="radio-c2">No</label>
+                </c-form-check>
+
+
+              </c-form-group>
+            </c-col>
+            <c-col md="3">
+              <c-form-group>
+                <label cLabel for="name">Mode of Travel</label>
+                <select cSelect custom id="select1-c" name="select1-c" required>
+                  <option value="">Please select</option>
+                  <option value="1">Option #1</option>
+                  <option value="2">Option #2</option>
+                  <option value="3">Option #3</option>
+                </select>
+              </c-form-group>
+            </c-col>
+            <c-col md="3">
+              <c-form-group>
+                <label cLabel for="name">Nature of Travel</label>
+                <select cSelect custom id="select1-d" name="select1-c" required>
+                  <option value="">Please select</option>
+                  <option value="1">Option #1</option>
+                  <option value="2">Option #2</option>
+                  <option value="3">Option #3</option>
+                </select>
+              </c-form-group>
+            </c-col>
+
+          </c-row>
+
+
+
+        </c-card-body>
+        <c-card-footer>
+          <button cButton type="submit" (click)="onClickSubmit()" color="primary" size="sm" class="mfe-1">
+            <c-icon name="cil-check-circle" size="sm"></c-icon>
+            <span> Submit</span>
+          </button>
+          <button cButton type="reset" color="danger" size="sm">
+            <c-icon name="cil-ban" size="sm"></c-icon>
+            <span> Reset</span>
+          </button>
+        </c-card-footer>
+      </c-card>
+    </c-col>
+    <c-col sm="12">
+      <c-card>
+        <c-card-header>
+          <strong>Add Group</strong>
+          <c-card-header-actions style="height: 21px;">
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-settings"></i></button>
+            <button cButton variant="ghost" class="card-header-action" (click)="toggleCollapse()"><i
+                class="{{currentIcon}}"></i></button>
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-x-circle"></i></button>
+          </c-card-header-actions>
+        </c-card-header>
+        <c-card-body cCollapse [show]="!collapsed">
+          <app-add-group *ngIf="newTourAdded"></app-add-group>
+        </c-card-body>
+      </c-card>
+
+
+
+      <!-- <c-row>
+        <c-col sm="6" *ngFor="let test of [1,2,3,4,5,6]">
+          <c-card>
+            <c-card-header>
+              Tour Name
+              <c-card-header-actions style="height: 21px;">
+                <c-switch color="info" size="sm" checked labelOn="On" labelOff="Off"></c-switch>
+              </c-card-header-actions>
+            </c-card-header>
+            <c-card-body>
+              <c-row>
+                <c-col sm="6">Group Details</c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-plus" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-pencil" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-trash" color="danger" height="16"></c-icon>
+                </c-col>
+              </c-row>
+              <c-row style="padding-top: 10px;">
+                <c-col sm="6">Travellers Details</c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-plus" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-pencil" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-trash" height="16"></c-icon>
+                </c-col>
+              </c-row>
+              <c-row style="padding-top: 10px;">
+                <c-col sm="6">Itinerary Details</c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-plus" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-pencil" height="16"></c-icon>
+                </c-col>
+                <c-col sm="2">
+                  <c-icon name="cil-trash" height="16"></c-icon>
+                </c-col>
+              </c-row>
+            </c-card-body>
+          </c-card>
+        </c-col>
+      </c-row> -->
+
+    </c-col>
+  </c-row>
+
+  <c-row>
+    <c-col sm="12">
+      <c-card>
+        <c-card-header>
+          <strong>Add Travellers</strong>
+          <c-card-header-actions style="height: 21px;">
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-settings"></i></button>
+            <button cButton variant="ghost" class="card-header-action" (click)="toggleCollapse()"><i
+                class="{{currentIcon}}"></i></button>
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-x-circle"></i></button>
+          </c-card-header-actions>
+        </c-card-header>
+        <c-card-body cCollapse [show]="!collapsed">
+          <app-add-travllers *ngIf="newTourAdded"></app-add-travllers>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+
+
+  <c-row>
+    <c-col sm="12">
+      <c-card>
+        <c-card-header>
+          <strong>Add Itinerary</strong>
+          <c-card-header-actions style="height: 21px;">
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-settings"></i></button>
+            <button cButton variant="ghost" class="card-header-action" (click)="toggleCollapse()"><i
+                class="{{currentIcon}}"></i></button>
+            <button cButton variant="ghost" class="card-header-action"><i class="cil-x-circle"></i></button>
+          </c-card-header-actions>
+        </c-card-header>
+        <c-card-body cCollapse [show]="!collapsed">
+          <app-add-itinerary *ngIf="newTourAdded"></app-add-itinerary>
+
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+
+</div>
