@@ -5,5 +5,5 @@ import { Component, HostBinding } from '@angular/core';
   templateUrl: 'login.component.html',
 })
 export class LoginComponent {
-  @HostBinding('class') cAppClass = 'c-app flex-row align-items-center';
+  @HostBinding('class') cAppClass = 'c-app flex-row align-items-center bg-info';
 }

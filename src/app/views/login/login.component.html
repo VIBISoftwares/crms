@@ -1,12 +1,12 @@
 <c-container>
   <c-row class="justify-content-center">
-    <c-col md="8">
+    <c-col md="5">
       <c-card-group>
         <c-card class="p-4">
           <c-card-body>
             <form>
-              <h1>Login</h1>
-              <p class="text-muted">Sign In to your account</p>
+              <h1 class="pb-2 text-center">Login</h1>
+              <p class="text-muted d-none">Sign In to your account</p>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -24,17 +24,17 @@
                 <input cInput type="password" placeholder="Password" autocomplete="current-password" required />
               </div>
               <c-row>
-                <c-col col="6">
-                  <button cButton color="primary" class="px-4" [routerLink]="'/operator-dashboard'">Login</button>
+                <c-col col="6" >
+                  <button cButton color="link" class="px-0">Forgot password?</button>
                 </c-col>
                 <c-col col="6" class="text-right">
-                  <button cButton color="link" class="px-0">Forgot password?</button>
+                  <button cButton color="primary" class="px-5 rounded-pill " [routerLink]="'/operator-dashboard'">Login</button>
                 </c-col>
               </c-row>
             </form>
           </c-card-body>
         </c-card>
-        <c-card color="primary" class="text-white py-5 d-md-down-none" style="width: 44%;">
+        <c-card color="primary" class="text-white py-5 d-md-down-none d-none" style="width: 44%;">
           <c-card-body class="text-center">
             <div>
               <h2>Sign up</h2>
