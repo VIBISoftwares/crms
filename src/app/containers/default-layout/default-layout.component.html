@@ -1,21 +1,21 @@
 <!--sidebar-->
 <c-sidebar #sidebar="cSidebar" id="sidebar" unfoldable="unfoldable">
   <c-sidebar-brand [routerLink]="null" [brandFull]="{
-      src: 'assets/img/brand/coreui-pro-angular-white.svg',
+      src: 'assets/img/company_logo.jpg',
       width: 190,
       height: 46,
-      alt: 'CoreUI Logo'
+      alt: 'Daily Gong'
     }" [brandMinimized]="{
-      src: 'assets/img/brand/coreui-signet-white.svg',
+      src: 'assets/img/company_logo_min.jpg',
       width: 46,
       height: 46,
-      alt: 'CoreUI Logo'
+      alt: 'Daily Gong'
     }">
   </c-sidebar-brand>
   <!-- <img src="./assets/img/tt-logo.png" alt="" style="width:75%; margin:auto"> -->
   <c-sidebar-nav [navItems]="navItems" [perfectScrollbar]="perfectScrollbarConfig" [disabled]="sidebar?.minimized"
-    dropdownMode="closeInactive"></c-sidebar-nav>
-  <c-sidebar-minimizer cSidebarMinimize="sidebar"></c-sidebar-minimizer>
+    dropdownMode="closeInactive" style="    background-image: linear-gradient(177deg, #cd3528, #f0977a);"></c-sidebar-nav>
+  <!-- <c-sidebar-minimizer cSidebarMinimize="sidebar"></c-sidebar-minimizer> -->
 </c-sidebar>
 
 <!--aside-->
@@ -47,15 +47,15 @@
   </c-body>
   <c-footer>
     <div>
-      <a href="https://goidux.com" target="_blank">
-        CoreUI
+      <a href="#" target="_blank">
+        Copy Right
+        <span> &copy; Daily Gong</span>
       </a>
-      <span> &copy; 2021 Travitime</span>
     </div>
     <div class="mfs-auto">
       Powered by
-      <a href="https://goidux.com" target="_blank">
-        <span> Idux</span>
+      <a href="https://vibisoft.site" target="_blank">
+        <span> VIBI Software Solutions</span>
       </a>
     </div>
   </c-footer>

@@ -5,40 +5,108 @@ export const navItems: INavData[] = [
     name: 'Dashboard',
     url: '/dashboard',
     icon: 'cil-speedometer',
+  },
+  {
+    name: 'Calendar',
+    url: '/operator-dashboard/calendar',
+    icon: 'cil-speedometer',
+  },
+  {
+    name: 'Contact',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+    children: [
+      {
+        name: 'Company Contact',
+        url: '/operator-dashboard/add-tour',
+      },
+      {
+        name: 'Client Contact',
+        url: '/operator-dashboard/add-tour',
+      },
+    ]
+  },
+  {
+    name: 'Sales',
+    title: true,
+  },
+  {
+    name: 'Leads',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+    children: [
+      {
+        name: 'Create',
+        url: '/operator-dashboard/add-tour',
+      },
+      {
+        name: 'Management',
+        url: '/operator-dashboard/tours',
+      },
+      {
+        name: 'Documents',
+        url: '/operator-dashboard/tours',
+      },
+      {
+        name: 'Profile',
+        url: '/operator-dashboard/tours',
+      },
+    ],
+  }, 
+  {
+    name: 'Appoinment',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+  },
+  {
+    name: 'Follow-up',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+  },
+  {
+    name: 'Escalated',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+  },
+  {
+    name: 'Dashboard',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+  },
+  {
+    name: 'Tickets',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+    // badge: {
+    //   variant: 'info',
+    //   text: 'NEW',
+    // },
+  },
+ /* 
+ {
+    name: 'Dashboard',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
     badge: {
       variant: 'info',
       text: 'NEW',
     },
   },
-  // {
-  //   name: 'Dashboard',
-  //   url: '/operator-dashboard',
-  //   icon: 'cil-speedometer',
-  //   badge: {
-  //     variant: 'info',
-  //     text: 'NEW',
-  //   },
-  // },
-  // {
-  //   name: 'Tour',
-  //   url: '/operator-dashboard',
-  //   icon: 'cil-speedometer',
-  //   children: [
-  //     {
-  //       name: 'Add Tour',
-  //       url: '/operator-dashboard/add-tour',
-  //     },
-  //     {
-  //       name: 'View Tours',
-  //       url: '/operator-dashboard/tours',
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: 'Calendar',
-  //   url: '/operator-dashboard/calendar',
-  //   icon: 'cil-speedometer',
-  // },
+  {
+    name: 'Tour',
+    url: '/operator-dashboard',
+    icon: 'cil-speedometer',
+    children: [
+      {
+        name: 'Add Tour',
+        url: '/operator-dashboard/add-tour',
+      },
+      {
+        name: 'View Tours',
+        url: '/operator-dashboard/tours',
+      },
+    ],
+  },
   {
     name: 'Theme',
     url: '/theme',
@@ -313,16 +381,16 @@ export const navItems: INavData[] = [
       },
     ],
   },
-  // {
-  //   name: 'Disabled',
-  //   url: '/dashboard',
-  //   icon: 'cil-ban',
-  //   badge: {
-  //     variant: 'secondary',
-  //     text: 'NEW'
-  //   },
-  //   attributes: { disabled: true },
-  // },
+  {
+    name: 'Disabled',
+    url: '/dashboard',
+    icon: 'cil-ban',
+    badge: {
+      variant: 'secondary',
+      text: 'NEW'
+    },
+    attributes: { disabled: true },
+  },
   {
     name: 'Apps',
     url: '/apps',
@@ -344,4 +412,7 @@ export const navItems: INavData[] = [
       },
     ],
   },
+
+  
+  */
 ];

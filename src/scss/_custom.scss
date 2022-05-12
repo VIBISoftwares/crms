@@ -1,1 +1,24 @@
-// Here you can add other styles
+.c-sidebar .c-sidebar-brand {
+    color: #fff;
+    background: #d13a29;
+}
+
+.c-sidebar .c-sidebar-nav-link:hover, .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
+    color: #fff;
+    background: #e57860;
+    border-radius: 35px 0 0 35px;
+}
+
+.c-sidebar .c-sidebar-nav-link.c-active, .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
+    // color: #fff;
+    // background: rgb(255 255 255 / 32%);
+    background: rgb(94 5 5 / 40%);
+    color: #ffffff;
+    font-style: bold;
+    /* background: rgb(94 5 5 / 40%); */
+    // background-image: linear-gradient( #791105, transparent,#791105);
+    border-radius: 35px 0 0 35px;
+}
+.c-sidebar-nav-link, .c-sidebar-nav-dropdown-toggle{
+    padding: 0.6445rem 1rem;
+}

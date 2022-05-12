@@ -1,6 +1,6 @@
 <!--<c-header [fixed]="true">-->
 <ng-container>
-  <c-toggler
+  <!-- <c-toggler
     class="d-md-none"
     cSidebarToggle="sidebar"
     inHeader="true"
@@ -10,7 +10,19 @@
     cSidebarToggle="sidebar"
     id="sidebar-toggler"
     inHeader="true"
-  ></c-toggler>
+  ></c-toggler> -->
+  <c-toggler
+  class="d-md-none"
+  cSidebarMinimize="sidebar"
+  inHeader="true"
+></c-toggler>
+<c-toggler
+  class="d-sm-down-none mfs-3"
+  cSidebarMinimize="sidebar"
+  id="sidebar-toggler"
+  inHeader="true"
+></c-toggler>
+  <!-- <c-sidebar-minimizer cSidebarMinimize="sidebar"></c-sidebar-minimizer> -->
   <c-header-brand [routerLink]="'/dashboard'" class="d-lg-none">
     <c-icon
       width="46"
