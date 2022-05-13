@@ -8,3 +8,7 @@ ng g m views/contact --routing=true
 ng g c views/contact/customer-contact -is --skip-tests=true -m=contact
 ng g c views/contact/company-contact -is --skip-tests=true -m=contact
 
+
+ng add @angular/pwa
+npm uninstall @angular/pwa
+npm cache clean --force

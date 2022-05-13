@@ -80,6 +80,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app.routing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './view/signin/signin.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -112,6 +114,12 @@ import { SigninComponent } from './view/signin/signin.component';
     // ToastrModule.forRoot(),
     // ToastContainerModule,
     FormModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   exports: [SharedModule],
 
