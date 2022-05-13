@@ -1,11 +1,13 @@
 <c-container>
   <c-row class="justify-content-center">
-    <c-col md="5">
+    <c-col md="4">
       <c-card-group>
         <c-card class="p-4">
           <c-card-body>
             <form>
-              <h1 class="pb-2 text-center">Login</h1>
+              <div class="pb-4 text-center">
+                  <img src="assets/img/company_logo.jpg" width="240" height="70" />
+              </div>
               <p class="text-muted d-none">Sign In to your account</p>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -24,11 +26,11 @@
                 <input cInput type="password" placeholder="Password" autocomplete="current-password" required />
               </div>
               <c-row>
-                <c-col col="6" >
+                <!-- <c-col col="6" >
                   <button cButton color="link" class="px-0">Forgot password?</button>
-                </c-col>
-                <c-col col="6" class="text-right">
-                  <button cButton color="primary" class="px-5 rounded-pill " [routerLink]="'/operator-dashboard'">Login</button>
+                </c-col> -->
+                <c-col col="12" class="text-right">
+                  <button cButton color="danger" class="px-5 rounded-pill " [routerLink]="'/operator-dashboard'">Login</button>
                 </c-col>
               </c-row>
             </form>
@@ -50,4 +52,5 @@
       </c-card-group>
     </c-col>
   </c-row>
+  <img src="assets/img/vibi_logo.png" style="transform: 0.7;position:absolute;bottom:10px;right:10px;width:20%;height:10% " />
 </c-container>

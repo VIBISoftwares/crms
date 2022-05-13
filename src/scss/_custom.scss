@@ -1,20 +1,30 @@
+.login-bg{
+    background-image:url('/assets/img/login-bg.jpg') ;
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
+}
+// side menu
+.menu-bg{
+     background-image: linear-gradient(177deg, #393F6F, #7F4BA1) !important;
+}
+
 .c-sidebar .c-sidebar-brand {
     color: #fff;
-    background: #d13a29;
+    background: #393F6F;
 }
 
 .c-sidebar .c-sidebar-nav-link:hover, .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     color: #fff;
-    background: #e57860;
+    background: #aeaeae;
     border-radius: 35px 0 0 35px;
 }
 
 .c-sidebar .c-sidebar-nav-link.c-active, .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
     // color: #fff;
     // background: rgb(255 255 255 / 32%);
-    background: rgb(94 5 5 / 40%);
+    background: #492760;
     color: #ffffff;
-    font-style: bold;
+    font-size: 12pt;
     /* background: rgb(94 5 5 / 40%); */
     // background-image: linear-gradient( #791105, transparent,#791105);
     border-radius: 35px 0 0 35px;
