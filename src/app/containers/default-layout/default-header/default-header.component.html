@@ -14,12 +14,13 @@
   <c-toggler class="d-md-none" cSidebarToggle="sidebar" inHeader="true"></c-toggler>
   <c-toggler class="d-sm-down-none mfs-3" cSidebarMinimize="sidebar" id="sidebar-toggler" inHeader="true"></c-toggler>
   <!-- <c-sidebar-minimizer cSidebarMinimize="sidebar"></c-sidebar-minimizer> -->
-  <c-header-brand [routerLink]="'/dashboard'" class="d-lg-none">
-    <c-icon width="46" height="46" alt="Company Logo" [use]="'assets/img/company_logo_min.jpg'"></c-icon>
+  <c-header-brand [routerLink]="'/dashboard'" class="d-lg-none text-center">
+    <!-- <c-icon width="46" height="46" alt="Company Logo" [use]="'assets/img/company_logo_min.jpg'"></c-icon> -->
+    <img src='assets/img/company_logo.jpg' width="200" height="46"   />
   </c-header-brand>
   <!-- header links-->
-  <ul class="c-header-nav d-md-down-none" style="width:70%">
-    <li class="c-header-nav-item text-center bold px-3" style="width:100%;">
+  <ul class="c-header-nav d-md-down-none">
+    <li class="c-header-nav-item text-center bold px-3" >
       <!-- <marquee class="text-center"> -->
       <span style="font-size: 19px; font-weight: bold;">Daily Gong</span>
       <br>
@@ -47,6 +48,7 @@
     <app-default-header-dropdown-tasks class="d-md-down-none"></app-default-header-dropdown-tasks>
     <app-default-header-dropdown-messages class="d-md-down-none d-none"></app-default-header-dropdown-messages>
     <app-default-header-dropdown-account></app-default-header-dropdown-account>
+    <img src='assets/img/vibi_logo.png' width="200" height="46" class="pr-2 d-md-down-none"   />
   </ul>
   <!--aside toggler-->
   <c-toggler cSidebarToggle="aside" id="aside-toggler">
@@ -59,15 +61,17 @@
     <!--breadcrumbs-->
     <c-breadcrumb class="border-0 m-0 px-0 px-md-3 c-subheader-nav" cBreadcrumbRouter></c-breadcrumb>
     <!--subheader links-->
-    <div class="c-subheader-nav d-md-down-none mfe-2">
-      <a class="c-subheader-nav-link" [routerLink]="'/apps/email'">
+    <div class="c-subheader-nav d-md-down-none mfe-2 ">
+    <b>Daily Quotes:</b><i style="font-size:10px">  “How you gather, manage and use information will determine whether you win or lose.” –<b> Bill Gates </b></i>
+
+      <a class="c-subheader-nav-link d-none" [routerLink]="'/apps/email'">
         <c-icon name="cil-speech"></c-icon>
       </a>
-      <a class="c-subheader-nav-link" [routerLink]="'/dashboard'">
+      <a class="c-subheader-nav-link d-none" [routerLink]="'/dashboard'">
         <c-icon name="cil-graph"></c-icon>
         &nbsp;Dashboard
       </a>
-      <a class="c-subheader-nav-link" href="#">
+      <a class="c-subheader-nav-link d-none" href="#">
         <c-icon name="cil-settings"></c-icon>
         &nbsp;Settings
       </a>

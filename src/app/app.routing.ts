@@ -85,6 +85,11 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'contact',
+        loadChildren: () =>
+          import('./views/contact/contact.module').then((m) => m.ContactModule),
+      },
+      {
         path: 'theme',
         loadChildren: () =>
           import('./views/theme/theme.module').then((m) => m.ThemeModule),

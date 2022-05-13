@@ -13,16 +13,16 @@ export const navItems: INavData[] = [
   // },
   {
     name: 'Contact',
-    url: '/operator-dashboard',
+    url: '/contact',
     icon: 'cil-address-book',
     children: [
       {
         name: 'Company Contact',
-        url: '/company-contact',
+        url: '/contact/company-contact',
       },
       {
         name: 'Client Contact',
-        url: '/client-contact',
+        url: '/contact/client-contact',
       },
     ]
   },

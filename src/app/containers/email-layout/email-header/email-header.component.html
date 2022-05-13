@@ -1,23 +1,9 @@
 <!--<c-header [fixed]="true">-->
 <ng-container>
-  <c-toggler
-    class="d-md-none"
-    cSidebarToggle="sidebar"
-    inHeader="true"
-  ></c-toggler>
-  <c-toggler
-    class="d-sm-down-none mfs-3"
-    cSidebarToggle="sidebar"
-    id="sidebar-toggler"
-    inHeader="true"
-  ></c-toggler>
+  <c-toggler class="d-md-none" cSidebarToggle="sidebar" inHeader="true"></c-toggler>
+  <c-toggler class="d-sm-down-none mfs-3" cSidebarToggle="sidebar" id="sidebar-toggler" inHeader="true"></c-toggler>
   <c-header-brand [routerLink]="'/dashboard'" class="d-lg-none">
-    <c-icon
-      width="46"
-      height="46"
-      alt="CoreUI Logo"
-      [use]="'assets/img/brand/coreui-pro.svg#signet'"
-    ></c-icon>
+    <c-icon width="46" height="46" alt="CoreUI Logo" [use]="'assets/img/brand/coreui-pro.svg#signet'"></c-icon>
   </c-header-brand>
   <!-- header links-->
   <ul class="c-header-nav d-md-down-none">
@@ -42,15 +28,9 @@
 
   <!--header dropdowns-->
   <ul class="c-header-nav">
-    <app-default-header-dropdown-notifications
-      class="d-md-down-none"
-    ></app-default-header-dropdown-notifications>
-    <app-default-header-dropdown-tasks
-      class="d-md-down-none"
-    ></app-default-header-dropdown-tasks>
-    <app-default-header-dropdown-messages
-      class="d-md-down-none"
-    ></app-default-header-dropdown-messages>
+    <app-default-header-dropdown-notifications class="d-md-down-none"></app-default-header-dropdown-notifications>
+    <app-default-header-dropdown-tasks class="d-md-down-none"></app-default-header-dropdown-tasks>
+    <app-default-header-dropdown-messages class="d-md-down-none"></app-default-header-dropdown-messages>
     <app-default-header-dropdown-account></app-default-header-dropdown-account>
   </ul>
 
@@ -65,10 +45,7 @@
   <c-subheader class="justify-content-between px-3">
 
     <!--breadcrumbs-->
-    <c-breadcrumb
-      class="border-0 m-0 px-0 px-md-3 c-subheader-nav"
-      cBreadcrumbRouter
-    ></c-breadcrumb>
+    <c-breadcrumb class="border-0 m-0 px-0 px-md-3 c-subheader-nav" cBreadcrumbRouter></c-breadcrumb>
 
     <!--subheader links-->
     <div class="c-subheader-nav d-md-down-none mfe-2">
