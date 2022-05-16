@@ -118,8 +118,8 @@ export const navItems: INavData[] = [
         url: '/notification/management',
       },
       {
-        name: 'Leave Management',
-        url: '/notification/leave',
+        name: 'Holidays',
+        url: '/notification/holidays',
       },]
   },
   {
@@ -127,8 +127,8 @@ export const navItems: INavData[] = [
     title: true,
   },
   {
-    name: 'User',
-    url: '/user',
+    name: 'Users',
+    url: '/users',
     icon: 'cil-user-plus',
     children: [
       {
@@ -191,8 +191,8 @@ export const navItems: INavData[] = [
     icon: 'cil-comment-bubble',
   },
   {
-    name: 'RO Performance',
-    url: '/reports/performance',
+    name: 'Employee Performance',
+    url: '/reports/employee-performance',
     icon: 'cil-graph',
   },
   {

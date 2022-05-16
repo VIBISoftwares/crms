@@ -1,6 +1,6 @@
 {
-  "name": "ng",
-  "short_name": "ng",
+  "name": "Daily Gong",
+  "short_name": "Daily Gong",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
@@ -11,7 +11,7 @@
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "Daily Gong -CRM"
     },
     {
       "src": "assets/icons/icon-96x96.png",
