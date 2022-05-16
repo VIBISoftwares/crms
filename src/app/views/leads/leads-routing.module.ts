@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'management',
+        redirectTo: 'create',
       },
       {
         path: 'create',

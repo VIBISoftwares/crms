@@ -133,23 +133,23 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Create',
-        url: '/user/create',
+        url: '/users/create',
       },
       {
         name: 'Management',
-        url: '/user/management',
+        url: '/users/management',
       },
       {
         name: 'User Rights',
-        url: '/user/user-rights',
+        url: '/users/user-rights',
       },
       {
         name: 'Password Change',
-        url: '/user/change-password',
+        url: '/users/change-password',
       },
       {
         name: 'System Config',
-        url: '/user/system-config',
+        url: '/users/system-config',
       },
     ],
   },

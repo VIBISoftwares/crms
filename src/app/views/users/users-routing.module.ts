@@ -40,17 +40,17 @@ const routes: Routes = [
         },
       },     
       {
-        path: 'holidays',
+        path: 'change-password',
         component: ChangePasswordComponent,
         data: {
-          title: 'Holidays',
+          title: 'Change Password',
         },
       },     
       {
-        path: 'holidays',
+        path: 'system-config',
         component: SystemConfigComponent,
         data: {
-          title: 'SystemConfigComponent',
+          title: 'System Config',
         },
       },     
     ],
