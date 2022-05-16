@@ -1,11 +1,12 @@
-.login-bg{
-    background-image:url('/assets/img/login-bg.jpg') ;
+.login-bg {
+    background-image: url('/assets/img/login-bg.jpg');
     background-repeat: no-repeat;
     background-size: 100% 110%;
 }
+
 // side menu
-.menu-bg{
-     background-image: linear-gradient(177deg, #393F6F, #7F4BA1) !important;
+.menu-bg {
+    background-image: linear-gradient(177deg, #393F6F, #7F4BA1) !important;
 }
 
 .c-sidebar .c-sidebar-brand {
@@ -13,13 +14,15 @@
     background: #393F6F;
 }
 
-.c-sidebar .c-sidebar-nav-link:hover, .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
+.c-sidebar .c-sidebar-nav-link:hover,
+.c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     color: #fff;
     background: #aeaeae;
     border-radius: 35px 0 0 35px;
 }
 
-.c-sidebar .c-sidebar-nav-link.c-active, .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
+.c-sidebar .c-sidebar-nav-link.c-active,
+.c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
     // color: #fff;
     // background: rgb(255 255 255 / 32%);
     background: #492760;
@@ -29,6 +32,44 @@
     // background-image: linear-gradient( #791105, transparent,#791105);
     border-radius: 35px 0 0 35px;
 }
-.c-sidebar-nav-link, .c-sidebar-nav-dropdown-toggle{
+
+.c-sidebar-nav-link,
+.c-sidebar-nav-dropdown-toggle {
     padding: 0.6445rem 1rem;
+}
+
+
+/* input lable on transition */
+
+.floating-label {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    font-size: smaller;
+    color: #777777;
+    padding-left: 11px;
+    pointer-events: none;
+}
+
+input:focus~.floating-label,
+input:not(:placeholder-shown):not(:focus)~.floating-label {
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    font-size: 9px;
+    color: #000000;
+    padding-left: 6px;
+    transition: 0.3s ease all;
+    font-weight: 500;
+}
+
+.floating-label-select {
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    font-size: 9px;
+    color: #000000;
+    padding-left: 6px;
+    transition: 0.3s ease all;
+    font-weight: 500;
 }

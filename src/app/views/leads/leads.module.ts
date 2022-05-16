@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ButtonModule, CardModule, FormModule, GridModule, CollapseModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
 
 import { LeadsRoutingModule } from './leads-routing.module';
 import { CreateComponent } from './create/create.component';
@@ -19,7 +24,15 @@ import { TransferComponent } from './transfer/transfer.component';
   ],
   imports: [
     CommonModule,
-    LeadsRoutingModule
+    LeadsRoutingModule,
+    BsDropdownModule.forRoot(),
+    FormsModule,
+    CardModule,
+    CollapseModule,
+    GridModule,
+    IconModule,
+    ButtonModule,
+    FormModule,
   ]
 })
 export class LeadsModule { }
