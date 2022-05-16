@@ -90,6 +90,28 @@ export const routes: Routes = [
           import('./views/contact/contact.module').then((m) => m.ContactModule),
       },
       {
+        path: 'leads',
+        loadChildren: () =>
+          import('./views/leads/leads.module').then((m) => m.LeadsModule),
+      },
+      {
+        path: 'appoinment',
+        loadChildren: () =>
+          import('./views/appointment/appointment.module').then((m) => m.AppointmentModule),
+      },
+      {
+        path: 'followup',
+        loadChildren: () =>
+          import('./views/followup/followup.module').then((m) => m.FollowupModule),
+      },
+      {
+        path: 'escalation',
+        loadChildren: () =>
+          import('./views/escalation/escalation.module').then((m) => m.EscalationModule),
+      },
+
+// will remove
+      {
         path: 'theme',
         loadChildren: () =>
           import('./views/theme/theme.module').then((m) => m.ThemeModule),
@@ -150,7 +172,7 @@ export const routes: Routes = [
         path: 'widgets',
         loadChildren: () =>
           import('./views/widgets/widgets.module').then((m) => m.WidgetsModule),
-      },
+      }, 
       {
         path: 'apps',
         loadChildren: () =>

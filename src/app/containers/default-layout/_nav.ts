@@ -32,94 +32,94 @@ export const navItems: INavData[] = [
   // },
   {
     name: 'Leads',
-    url: '/operator-dashboard',
+    url: '/leads',
     icon: 'cil-group',
     children: [
       {
         name: 'Create',
-        url: '/operator-dashboard/add-tour',
+        url: '/leads/create',
       },
       {
         name: 'Management',
-        url: '/operator-dashboard/tours',
+        url: '/leads/management',
       },
       {
         name: 'Documents',
-        url: '/operator-dashboard/tours',
+        url: '/leads/documents',
       },
       {
         name: 'Lead Profile',
-        url: '/operator-dashboard/tours',
+        url: '/leads/profiles',
       },
       {
         name: 'Bulk Transfer',
-        url: '/operator-dashboard/tours',
+        url: '/leads/transfer',
       },
     ],
   }, 
   {
     name: 'Appoinment',
-    url: '/operator-dashboard',
+    url: '/appoinment',
     icon: 'cil-calendar',
   },
   {
     name: 'Follow-up',
-    url: '/operator-dashboard',
+    url: '/followup',
     icon: 'cil-user-plus',
   },
   {
     name: 'Escalation',
-    url: '/operator-dashboard',
+    url: '/escalation',
     icon: 'cil-calendar-check',
   },
   {
     name: 'Tickets',
-    url: '/operator-dashboard',
+    url: '/tickets',
     icon: 'cil-send',
     children: [
       {
         name: 'Raise Ticket',
-        url: '/operator-dashboard/add-tour',
+        url: '/tickets/raise',
       },
       {
         name: 'Assign Ticket',
-        url: '/operator-dashboard/tours',
+        url: '/tickets/assign',
       },
       {
         name: 'Status Ticket',
-        url: '/operator-dashboard/tours',
+        url: '/tickets/status',
       },]
   },
   {
     name: 'Product',
-    url: '/operator-dashboard',
+    url: '/product',
     icon: 'cil-sitemap',
     children: [
       {
         name: 'Add Product',
-        url: '/operator-dashboard/add-tour',
+        url: '/product/add',
       },
       {
         name: 'Management',
-        url: '/operator-dashboard/tours',
+        url: '/product/management',
       },]
   },
   {
     name: 'Notification',
-    url: '/operator-dashboard',
+    url: '/notification',
     icon: 'cil-notes',
     children: [
       {
         name: 'Create',
-        url: '/operator-dashboard/add-tour',
+        url: '/notification/create',
       },
       {
         name: 'Management',
-        url: '/operator-dashboard/tours',
+        url: '/notification/management',
       },
       {
         name: 'Leave Management',
-        url: '/operator-dashboard/tours',
+        url: '/notification/leave',
       },]
   },
   {
@@ -128,47 +128,47 @@ export const navItems: INavData[] = [
   },
   {
     name: 'User',
-    url: '/operator-dashboard',
+    url: '/user',
     icon: 'cil-user-plus',
     children: [
       {
         name: 'Create',
-        url: '/operator-dashboard/add-tour',
+        url: '/user/create',
       },
       {
         name: 'Management',
-        url: '/operator-dashboard/tours',
+        url: '/user/management',
       },
       {
         name: 'User Rights',
-        url: '/operator-dashboard/tours',
+        url: '/user/rights',
       },
       {
         name: 'Password Change',
-        url: '/operator-dashboard/tours',
+        url: '/user/change-password',
       },
       {
         name: 'System Config',
-        url: '/operator-dashboard/tours',
+        url: '/user/system-config',
       },
     ],
   },
   {
     name: 'Location',
-    url: '/operator-dashboard',
+    url: '/location',
     icon: 'cil-compass',
     children: [
       {
         name: 'Country',
-        url: '/operator-dashboard/add-tour',
+        url: '/location/country',
       },
       {
         name: 'State',
-        url: '/operator-dashboard/add-tour',
+        url: '/location/state',
       },
       {
         name: 'Area',
-        url: '/operator-dashboard/add-tour',
+        url: '/location/area',
       }]
   },
   {
@@ -177,22 +177,22 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Daily Leads',
-    url: '/operator-dashboard',
+    url: '/reports/daily-leads',
     icon: 'cil-notes',
   },
   {
     name: 'Daily Followups',
-    url: '/operator-dashboard',
+    url: '/reports/daily-followups',
     icon: 'cil-speech',
   },
   {
     name: 'Appoinments',
-    url: '/operator-dashboard',
+    url: '/reports/appoinments',
     icon: 'cil-comment-bubble',
   },
   {
     name: 'RO Performance',
-    url: '/operator-dashboard',
+    url: '/reports/performance',
     icon: 'cil-graph',
   },
   {
