@@ -141,7 +141,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'User Rights',
-        url: '/user/rights',
+        url: '/user/user-rights',
       },
       {
         name: 'Password Change',

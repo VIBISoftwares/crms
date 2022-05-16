@@ -109,6 +109,33 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./views/escalation/escalation.module').then((m) => m.EscalationModule),
       },
+      {
+        path: 'tickets',
+        loadChildren: () =>
+          import('./views/tickets/tickets.module').then((m) => m.TicketsModule),
+      },    
+      {
+        path: 'product',
+        loadChildren: () =>
+          import('./views/product/product.module').then((m) => m.ProductModule),
+      },
+      {
+        path: 'notification',
+        loadChildren: () =>
+          import('./views/notification/notification.module').then((m) => m.NotificationModule),
+      },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./views/users/users.module').then((m) => m.UsersModule),
+      },
+    
+
+
+
+
+
+
 
 // will remove
       {
