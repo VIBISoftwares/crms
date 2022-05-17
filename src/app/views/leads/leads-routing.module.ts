@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'leads',
+      title: 'Leads',
     },
     children: [
       {
@@ -23,7 +23,7 @@ const routes: Routes = [
         path: 'create',
         component: CreateComponent,
         data: {
-          title: 'Company Contact',
+          title: 'Create',
         },
       },
       {
