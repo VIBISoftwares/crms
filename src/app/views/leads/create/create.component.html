@@ -9,7 +9,7 @@
                     <c-row>
                         <c-col sm="8">
                             <c-row class="row mt-3 bg-white">
-                                <c-col sm="3" class="pb-2">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control title " name="title" id="title" title="Title" required>
                                         <option value="">Title</option>
 
@@ -27,7 +27,7 @@
                                     <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " title="Last Name">
                                     <span class="floating-label">Last Name</span>
                                 </c-col>
-                                <c-col sm="3" class="pb-2">
+                                <c-col sm="3" class="pb-3">
                                     <input type="radio" class="ml-2" name="gender" id="gender_m" title="Male" value="male" checked>
                                     <label for="gender_m"><i class="fa fa-male px-2" aria-hidden="true"></i></label>
                                     <input type="radio" class="ml-2" name="gender" id="gender_f" title="Female" value="female">
@@ -36,7 +36,7 @@
                                     <label for="gender_t"><i class="fa fa-transgender px-2"
                                             aria-hidden="true"></i></label>
                                 </c-col>
-                                <c-col sm="3" class="pb-2">
+                                <c-col sm="3" class="pb-3">
                                     <input class="form-control" type="email" name="email" id="email" placeholder=" " title="Email">
                                     <span class="floating-label required">Email</span>
                                 </c-col>
@@ -50,7 +50,7 @@
 
                                     </select>
                                 </c-col>
-                                <c-col sm="3" class="pb-2">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="guardian_relationship" name="guardian_relationship" title="Relationship">
                                         <option value="">Gurardian</option>
                     
@@ -70,8 +70,8 @@
                                     <input type="text" class="form-control" id="guard1_contact_no" name="guard1_contact_no" placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
                                     <span class="floating-label required">Contact Number</span>
                                 </c-col>
-                                <c-col sm="3" class="pb-2">
-                                    <input type="text" class="form-control" id="dob" name="dob" placeholder=" " title="Date of Birth">
+                                <c-col sm="3" class="pb-3">
+                                    <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
                                     <span class="floating-label">Date of Birth</span>
                                 </c-col>
                                 <c-col sm="3">
@@ -86,7 +86,7 @@
                                     <input type="text" class="form-control" id="caste" name="caste" placeholder=" " title="Caste">
                                     <span class="floating-label">Caste</span>
                                 </c-col>
-                                <c-col sm="6" class="pb-2">
+                                <c-col sm="6" class="pb-3">
                                     <input type="text" class="form-control" id="address1" name="address1" placeholder=" " title="Address Line 1" required>
                                     <span class="floating-label required">Address Line 1</span>
                                 </c-col>
@@ -128,7 +128,7 @@
 
                             <c-row class="row mt-3 bg-white">
                                 <c-col sm="4"></c-col>
-                                <c-col sm="4" class="pb-2">
+                                <c-col sm="4" class="pb-3">
                                     <div class="imagePreview"></div>
                                     <input type="hidden" name="uploaded_picture" id="uploaded_picture">
                                     <label class="btn btn-primary w-100">
@@ -139,7 +139,8 @@
                                 </c-col>
                                 <c-col sm="4"></c-col>
                                 <c-col sm="3">
-                                    <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " title="Followup Date" required>
+                                    <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " title="Followup Date" required> -->
+                                    <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
                                     <span class="floating-label required">Followup Date</span>
                                 </c-col>
                                 <c-col sm="4">

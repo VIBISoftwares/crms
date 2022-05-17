@@ -12,6 +12,11 @@ import { ManagementComponent } from './management/management.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TransferComponent } from './transfer/transfer.component';
+// Timepicker
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+
+// Datepicker
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -33,6 +38,8 @@ import { TransferComponent } from './transfer/transfer.component';
     IconModule,
     ButtonModule,
     FormModule,
+    TimepickerModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ]
 })
 export class LeadsModule { }

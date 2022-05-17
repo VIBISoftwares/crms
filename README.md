@@ -18,3 +18,6 @@ ng build --prod
 Manager :
 Add filter in Lead report
 OD report
+
+flatpickr
+https://github.com/mattlewis92/angularx-flatpickr/blob/master/demo/demo.component.ts
