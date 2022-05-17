@@ -10,6 +10,8 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { CustomerContactComponent } from './customer-contact/customer-contact.component';
 import { CompanyContactComponent } from './company-contact/company-contact.component';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { CompanyContactComponent } from './company-contact/company-contact.compo
     IconModule,
     ButtonModule,
     FormModule,
+    PaginationModule
   ]
 })
 export class ContactModule { }

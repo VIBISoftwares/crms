@@ -14,20 +14,54 @@ export class CalendarComponent implements OnInit {
 
   events = [
     {
-      title: 'event 1',
-      start: this.todayStr + 'T08:00:00',
-      end: this.todayStr + 'T10:30:00',
+      title: 'App:Ramanaujam',
+      start: this.todayStr + 'T10:00:00',
+      end: this.todayStr + 'T11:30:00',
       color: 'black',
     },
     {
-      title: 'event 2',
-      start: this.todayStr + 'T17:00:00',
-      end: this.todayStr + 'T18:30:00',
+      title: 'App:Rampotheni',
+      start: this.todayStr + 'T13:00:00',
+      end: this.todayStr + 'T13:30:00',
+      draggable: true,
     },
     {
-      start: addDays(startOfDay(this.today), 1),
-      end: addDays(endOfDay(this.today), 3),
-      title: 'A 2 day event',
+      start: addDays(startOfDay(this.today), 2),
+      end: addDays(endOfDay(this.today), 4),
+      title: 'Chennai Head Office Meeting ',
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
+    },
+    {
+      start: addDays(startOfDay(this.today), 2),
+      end: addDays(endOfDay(this.today), 2),
+      title: 'DRM meeting',
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
+    },
+    {
+      start: addDays(startOfDay(this.today), 2),
+      end: addDays(endOfDay(this.today), 2),
+      title: 'Today Esclation : 2',
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
+    },
+    {
+      start: addDays(startOfDay(this.today), 2),
+      end: addDays(endOfDay(this.today), 2),
+      title: 'Today Appointment : 5',
       allDay: true,
       resizable: {
         beforeStart: true,

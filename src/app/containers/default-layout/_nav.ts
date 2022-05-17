@@ -6,11 +6,11 @@ export const navItems: INavData[] = [
     url: '/dashboard',
     icon: 'cil-speedometer',
   },
-  // {
-  //   name: 'Calendar',
-  //   url: '/operator-dashboard/calendar',
-  //   icon: 'cil-speedometer',
-  // },
+  {
+    name: 'Daily Events',
+    url: '/operator-dashboard/calendar',
+    icon: 'cil-speedometer',
+  },
   {
     name: 'Contact',
     url: '/contact',
@@ -218,6 +218,21 @@ export const navItems: INavData[] = [
       {
         name: 'Validation',
         url: '/forms/validation-forms',
+      },
+    ],
+  },
+  {
+    name: 'Tables',
+    url: '/tables',
+    icon: 'cil-columns',
+    children: [
+      {
+        name: 'DataTable',
+        url: '/tables/datatables',
+      },
+      {
+        name: 'Standard Tables',
+        url: '/tables/tables',
       },
     ],
   },

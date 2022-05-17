@@ -5,7 +5,7 @@
                 <c-col sm="3">
                     <c-card>
                         <c-card-header>
-                            <strong>Client</strong><small> Creation</small>
+                            <strong>Client contact</strong><small> Creation</small>
                         </c-card-header>
                         <c-card-body>
                             <c-row>
@@ -36,19 +36,11 @@
                                 <c-col sm="12">
                                     <c-form-group>
                                         <select cSelect id="ccmonth">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                          </select>
+                                            <option>Social Media</option>
+                                            <option>Advertise</option>
+                                            <option>Employee</option>
+                                            <option>Others</option>
+                                        </select>
                                         <span class="floating-label-select required">Reference</span>
                                     </c-form-group>
                                 </c-col>
@@ -60,7 +52,8 @@
                                 </c-col>
                                 <c-col sm="12">
                                     <c-form-group>
-                                        <button cButton color="info rounded-pill px-4 float-right" class="mr-1 mb-1">Save</button>
+                                        <button cButton color="info rounded-pill px-4 float-right"
+                                            class="mr-1 mb-1">Save</button>
                                     </c-form-group>
                                 </c-col>
                             </c-row>
@@ -70,12 +63,52 @@
                 <c-col sm="9">
                     <c-card>
                         <c-card-header>
-                            <strong>Contact</strong><small> Management</small>
+                            <strong>Client Contact</strong><small> Management</small>
                         </c-card-header>
                         <c-card-body>
                             <c-row>
                                 <c-col sm="12">
-
+                                    <table class="table table-responsive-sm">
+                                        <colgroup>
+                                            <col class="column-1" />
+                                            <col class="column-2" />
+                                            <col class="column-3" />
+                                            <col class="column-4" />
+                                            <col class="column-5" />
+                                            <col class="column-6" />
+                                            <col class="column-7" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">id</th>
+                                                <th>Contact Name</th>
+                                                <th>Contact No</th>
+                                                <th>Altername No</th>
+                                                <th>Email</th>
+                                                <th>Reference</th>
+                                                <th>Assigned to</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let user of returnedArray">
+                                                <th scope="row">{{ user.id }}</th>
+                                                <td>{{ user.name }}</td>
+                                                <td>{{ user.contactno }}</td>
+                                                <td>{{ user.alternateno }}</td>
+                                                <td>{{ user.email }}</td>
+                                                <td>{{ user.referral }}</td>
+                                                <td>{{ user.assignto }}</td>
+                                                <!-- <td>
+                                                    <c-badge [color]="getBadge(user.status)">{{
+                                                        user.status
+                                                        }}</c-badge>
+                                                </td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
+                                        [itemsPerPage]="5" [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true">
+                                    </pagination>
                                 </c-col>
                             </c-row>
                         </c-card-body>

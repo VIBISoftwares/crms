@@ -31,6 +31,7 @@ import { P500Component } from './views/error/500.component';
 // Import pages
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent,
@@ -114,6 +115,7 @@ import { environment } from '../environments/environment';
     // ToastrModule.forRoot(),
     // ToastContainerModule,
     FormModule,
+    // AngularFontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

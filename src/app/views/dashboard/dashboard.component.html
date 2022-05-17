@@ -5,7 +5,7 @@
       <c-row>
         <c-col sm="5">
           <h4 class="card-title mb-0">Traffic</h4>
-          <div class="small text-muted">November 2019</div>
+          <div class="small text-muted">May 2022</div>
         </c-col>
         <c-col sm="7" class="d-none d-md-block">
           <c-button-toolbar class="float-right">
@@ -32,34 +32,34 @@
     <c-card-footer>
       <c-row class="text-center">
         <c-col sm="12" [md]="true" class="mb-sm-2 mb-0">
-          <div class="text-muted">Visits</div>
-          <strong>29.703 Users (40%)</strong>
+          <div class="text-muted">Attendance</div>
+          <strong>Present -45</strong>
           <c-progress size="xs" class="mt-2">
             <c-progress-bar color="success" [value]="40"></c-progress-bar>
           </c-progress>
         </c-col>
         <c-col sm="12" [md]="true" class="mb-sm-2 mb-0">
-          <div class="text-muted">Unique</div>
-          <strong>24.093 Users (20%)</strong>
+          <div class="text-muted">Attendance</div>
+          <strong>Absent -20</strong>
           <c-progress size="xs" class="mt-2">
             <c-progress-bar color="info" [value]="20"></c-progress-bar>
           </c-progress>
         </c-col>
         <c-col sm="12" [md]="true" class="mb-sm-2 mb-0">
-          <div class="text-muted">Pageviews</div>
-          <strong>78.706 Views (60%)</strong>
+          <div class="text-muted">Online</div>
+          <strong>Users -25 </strong>
           <c-progress size="xs" class="mt-2">
             <c-progress-bar color="warning" [value]="60"></c-progress-bar>
           </c-progress>
         </c-col>
         <c-col sm="12" [md]="true" class="mb-sm-2 mb-0">
-          <div class="text-muted">New Users</div>
-          <strong>22.123 Users (80%)</strong>
+          <div class="text-muted">Offline</div>
+          <strong>Users -20</strong>
           <c-progress size="xs" class="mt-2">
             <c-progress-bar color="danger" [value]="80"></c-progress-bar>
           </c-progress>
         </c-col>
-        <c-col sm="12" [md]="true" class="mb-sm-2 mb-0">
+        <c-col sm="12" [md]="true" class="mb-sm-2 mb-0 d-none">
           <div class="text-muted">Bounce Rate</div>
           <strong>40.15%</strong>
           <c-progress size="xs" class="mt-2">
@@ -69,29 +69,29 @@
       </c-row>
     </c-card-footer>
   </c-card>
-  <app-widgets-brand></app-widgets-brand>
+  <app-widgets-brand class="d-none"></app-widgets-brand>
   <c-row>
     <c-col md="12">
-      <c-card>
-        <c-card-header>
-          Traffic &amp; Sales
-        </c-card-header>
+      <c-card>        
         <c-card-body>
+          <c-card-header>
+            Traffic &amp; Sales
+          </c-card-header>
           <c-row>
             <c-col sm="6">
               <c-row>
                 <c-col sm="6">
                   <c-callout [color]="'info'">
-                    <small class="text-muted">New Clients</small>
+                    <small class="text-muted">New Leads</small>
                     <br>
-                    <strong class="h4">9,123</strong>
+                    <strong class="h4">1000</strong>
                   </c-callout>
                 </c-col>
                 <c-col sm="6">
                   <c-callout color="danger">
-                    <small class="text-muted">Recuring Clients</small>
+                    <small class="text-muted">Leads Convert</small>
                     <br>
-                    <strong class="h4">22,643</strong>
+                    <strong class="h4">650</strong>
                   </c-callout>
                 </c-col>
               </c-row>
@@ -104,10 +104,10 @@
                 </div>
                 <div class="progress-group-bars">
                   <c-progress size="xs">
-                    <c-progress-bar color="info" [value]="34"></c-progress-bar>
+                    <c-progress-bar color="info" [value]="84"></c-progress-bar>
                   </c-progress>
                   <c-progress size="xs">
-                    <c-progress-bar color="danger" [value]="78"></c-progress-bar>
+                    <c-progress-bar color="danger" [value]="58"></c-progress-bar>
                   </c-progress>
                 </div>
               </div>
@@ -212,6 +212,40 @@
               </div>
             </c-col>
             <c-col sm="6">
+              <table class="table table-responsive-sm table-hover table-outline mb-0">
+                <thead class="thead-light">
+                  <tr>                   
+                    <th class="text-center">Notification</th>
+                  </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <marquee direction="up" scrolldelay="2">
+                  <ul class="h6">
+                    <li class="pb-2">Meeting 9.30 AM to 10.30 AM</li>
+                    <li class="pb-2 text-danger">Mr. Ramki Birthday</li>
+                    <li class="pb-2 text-success">Today Holiday</li>
+                    <li class="pb-2 text-warning">25 Escalation in queue</li>
+                    <li class="pb-2">Meeting 9.30 AM to 10.30 AM</li>
+                    <li class="pb-2 text-danger">Mr. Ramki Birthday</li>
+                    <li class="pb-2 text-success">Today Holiday</li>
+                    <li class="pb-2 text-warning">25 Escalation in queue</li>
+                    <li class="pb-2">Meeting 9.30 AM to 10.30 AM</li>
+                    <li class="pb-2 text-danger">Mr. Ramki Birthday</li>
+                    <li class="pb-2 text-success">Today Holiday</li>
+                    <li class="pb-2 text-warning">25 Escalation in queue</li>
+                    <li class="pb-2">Meeting 9.30 AM to 10.30 AM</li>
+                    <li class="pb-2 text-danger">Mr. Ramki Birthday</li>
+                    <li class="pb-2 text-success">Today Holiday</li>
+                    <li class="pb-2 text-warning">25 Escalation in queue</li>
+                  </ul>
+                </marquee>
+                </tr>
+              </tbody>
+              </table>
+            </c-col>
+
+            <c-col sm="6" class="d-none">
               <c-row>
                 <c-col sm="6">
                   <c-callout color="warning">
@@ -313,7 +347,7 @@
             </c-col>
           </c-row>
           <br>
-          <table class="table table-responsive-sm table-hover table-outline mb-0">
+          <table class="table table-responsive-sm table-hover table-outline mb-0 d-none">
             <thead class="thead-light">
               <tr>
                 <th class="text-center">

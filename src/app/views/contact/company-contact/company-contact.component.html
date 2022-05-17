@@ -1,1 +1,154 @@
-<p>company-contact works!</p>
+<div class="pulse">
+    <c-row>
+        <c-col sm="12">
+            <c-row>
+                <c-col sm="3">
+                    <c-card>
+                        <c-card-header>
+                            <strong>Company contact</strong><small> Creation</small>
+                        </c-card-header>
+                        <c-card-body>
+                            <c-row>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Company Name</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Office Address</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Contact Person</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Person Contact</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Office Contact</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Email</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">GST number</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <select cSelect id="ccmonth">
+                                            <option>L1</option>
+                                            <option>L2</option>
+                                            <option>L3</option>
+                                            <option>L4</option>
+                                        </select>
+                                        <span class="floating-label-select required">Company Size</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <select cSelect id="ccmonth">
+                                            <option>Social Media</option>
+                                            <option>Advertise</option>
+                                            <option>Employee</option>
+                                            <option>Others</option>
+                                        </select>
+                                        <span class="floating-label-select required">Reference</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <input cInput id="name" placeholder=" ">
+                                        <span class="floating-label required">Assigned to</span>
+                                    </c-form-group>
+                                </c-col>
+                                <c-col sm="12">
+                                    <c-form-group>
+                                        <button cButton color="info rounded-pill px-4 float-right"
+                                            class="mr-1 mb-1">Save</button>
+                                    </c-form-group>
+                                </c-col>
+                            </c-row>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+                <c-col sm="9">
+                    <c-card>
+                        <c-card-header>
+                            <strong>Company Contact</strong><small> Management</small>
+                        </c-card-header>
+                        <c-card-body>
+                            <c-row>
+                                <c-col sm="12">
+                                    <table class="table table-responsive-sm">
+                                        <colgroup>
+                                            <col class="column-1" />
+                                            <col class="column-2" />
+                                            <col class="column-3" />
+                                            <col class="column-4" />
+                                            <col class="column-5" />
+                                            <col class="column-6" />
+                                            <col class="column-7" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">id</th>
+                                                <th>Company Name</th>
+                                                <th>Contact No</th>
+                                                <th>Altername No</th>
+                                                <th>Email</th>
+                                                <th>Reference</th>
+                                                <th>Assigned to</th>
+                                                <th>Option</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let user of returnedArray">
+                                                <th scope="row">{{ user.id }}</th>
+                                                <td>{{ user.name }}</td>
+                                                <td>{{ user.contactno }}</td>
+                                                <td>{{ user.alternateno }}</td>
+                                                <td>{{ user.email }}</td>
+                                                <td>{{ user.referral }}</td>
+                                                <td>{{ user.assignto }}</td>
+                                                <td>
+                                                    <i class="fa fa-edit px-2 btn-sm btn-info mr-1">Edit</i>
+                                                    <i class="fa fa-delete px-2 btn-sm btn-danger">Delete</i>
+                                                </td>
+                                                <!-- <td>
+                                                    <c-badge [color]="getBadge(user.status)">{{
+                                                        user.status
+                                                        }}</c-badge>
+                                                </td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
+                                        [itemsPerPage]="5" [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true">
+                                    </pagination>
+                                </c-col>
+                            </c-row>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+            </c-row>
+        </c-col>
+    </c-row>
+</div>

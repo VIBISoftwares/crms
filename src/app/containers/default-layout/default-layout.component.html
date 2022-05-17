@@ -19,7 +19,7 @@
 </c-sidebar>
 
 <!--aside-->
-<c-sidebar id="aside" #aside="cSidebar" [aside]="true" colorScheme="light" [overlaid]="true" size="lg" [show]="false"
+<c-sidebar  class="d-none" id="aside" #aside="cSidebar" [aside]="true" colorScheme="light" [overlaid]="true" size="lg" [show]="false"
   [breakpoint]="false" [mobile]="'xl'">
   <!--  cOutClick-->
   <!--aside internal toggler-->
@@ -45,7 +45,7 @@
     </main>
     <!--app footer-->
   </c-body>
-  <c-footer>
+  <c-footer class="d-none">
     <div>
       <a href="#" target="_blank">
         Copy Right
@@ -55,7 +55,7 @@
     <div class="mfs-auto">
       Powered by
       <a href="https://vibisoft.site" target="_blank">
-        <span> VIBI Software Solutions</span>
+        <span>VIBI Software Solutions</span>
       </a>
     </div>
   </c-footer>

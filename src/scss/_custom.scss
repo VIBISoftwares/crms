@@ -73,3 +73,12 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     transition: 0.3s ease all;
     font-weight: 500;
 }
+
+@media (min-width: 768px){
+.c-main > .container-fluid, .c-main > .container-sm, .c-main > .container-md,
+ .c-main > .container-lg, .c-main > .container-xl, .c-main > .container-xxl {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: -20px;
+}
+}

@@ -1,29 +1,8 @@
 <c-row>
   <c-col sm="6" lg="3">
-    <c-widget-dropdown color="gradient-primary" header="9.823" text="Members online">
+    <c-widget-dropdown color="gradient-warning" header="45" text="Today Leads">
       <c-button-group dropdown>
-        <button cButton color="transparent" class="p-0 dropdown-toggle" dropdownToggle>
-          <c-icon name="cil-settings"></c-icon>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-          <a class="dropdown-item" [routerLink]>Action</a>
-          <a class="dropdown-item" [routerLink]>Another action</a>
-          <a class="dropdown-item" [routerLink]>Something else here</a>
-        </div>
-      </c-button-group>
-      <div slot="footer">
-        <div class="c-chart-wrapper mt-3 mx-3" style="height: 70px;" [@.disabled]="true">
-          <canvas cNoZoneBaseChart class="chart" height="70" [datasets]="chart[0].data" [labels]="chart[0].labels"
-            [options]="chart[0].options" [colors]="chart[0].colors" [chartType]="chart[0].type">
-          </canvas>
-        </div>
-      </div>
-    </c-widget-dropdown>
-  </c-col>
-  <c-col sm="6" lg="3">
-    <c-widget-dropdown color="gradient-info" header="9.823" text="Members online">
-      <c-button-group dropdown>
-        <button cButton color="transparent" class="p-0 dropdown-toggle" dropdownToggle>
+        <button cButton color="transparent" class="p-0 dropdown-toggle d-none" dropdownToggle>
           <c-icon name="cil-settings"></c-icon>
         </button>
         <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
@@ -42,30 +21,9 @@
     </c-widget-dropdown>
   </c-col>
   <c-col sm="6" lg="3">
-    <c-widget-dropdown color="gradient-warning" header="9.823" text="Members online">
+    <c-widget-dropdown color="gradient-danger" header="15" text="Today Esclation">
       <c-button-group dropdown>
-        <button cButton color="transparent" class="p-0 dropdown-toggle" dropdownToggle>
-          <c-icon name="cil-settings"></c-icon>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-          <a class="dropdown-item" [routerLink]>Action</a>
-          <a class="dropdown-item" [routerLink]>Another action</a>
-          <a class="dropdown-item" [routerLink]>Something else here</a>
-        </div>
-      </c-button-group>
-      <div slot="footer">
-        <div class="c-chart-wrapper mt-3" style="height: 70px;" [@.disabled]="true">
-          <canvas cNoZoneBaseChart class="chart" height="70" [datasets]="chart[2].data" [labels]="chart[2].labels"
-            [options]="chart[2].options" [colors]="chart[2].colors" [chartType]="chart[2].type">
-          </canvas>
-        </div>
-      </div>
-    </c-widget-dropdown>
-  </c-col>
-  <c-col sm="6" lg="3">
-    <c-widget-dropdown color="gradient-danger" header="9.823" text="Members online">
-      <c-button-group dropdown>
-        <button cButton color="transparent" class="p-0 dropdown-toggle" dropdownToggle>
+        <button cButton color="transparent" class="p-0 dropdown-toggle d-none" dropdownToggle>
           <c-icon name="cil-settings"></c-icon>
         </button>
         <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
@@ -83,4 +41,47 @@
       </div>
     </c-widget-dropdown>
   </c-col>
+  <c-col sm="6" lg="3">
+    <c-widget-dropdown color="gradient-primary" header="35" text="Total Conversion">
+      <c-button-group dropdown>
+        <button cButton color="transparent" class="p-0 dropdown-toggle d-none" dropdownToggle>
+          <c-icon name="cil-settings"></c-icon>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+          <a class="dropdown-item" [routerLink]>Action</a>
+          <a class="dropdown-item" [routerLink]>Another action</a>
+          <a class="dropdown-item" [routerLink]>Something else here</a>
+        </div>
+      </c-button-group>
+      <div slot="footer">
+        <div class="c-chart-wrapper mt-3 mx-3" style="height: 70px;" [@.disabled]="true">
+          <canvas cNoZoneBaseChart class="chart" height="70" [datasets]="chart[0].data" [labels]="chart[0].labels"
+            [options]="chart[0].options" [colors]="chart[0].colors" [chartType]="chart[0].type">
+          </canvas>
+        </div>
+      </div>
+    </c-widget-dropdown>
+  </c-col>
+  <c-col sm="6" lg="3">
+    <c-widget-dropdown color="gradient-success" header="2,75,000" text="Today Collection">
+      <c-button-group dropdown>
+        <button cButton color="transparent" class="p-0 dropdown-toggle d-none" dropdownToggle>
+          <c-icon name="cil-settings"></c-icon>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+          <a class="dropdown-item" [routerLink]>Action</a>
+          <a class="dropdown-item" [routerLink]>Another action</a>
+          <a class="dropdown-item" [routerLink]>Something else here</a>
+        </div>
+      </c-button-group>
+      <div slot="footer">
+        <div class="c-chart-wrapper mt-3" style="height: 70px;" [@.disabled]="true">
+          <canvas cNoZoneBaseChart class="chart" height="70" [datasets]="chart[2].data" [labels]="chart[2].labels"
+            [options]="chart[2].options" [colors]="chart[2].colors" [chartType]="chart[2].type">
+          </canvas>
+        </div>
+      </div>
+    </c-widget-dropdown>
+  </c-col>
+
 </c-row>
