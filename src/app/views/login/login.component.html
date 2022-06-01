@@ -1,56 +1,56 @@
 <c-container>
-  <c-row class="justify-content-center">
-    <c-col md="4">
-      <c-card-group>
-        <c-card class="p-4">
-          <c-card-body>
-            <form>
-              <div class="pb-4 text-center">
-                  <img src="assets/img/company_logo.jpg" width="240" height="70" />                  
-              </div>
-              <p class="text-muted d-none">Sign In to your account</p>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
+    <c-row class="justify-content-center">
+        <c-col md="4">
+            <c-card-group>
+                <c-card class="p-4">
+                    <c-card-body>
+                        <form>
+                            <div class="pb-4 text-center">
+                                <img src="assets/img/company_logo.jpg" width="240" height="70" />
+                            </div>
+                            <p class="text-muted d-none">Sign In to your account</p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
                     <c-icon name="cil-user"></c-icon>
                   </span>
-                </div>
-                <input cInput placeholder="Username" autocomplete="username" required />
-              </div>
-              <div class="input-group mb-4">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
+                                </div>
+                                <input cInput placeholder="Username" autocomplete="username" required />
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
                     <c-icon name="cil-lock-locked"></c-icon>
                   </span>
-                </div>
-                <input cInput type="password" placeholder="Password" autocomplete="current-password" required />
-              </div>
-              <c-row>
-                <!-- <c-col col="6" >
+                                </div>
+                                <input cInput type="password" placeholder="Password" autocomplete="current-password" required />
+                            </div>
+                            <c-row>
+                                <!-- <c-col col="6" >
                   <button cButton color="link" class="px-0">Forgot password?</button>
                 </c-col> -->
-                <c-col col="12" class="text-right">
-                  <button cButton color="danger" class="px-5 rounded-pill " [routerLink]="'/dashboard'">Login</button>
-                </c-col>
-              </c-row>
-            </form>
-          </c-card-body>
-        </c-card>
-        <c-card color="primary" class="text-white py-5 d-md-down-none d-none" style="width: 44%;">
-          <c-card-body class="text-center">
-            <div>
-              <h2>Sign up</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <button cButton color="light" variant="outline" size="lg" class="mt-3" [routerLink]="'/register'">Register
+                                <c-col col="12" class="text-right">
+                                    <button cButton color="danger" class="px-5 rounded-pill " [routerLink]="'/dashboard'">Login</button>
+                                </c-col>
+                            </c-row>
+                        </form>
+                    </c-card-body>
+                </c-card>
+                <c-card color="primary" class="text-white py-5 d-md-down-none d-none" style="width: 44%;">
+                    <c-card-body class="text-center">
+                        <div>
+                            <h2>Sign up</h2>
+                            <p>
+                                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. -->
+                            </p>
+                            <button cButton color="light" variant="outline" size="lg" class="mt-3" [routerLink]="'/register'">Register
                 Now!</button>
-            </div>
-          </c-card-body>
-        </c-card>
-      </c-card-group>
-    </c-col>
-  </c-row>
-  <img src="assets/img/vibi_logo.png" style="transform: 0.7;position:absolute;bottom:10px;right:10px;width:20%;height:10% " />
+                        </div>
+                    </c-card-body>
+                </c-card>
+            </c-card-group>
+        </c-col>
+    </c-row>
+    <img src="assets/img/vibi_logo.png" style="transform: 0.7;position:absolute;bottom:10px;right:10px;width:20%;height:10% " />
 </c-container>
