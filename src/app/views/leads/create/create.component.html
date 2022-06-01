@@ -16,154 +16,181 @@
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " title="First Name" required>
+                                    <input cInput class="form-control " type="text" name="firstname" id="firstname"
+                                        placeholder="  " title="First Name" required>
                                     <span class="floating-label required">First Name</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" " title="Middle Name">
+                                    <input class="form-control" type="text" name="middlename" id="middlename"
+                                        placeholder=" " title="Middle Name">
                                     <span class="floating-label">Middle Name</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " title="Last Name">
+                                    <input class="form-control" type="text" name="lastname" id="lastname"
+                                        placeholder=" " title="Last Name">
                                     <span class="floating-label">Last Name</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="radio" class="ml-2" name="gender" id="gender_m" title="Male" value="male" checked>
+                                    <input type="radio" class="ml-2" name="gender" id="gender_m" title="Male"
+                                        value="male" checked>
                                     <label for="gender_m"><i class="fa fa-male px-2" aria-hidden="true"></i></label>
-                                    <input type="radio" class="ml-2" name="gender" id="gender_f" title="Female" value="female">
+                                    <input type="radio" class="ml-2" name="gender" id="gender_f" title="Female"
+                                        value="female">
                                     <label for="gender_f"><i class="fa fa-female px-2" aria-hidden="true"></i></label>
-                                    <input type="radio" class="ml-2" name="gender" id="gender_t" title="Transgender" value="transgender">
+                                    <input type="radio" class="ml-2" name="gender" id="gender_t" title="Transgender"
+                                        value="transgender">
                                     <label for="gender_t"><i class="fa fa-transgender px-2"
                                             aria-hidden="true"></i></label>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input class="form-control" type="email" name="email" id="email" placeholder=" " title="Email">
+                                    <input class="form-control" type="email" name="email" id="email" placeholder=" "
+                                        title="Email">
                                     <span class="floating-label required">Email</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input class="form-control" type="text" name="contact_no" id="contact_no" placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
+                                    <input class="form-control" type="text" name="contact_no" id="contact_no"
+                                        placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);'
+                                        maxlength="10" required>
                                     <span class="floating-label required">Contact Number</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <select class="form-control" id="marital_status" name="marital_status" title="Marital status">
+                                    <select class="form-control" id="marital_status" name="marital_status"
+                                        title="Marital status">
                                         <option value=" ">Marital status</option>
 
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <select class="form-control" id="guardian_relationship" name="guardian_relationship" title="Relationship">
+                                    <select class="form-control" id="guardian_relationship" name="guardian_relationship"
+                                        title="Relationship">
                                         <option value="">Gurardian</option>
-                    
+
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="guard1_name" name="guard1_name" placeholder=" " title="Guardian Name" required>
+                                    <input type="text" class="form-control" id="guard1_name" name="guard1_name"
+                                        placeholder=" " title="Guardian Name" required>
                                     <span class="floating-label required">Guardian Name</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <select class="form-control" id="guard1_occupation" name="guard1_occupation" title="Occupation">
+                                    <select class="form-control" id="guard1_occupation" name="guard1_occupation"
+                                        title="Occupation">
                                         <option value="">Occupation</option>
-                    
+
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="guard1_contact_no" name="guard1_contact_no" placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
+                                    <input type="text" class="form-control" id="guard1_contact_no"
+                                        name="guard1_contact_no" placeholder=" " title="Contact Number"
+                                        onkeypress='return isNumberKey(event);' maxlength="10" required>
                                     <span class="floating-label required">Contact Number</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
+                                    <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker"
+                                        bsDatepicker [(bsValue)]="bsValue">
                                     <span class="floating-label">Date of Birth</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="religion" name="religion" placeholder=" " title="Religion">
+                                    <input type="text" class="form-control" id="religion" name="religion"
+                                        placeholder=" " title="Religion">
                                     <span class="floating-label">Religion</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="community" name="community" placeholder=" " title="Community">
+                                    <input type="text" class="form-control" id="community" name="community"
+                                        placeholder=" " title="Community">
                                     <span class="floating-label">Community</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="caste" name="caste" placeholder=" " title="Caste">
+                                    <input type="text" class="form-control" id="caste" name="caste" placeholder=" "
+                                        title="Caste">
                                     <span class="floating-label">Caste</span>
                                 </c-col>
                                 <c-col sm="6" class="pb-3">
-                                    <input type="text" class="form-control" id="address1" name="address1" placeholder=" " title="Address Line 1" required>
+                                    <input type="text" class="form-control" id="address1" name="address1"
+                                        placeholder=" " title="Address Line 1" required>
                                     <span class="floating-label required">Address Line 1</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="address2" name="address2" placeholder=" " title="Address Line 2">
+                                    <input type="text" class="form-control" id="address2" name="address2"
+                                        placeholder=" " title="Address Line 2">
                                     <span class="floating-label">Address Line 2</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder=" " title="Pincode" onkeypress='return isNumberKey(event);' maxlength="6" onchange="getAreaByPincode(this.value)">
+                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder=" "
+                                        title="Pincode" onkeypress='return isNumberKey(event);' maxlength="6"
+                                        onchange="getAreaByPincode(this.value)">
                                     <span class="floating-label ">Pincode</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <select class="form-control" id="country" name="country" placeholder=" " title="Country">
+                                    <select class="form-control" id="country" name="country" placeholder=" "
+                                        title="Country">
                                         <option value="">Country</option>
-                    
+
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="state" name="state" placeholder=" " title="State">
                                         <option value="">State</option>
-                    
+
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
-                                    <select class="form-control" id="district" name="district" placeholder=" " title="District">
+                                    <select class="form-control" id="district" name="district" placeholder=" "
+                                        title="District">
                                         <option value="">District</option>
-                    
+
                                     </select>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="area" name="area" placeholder=" " title="Area">
                                         <option value="">Area</option>
-                    
+
                                     </select>
                                 </c-col>
                             </c-row>
                         </c-col>
                         <c-col sm="4">
+
                             <c-row class="row mt-3">
-                                <c-col sm="4"></c-col>
-                                <c-col sm="4" class="pb-3 text-center">
+                                <c-col sm="6">
+                                    <c-col sm="12" class="pb-3">
+                                        <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " title="Followup Date" required> -->
+                                        <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker"
+                                            bsDatepicker [(bsValue)]="bsValue">
+                                        <span class="floating-label required">Followup Date</span>
+                                    </c-col>
+                                    <c-col sm="12" class="pb-3">
+                                        <select class="form-control" id="source" name="source" value="" title="Source">
+                                            <option value="">Source</option>
+                                        </select>
+                                    </c-col>
+
+                                    <c-col sm="12" class="mt-2">
+                                        <input class="form-check-input ml-2" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label ml-4 " for="flexCheckDefault">
+                                           To Convert
+                                        </label>
+                                    </c-col>
+                                </c-col>
+                                <c-col sm="6">
                                     <div class="imagePreview"></div>
                                     <input type="hidden" name="uploaded_picture" id="uploaded_picture">
                                     <label class="btn btn-primary w-100">
                                         Upload
                                         <input type="file" class="uploadFile" value="Upload Photo"
-                                        style="width: 0px;height: 0px;overflow: hidden;" accept="image/*">
+                                            style="width: 0px;height: 0px;overflow: hidden;" accept="image/*">
                                     </label>
                                 </c-col>
-                                <c-col sm="4"></c-col>
-                                <c-col sm="3" class="pb-3">
-                                    <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " title="Followup Date" required> -->
-                                    <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
-                                    <span class="floating-label required">Followup Date</span>
-                                </c-col>
-                                <c-col sm="4" class="pb-3">
-                                    <select class="form-control" id="source" name="source" value="" title="Source">
-                                        <option value="">Source</option>
-                                    </select>
-                                </c-col>
-                                <!-- <c-col sm="3" class="pb-3">
-                                    <input type="text" class="form-control" id="reference" name="reference" value="" placeholder="Reference" title="Reference">
-                                </c-col> -->
-                                <c-col sm="5">
-                                    <c-row>
-                                        <c-col sm="6" class="mt-2">
-                                            <input class="form-check-input ml-2" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="form-check-label ml-4 " for="flexCheckDefault">
-                                            Convert
-                                        </label>
-                                        </c-col>
-                                        <c-col sm="6">
-                                            <input class="btn btn-info float-right px-4" type="submit" value="Save" />
-                                        </c-col>
-                                    </c-row>
+
+                                <c-col sm="12" class="mt-5">
+                                    <input class="btn btn-success float-right rounded-pill px-5" type="submit" value="Save" />
                                 </c-col>
                             </c-row>
+
+
+
+
                         </c-col>
                     </c-row>
                 </c-card-body>
