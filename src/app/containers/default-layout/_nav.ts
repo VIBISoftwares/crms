@@ -44,7 +44,7 @@ export const navItems: INavData[] = [
         url: '/leads/management',
       },
       {
-        name: 'Documents',
+        name: 'KYC Documents',
         url: '/leads/documents',
       },
       {
@@ -200,8 +200,78 @@ export const navItems: INavData[] = [
     url: '/',
     icon: 'cil-power-standby',
   },
-
-
+  {
+    name: 'Base',
+    url: '/base',
+    icon: 'cil-puzzle',
+    children: [
+      {
+        name: 'Breadcrumbs',
+        url: '/base/breadcrumbs',
+      },
+      {
+        name: 'Cards',
+        url: '/base/cards',
+      },
+      {
+        name: 'Carousels',
+        url: '/base/carousels',
+      },
+      {
+        name: 'Collapses',
+        url: '/base/collapses',
+      },
+      {
+        name: 'Images',
+        url: '/base/images',
+      },
+      {
+        name: 'Jumbotrons',
+        url: '/base/jumbotrons',
+      },
+      {
+        name: 'List Groups',
+        url: '/base/list-groups',
+      },
+      {
+        name: 'Media',
+        url: '/base/media-objects',
+      },
+      {
+        name: 'Navbars',
+        url: '/base/navbars',
+      },
+      {
+        name: 'Navs',
+        url: '/base/navs',
+      },
+      {
+        name: 'Pagination',
+        url: '/base/paginations',
+      },
+      {
+        name: 'Popovers',
+        url: '/base/popovers',
+      },
+      {
+        name: 'Progress',
+        url: '/base/progress',
+      },
+      {
+        name: 'Switches',
+        url: '/base/switches',
+      },
+      {
+        name: 'Tabs',
+        url: '/base/tabs',
+      },
+      {
+        name: 'Tooltips',
+        url: '/base/tooltips',
+      },
+    ],
+  },
+ /* 
   {
     name: 'Forms',
     url: '/forms',
@@ -236,7 +306,7 @@ export const navItems: INavData[] = [
       },
     ],
   },
- /* 
+
  {
     name: 'Dashboard',
     url: '/operator-dashboard',

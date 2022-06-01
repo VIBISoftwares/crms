@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-escalation',
   templateUrl: './escalation.component.html',
-  styles: [
-  ]
+  styleUrls: ['./escalation.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class EscalationComponent implements OnInit {
 
@@ -12,5 +12,12 @@ export class EscalationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  minDate = new Date(2017, 5, 10);
+  maxDate = new Date(2022, 9, 15);
+
+  bsValue: Date = new Date();
+  bsRangeValue: any = [new Date(2020, 7, 4), new Date(2020, 7, 20)];
+  
 
 }

@@ -8,22 +8,22 @@
                 <c-card-body>
                     <c-row>
                         <c-col sm="8">
-                            <c-row class="row mt-3 bg-white">
+                            <c-row class="row mt-3">
                                 <c-col sm="3" class="pb-3">
                                     <select class="form-control title " name="title" id="title" title="Title" required>
                                         <option value="">Title</option>
 
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
-                                    <input class="form-control " type="text" name="firstname" id="firstname" placeholder="  " title="First Name" required>
+                                <c-col sm="3" class="pb-3">
+                                    <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " title="First Name" required>
                                     <span class="floating-label required">First Name</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" " title="Middle Name">
                                     <span class="floating-label">Middle Name</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " title="Last Name">
                                     <span class="floating-label">Last Name</span>
                                 </c-col>
@@ -40,11 +40,11 @@
                                     <input class="form-control" type="email" name="email" id="email" placeholder=" " title="Email">
                                     <span class="floating-label required">Email</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input class="form-control" type="text" name="contact_no" id="contact_no" placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
                                     <span class="floating-label required">Contact Number</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="marital_status" name="marital_status" title="Marital status">
                                         <option value=" ">Marital status</option>
 
@@ -56,17 +56,17 @@
                     
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="guard1_name" name="guard1_name" placeholder=" " title="Guardian Name" required>
                                     <span class="floating-label required">Guardian Name</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="guard1_occupation" name="guard1_occupation" title="Occupation">
                                         <option value="">Occupation</option>
                     
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="guard1_contact_no" name="guard1_contact_no" placeholder=" " title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
                                     <span class="floating-label required">Contact Number</span>
                                 </c-col>
@@ -74,15 +74,15 @@
                                     <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
                                     <span class="floating-label">Date of Birth</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="religion" name="religion" placeholder=" " title="Religion">
                                     <span class="floating-label">Religion</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="community" name="community" placeholder=" " title="Community">
                                     <span class="floating-label">Community</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="caste" name="caste" placeholder=" " title="Caste">
                                     <span class="floating-label">Caste</span>
                                 </c-col>
@@ -90,33 +90,33 @@
                                     <input type="text" class="form-control" id="address1" name="address1" placeholder=" " title="Address Line 1" required>
                                     <span class="floating-label required">Address Line 1</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="address2" name="address2" placeholder=" " title="Address Line 2">
                                     <span class="floating-label">Address Line 2</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="pincode" name="pincode" placeholder=" " title="Pincode" onkeypress='return isNumberKey(event);' maxlength="6" onchange="getAreaByPincode(this.value)">
                                     <span class="floating-label ">Pincode</span>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="country" name="country" placeholder=" " title="Country">
                                         <option value="">Country</option>
                     
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="state" name="state" placeholder=" " title="State">
                                         <option value="">State</option>
                     
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="district" name="district" placeholder=" " title="District">
                                         <option value="">District</option>
                     
                                     </select>
                                 </c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <select class="form-control" id="area" name="area" placeholder=" " title="Area">
                                         <option value="">Area</option>
                     
@@ -125,10 +125,9 @@
                             </c-row>
                         </c-col>
                         <c-col sm="4">
-
-                            <c-row class="row mt-3 bg-white">
+                            <c-row class="row mt-3">
                                 <c-col sm="4"></c-col>
-                                <c-col sm="4" class="pb-3">
+                                <c-col sm="4" class="pb-3 text-center">
                                     <div class="imagePreview"></div>
                                     <input type="hidden" name="uploaded_picture" id="uploaded_picture">
                                     <label class="btn btn-primary w-100">
@@ -138,29 +137,29 @@
                                     </label>
                                 </c-col>
                                 <c-col sm="4"></c-col>
-                                <c-col sm="3">
+                                <c-col sm="3" class="pb-3">
                                     <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " title="Followup Date" required> -->
                                     <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
                                     <span class="floating-label required">Followup Date</span>
                                 </c-col>
-                                <c-col sm="4">
+                                <c-col sm="4" class="pb-3">
                                     <select class="form-control" id="source" name="source" value="" title="Source">
                                         <option value="">Source</option>
                                     </select>
                                 </c-col>
-                                <!-- <c-col sm="3">
+                                <!-- <c-col sm="3" class="pb-3">
                                     <input type="text" class="form-control" id="reference" name="reference" value="" placeholder="Reference" title="Reference">
                                 </c-col> -->
                                 <c-col sm="5">
                                     <c-row>
                                         <c-col sm="6" class="mt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="form-check-label " for="flexCheckDefault">
+                                            <input class="form-check-input ml-2" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label ml-4 " for="flexCheckDefault">
                                             Convert
                                         </label>
                                         </c-col>
                                         <c-col sm="6">
-                                            <input class="btn btn-success float-right px-4" type="submit" value="Save" />
+                                            <input class="btn btn-info float-right px-4" type="submit" value="Save" />
                                         </c-col>
                                     </c-row>
                                 </c-col>
@@ -215,7 +214,7 @@
                                 <td>10005</td>
                                 <td>Vishwa</td>
                                 <td>Male</td>
-                                <td>987587485</td>
+                                <td><a href="{{'tel:'+8248555365}}">8248555365</a></td>
                                 <td>Vishwa@mail.com</td>
                                 <td>Single</td>
                                 <td>Madurai</td>
@@ -231,7 +230,7 @@
                                 <td>10004</td>
                                 <td>Rani</td>
                                 <td>Female</td>
-                                <td>987587485</td>
+                                <td><a href="{{'tel:'+8248555365}}">8248555365</a></td>
                                 <td>Rani@mail.com</td>
                                 <td>Single</td>
                                 <td>Madurai</td>
@@ -247,7 +246,7 @@
                                 <td>10003</td>
                                 <td>Joseph</td>
                                 <td>Male</td>
-                                <td>987587485</td>
+                                <td><a href="{{'tel:'+8248555365}}">8248555365</a></td>
                                 <td>Joseph@mail.com</td>
                                 <td>Single</td>
                                 <td>Madurai</td>
@@ -263,7 +262,7 @@
                                 <td>10002</td>
                                 <td>Fathima</td>
                                 <td>Female</td>
-                                <td>987587485</td>
+                                <td><a href="{{'tel:'+8248555365}}">8248555365</a></td>
                                 <td>Fathima@mail.com</td>
                                 <td>Married</td>
                                 <td>Madurai</td>
@@ -279,7 +278,7 @@
                                 <td>10001</td>
                                 <td>RamKumar</td>
                                 <td>Male</td>
-                                <td>987587485</td>
+                                <td><a href="{{'tel:'+8248555365}}">8248555365</a></td>
                                 <td>ram@mail.com</td>
                                 <td>Single</td>
                                 <td>Madurai</td>

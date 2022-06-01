@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FollowupComponent } from './followup.component';
 const routes: Routes = [
   {
     path: '',
@@ -11,6 +11,13 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'followup',
+      },
+      {
+        path: 'followup',
+        component: FollowupComponent,
+        data: {
+          title: '',
+        },
       },
     ]
   }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppointmentComponent } from './appointment.component';
+
 
 const routes: Routes = [
   {
@@ -10,7 +12,14 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'appointment',
+        redirectTo: 'appoinment',
+      },
+      {
+        path: 'appoinment',
+        component: AppointmentComponent,
+        data: {
+          title: '',
+        },
       },
     ]
   }

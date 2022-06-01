@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'location',
+      title: 'Reports',
     },
     children: [
       {

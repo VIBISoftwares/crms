@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EscalationComponent } from './escalation.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,13 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'escalation',
+      },
+      {
+        path: 'escalation',
+        component: EscalationComponent,
+        data: {
+          title: '',
+        },
       },
     ]
   }

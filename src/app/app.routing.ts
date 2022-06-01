@@ -8,6 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { AppointmentComponent } from './views/appointment/appointment.component';
 
 export const routes: Routes = [
   {
@@ -50,6 +51,13 @@ export const routes: Routes = [
       title: 'Register Page',
     },
   },
+  // {
+  //   path: 'appoinment',
+  //   component: AppointmentComponent,
+  //   data: {
+  //     title: 'Appoinment',
+  //   },
+  // },
   {
     path: 'apps/email',
     component: EmailLayoutComponent,

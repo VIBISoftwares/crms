@@ -87,6 +87,7 @@
                                                 <th>Email</th>
                                                 <th>Reference</th>
                                                 <th>Assigned to</th>
+                                                <th>Option</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -98,6 +99,10 @@
                                                 <td>{{ user.email }}</td>
                                                 <td>{{ user.referral }}</td>
                                                 <td>{{ user.assignto }}</td>
+                                                <td>
+                                                    <i class="fa fa-edit px-2 btn-sm btn-info pr-1">Edit</i>
+                                                    <i class="fa fa-trash px-2 btn-sm btn-danger">Delete</i>
+                                                </td>
                                                 <!-- <td>
                                                     <c-badge [color]="getBadge(user.status)">{{
                                                         user.status

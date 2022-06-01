@@ -1,1 +1,133 @@
-<p>appointment works!</p>
+<div class="fade-in">
+    <c-row>
+        <c-col sm="12">
+            <c-card>
+                <c-card-header>
+                    <strong>Appointment</strong>
+                </c-card-header>
+                <c-card-body>
+                    <c-row>
+                        <c-col sm="3" class="pb-3">
+                            <input class="form-control" cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker
+                                [(bsValue)]="bsValue">
+                            <span class="floating-label required">Next Appointment Date</span>
+                        </c-col>
+                        <c-col sm="2" class="pb-3">
+                            <input class="btn btn-info float-right px-4" type="submit" value="Reschedule" />
+                        </c-col>
+                    </c-row>
+
+
+                    <table class="table table-responsive-sm">
+                        <colgroup>
+                            <col class="column-1" />
+                            <col class="column-2" />
+                            <col class="column-3" />
+                            <col class="column-4" />
+                            <col class="column-5" />
+                            <col class="column-6" />
+                            <col class="column-7" />
+                            <col class="column-8" />
+                            <col class="column-9" />
+                            <col class="column-10" />
+                            <col class="column-11" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Select <input class="form-check-input ml-2" type="checkbox"></th>
+                                <th>Lead Id</th>
+                                <th>Lead Name</th>
+                                <th>Gender</th>
+                                <th>Contact No</th>
+                                <th>Email Id</th>
+                                <th>Maritial Status</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Is Converted</th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
+                                <td>10005</td>
+                                <td>Vishwa</td>
+                                <td>Male</td>
+                                <td>987587485</td>
+                                <td>Vishwa@mail.com</td>
+                                <td>Single</td>
+                                <td>Madurai</td>
+                                <td>Tamilnadu</td>
+                                <td>No</td>
+                                <td>
+                                    <button class="btn-sm btn-info mr-2">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
+                                <td>10004</td>
+                                <td>Rani</td>
+                                <td>Female</td>
+                                <td>987587485</td>
+                                <td>Rani@mail.com</td>
+                                <td>Single</td>
+                                <td>Madurai</td>
+                                <td>Tamilnadu</td>
+                                <td>No</td>
+                                <td>
+                                    <button class="btn-sm btn-info mr-2">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
+                                <td>10003</td>
+                                <td>Joseph</td>
+                                <td>Male</td>
+                                <td>987587485</td>
+                                <td>Joseph@mail.com</td>
+                                <td>Single</td>
+                                <td>Madurai</td>
+                                <td>Tamilnadu</td>
+                                <td>No</td>
+                                <td>
+                                    <button class="btn-sm btn-info mr-2">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
+                                <td>10002</td>
+                                <td>Fathima</td>
+                                <td>Female</td>
+                                <td>987587485</td>
+                                <td>Fathima@mail.com</td>
+                                <td>Married</td>
+                                <td>Madurai</td>
+                                <td>Tamilnadu</td>
+                                <td>Yes</td>
+                                <td>
+                                    <button class="btn-sm btn-info mr-2">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
+                                <td>10001</td>
+                                <td>RamKumar</td>
+                                <td>Male</td>
+                                <td>987587485</td>
+                                <td>ram@mail.com</td>
+                                <td>Single</td>
+                                <td>Madurai</td>
+                                <td>Tamilnadu</td>
+                                <td>Yes</td>
+                                <td>
+                                    <button class="btn-sm btn-info mr-2">View</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </c-card-body>
+            </c-card>
+        </c-col>
+    </c-row>
+</div>
