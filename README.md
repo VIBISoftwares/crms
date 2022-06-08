@@ -15,6 +15,15 @@ npm cache clean --force
 
 ng build --prod
 
+
+npm install jquery --save
+npm install bootstrap --save
+npm install datatables.net --save
+npm install datatables.net-dt --save
+npm install angular-datatables --save
+npm install @types/jquery --save
+npm install @types/datatables.net --save
+
 Manager :
 Add filter in Lead report
 OD report

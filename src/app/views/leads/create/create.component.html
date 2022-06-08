@@ -13,6 +13,7 @@
                                     <select class="form-control title " name="title" id="title" title="Title" required>
                                         <option *ngFor="let item of title"  value="{{item}}">{{item}}</option>
                                     </select>
+                                    <span class="floating-label-select required">Title</span>
                                 </c-col>
                                 <c-col sm="3" class="pb-3">
                                     <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " title="First Name" required>
@@ -167,10 +168,6 @@
                                     <input class="btn btn-success float-right rounded-pill px-5" type="submit" value="Save" />
                                 </c-col>
                             </c-row>
-
-
-
-
                         </c-col>
                     </c-row>
                 </c-card-body>
