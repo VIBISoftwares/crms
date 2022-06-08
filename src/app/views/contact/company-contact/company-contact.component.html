@@ -97,7 +97,7 @@
                         <c-card-body>
                             <c-row>
                                 <c-col sm="12">
-                                    <table datatable [dtOptions]="dtOptions" class="table table-responsive-sm">
+                                    <table class="table table-responsive-sm">
                                         <colgroup>
                                             <col class="column-1" />
                                             <col class="column-2" />
@@ -140,9 +140,9 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <!-- <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
+                                    <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
                                         [itemsPerPage]="5" [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true">
-                                    </pagination> -->
+                                    </pagination>
                                 </c-col>
                             </c-row>
                         </c-card-body>

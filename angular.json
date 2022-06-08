@@ -24,15 +24,16 @@
             "styles": [
               "./node_modules/tippy.js/dist/tippy.css",
               "src/scss/style.scss"
-            ],
+           ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "./node_modules"
               ]
             },
             "scripts": [
-              "./node_modules/datatables.net/js/jquery.dataTables.js"
-            ],
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/datatables.net/js/jquery.dataTables.min.js"
+           ],
             "allowedCommonJsDependencies": [
               "@coreui/chartjs",
               "text-mask-addons",

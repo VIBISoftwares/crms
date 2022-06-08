@@ -32,7 +32,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
-DataTableModule
+
 
 
 const APP_CONTAINERS = [
@@ -86,8 +86,6 @@ import { SigninComponent } from './view/signin/signin.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
-import { DataTableModule } from '@pascalhonegger/ng-datatable';
-import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   imports: [
@@ -121,8 +119,6 @@ import { DataTablesModule } from 'angular-datatables';
     // ToastrModule.forRoot(),
     // ToastContainerModule,
     FormModule,
-    DataTableModule,
-    DataTablesModule,
     // AngularFontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
