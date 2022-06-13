@@ -11,6 +11,13 @@ import { CustomerContactComponent } from './customer-contact/customer-contact.co
 import { CompanyContactComponent } from './company-contact/company-contact.component';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { DataTablesModule } from 'angular-datatables';
+// Timepicker
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+
+// Datepicker
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { Global } from '../../global/global';
 
 
 
@@ -30,7 +37,11 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     IconModule,
     ButtonModule,
     FormModule,
-    PaginationModule
-  ]
+    PaginationModule,
+    DataTablesModule,
+    TimepickerModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+  ],
+  providers:[Global]
 })
 export class ContactModule { }

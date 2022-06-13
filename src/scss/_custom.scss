@@ -9,6 +9,93 @@
     background-image: linear-gradient(177deg, #393F6F, #7F4BA1) !important;
 }
 
+// data table ui
+.dataTables_length{
+    width: 30% !important;
+    position: absolute;
+    margin-bottom: 4px;
+    margin-top: -4px;
+}
+
+.dataTables_filter{
+    position: static;
+    float: right;
+    margin-bottom: 4px;
+    margin-top: -4px;
+}
+
+.dataTables_length>label>select,
+.dataTables_filter>label>input
+{
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid;
+    color: #5c6873;
+    background-color: #fff;
+    border-color: #e4e7ea;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.dataTables_length>label>select:focus,
+.dataTables_filter>label>input:focus {
+    color: #5c6873;
+    background-color: #fff;
+    border-color: #ccc7f6 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.08rem rgb(50 31 219 / 25%) !important;
+}
+
+.dataTable{
+    font-size: 9.5pt;
+}
+
+.dataTable .table th, 
+.dataTable .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid;
+    border-top-color: #d8dbe0;
+}
+
+.dt-buttons{
+    text-align-last: right;
+    position: absolute;
+    right: 22%;
+}
+
+.dataTables_wrapper .dataTables_paginate>span>.paginate_button {
+    padding:  0 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate>span>.paginate_button:hover {
+    color: white !important;
+    border: 1px solid #111 !important;
+    background-color:#7F4BA1 !important;
+    background: linear-gradient(to bottom, #585858 0%, #111 100% ) !important;
+}
+
+.buttons-excel {
+    color: #fff;
+    background-color: #00834d;
+    border-color: #00834d;
+}
+
+.buttons-print {
+    color: #fff;
+    background-color: #e55355;
+    border-color: #e55355;
+}
+
+// .card-header{
+//     background-image: linear-gradient(177deg, #5e68b6, #c978fd) !important;
+//     color: #ffffff;
+// }
+
 .c-sidebar .c-sidebar-brand {
     color: #fff;
     background: #393F6F;
@@ -17,20 +104,18 @@
 .c-sidebar .c-sidebar-nav-link:hover,
 .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     color: #fff;
-    background: #aeaeae;
+    background-image: linear-gradient(177deg, #5e68b6, #c978fd) !important;
     border-radius: 35px 0 0 35px;
+    height: 38px;   
 }
 
 .c-sidebar .c-sidebar-nav-link.c-active,
 .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
-    // color: #fff;
-    // background: rgb(255 255 255 / 32%);
-    background: #492760;
+    background-image: linear-gradient(180deg, #c978fd,#393F6F) !important;    
     color: #ffffff;
     font-size: 12pt;
-    /* background: rgb(94 5 5 / 40%); */
-    // background-image: linear-gradient( #791105, transparent,#791105);
     border-radius: 35px 0 0 35px;
+    height: 38px;
 }
 
 .c-sidebar-nav-link,
@@ -119,4 +204,33 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
         padding-left: 10px;
         margin-top: -20px;
     }
+}
+
+
+.c-dark-theme .menu-bg {
+    background: rgba(0, 0, 21, 0.2) !important;
+}
+
+
+.c-dark-theme input:focus~.floating-label,
+.c-dark-theme input:not(:placeholder-shown):not(:focus)~.floating-label {
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    font-size: 9px;
+    color: #ffffff;
+    padding-left: 6px;
+    transition: 0.3s ease all;
+    font-weight: 500;
+}
+
+.c-dark-theme .floating-label-select {
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+    font-size: 9px;
+    color: #ffffff;
+    padding-left: 6px;
+    transition: 0.3s ease all;
+    font-weight: 500;
 }

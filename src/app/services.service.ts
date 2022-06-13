@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CompanyContact } from './model/company-contact';
 
 
-const baseUrl = 'http://localhost:8080/api/';
+const baseUrl = 'http://localhost:8080/crm/api/';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,16 @@ const baseUrl = 'http://localhost:8080/api/';
 export class ServicesService {
 
   constructor(private http: HttpClient) { }
-   
-  getAllCompanyContact(): Observable<CompanyContact[]> {
-    return this.http.get<CompanyContact[]>(baseUrl);
+
+
+  saveCompanyInfo(data):Observable<any[]>{
+    return this.http.post<any>(baseUrl+'getCompanyList',data);
   }
+   
+  getCompanyList(): Observable<CompanyContact[]> {
+    return this.http.get<CompanyContact[]>(baseUrl+"getCompanyList");
+  }
+
+  
 
 }

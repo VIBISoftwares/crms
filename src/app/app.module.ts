@@ -81,11 +81,14 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+
 import { SigninComponent } from './view/signin/signin.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import {DataTablesModule } from 'angular-datatables';
+
 
 @NgModule({
   imports: [
@@ -118,7 +121,7 @@ import { HttpClientModule } from '@angular/common/http';
     BsDropdownModule.forRoot(),
     // ToastrModule.forRoot(),
     // ToastContainerModule,
-    FormModule,
+    FormModule,FormsModule,DataTablesModule,
     // AngularFontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

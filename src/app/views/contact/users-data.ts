@@ -167,4 +167,76 @@ export const companyData: CompanyData[] = [
     referral: 'Facebook',
     assignto: 'Admin'
   },
+  {
+    id: 1,
+    name: "APPOLO",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 2,
+    name: "TVS",
+    contactno:'4343434343',
+    alternateno:'12121211',
+    email: 'Babin@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 3,
+    name: "CAVIN",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 4,
+    name: "APPLE",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 5,
+    name: "ARROMA",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 6,
+    name: "NAHI",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 7,
+    name: "MANASA ",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
+  {
+    id: 8,
+    name: "RAMBESH",
+    contactno:'909090909',
+    alternateno:'12121211',
+    email: 'abc@cibGmail.com',
+    referral: 'Facebook',
+    assignto: 'Admin'
+  },
 ];

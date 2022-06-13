@@ -271,6 +271,26 @@ export const navItems: INavData[] = [
       },
     ],
   },
+   
+  {
+    name: 'Forms',
+    url: '/forms',
+    icon: 'cil-notes',
+    children: [
+      {
+        name: 'Basic Forms',
+        url: '/forms/basic-forms',
+      },
+      {
+        name: 'Advanced',
+        url: '/forms/advanced-forms',
+      },
+      {
+        name: 'Validation',
+        url: '/forms/validation-forms',
+      },
+    ],
+  },
  /* 
   {
     name: 'Forms',

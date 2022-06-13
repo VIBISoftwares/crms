@@ -16,12 +16,16 @@ ng build --prod
 npm add angular-datatables
 
 npm install jquery --save
-npm install bootstrap --save
 npm install datatables.net --save
 npm install datatables.net-dt --save
 npm install angular-datatables --save
-npm install @types/jquery --save
-npm install @types/datatables.net --save
+npm install @types/jquery --save-dev
+npm install @types/datatables.net --save-dev
+npm install ngx-bootstrap bootstrap --save
+npm install datatables.net-buttons --save
+npm install datatables.net-buttons-dt --save
+npm install @types/datatables.net-buttons --save-dev
+npm install jszip --save
 
 Manager :
 Add filter in Lead report
@@ -31,3 +35,7 @@ flatpickr
 https://github.com/mattlewis92/angularx-flatpickr/blob/master/demo/demo.component.ts
 
 <a href={{'tel:'+e.Phone}}>{{e.Phone | PhoneNumber}}</a>
+
+
+https://www.tutsmake.com/angular-11-sweetalert2-tutorial-example/
+https://laratutorials.com/angular-12-sweetalert2-tutorial-example/
