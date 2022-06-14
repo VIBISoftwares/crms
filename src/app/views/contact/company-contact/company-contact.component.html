@@ -12,19 +12,19 @@
                                 <c-row>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="cname" placeholder=" " name="cname" ngModel>
+                                            <input cInput id="cname" placeholder=" " name="company_name" ngModel>
                                             <span class="floating-label required">Company Name</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="addr" placeholder=" " name="addr" ngModel>
+                                            <input cInput id="addr" placeholder=" " name="office_address" ngModel>
                                             <span class="floating-label required">Office Address</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="personName" placeholder=" " name="personName" ngModel>
+                                            <input cInput id="personName" placeholder=" " name="contact_person" ngModel>
                                             <span class="floating-label required">Contact Person</span>
                                         </c-form-group>
                                     </c-col>
@@ -37,7 +37,7 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="officeContact" placeholder=" " name="officeContact"
+                                            <input cInput id="officeContact" placeholder=" " name="person_contact"
                                                 ngModel>
                                             <span class="floating-label required">Office Contact</span>
                                         </c-form-group>
@@ -50,13 +50,13 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="gstno" placeholder=" " name="gstno" ngModel>
+                                            <input cInput id="gstno" placeholder=" " name="gst_no" ngModel>
                                             <span class="floating-label required">GST number</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <select cSelect id="levelOfCompany" name="levelOfCompany" ngModel>
+                                            <select cSelect id="levelOfCompany" name="company_level" ngModel>
                                                 <option>L1</option>
                                                 <option>L2</option>
                                                 <option>L3</option>
@@ -78,7 +78,7 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="assignTo" placeholder=" " name="assignTo" ngModel>
+                                            <input cInput id="assignTo" placeholder=" " name="assignto" ngModel>
                                             <span class="floating-label required">Assigned to</span>
                                         </c-form-group>
                                     </c-col>
@@ -96,7 +96,7 @@
                                     </c-col> -->
                                     <c-col sm="12">
                                         <c-form-check variant="switch">
-                                            <input cInput custom type="checkbox" id="status" name="isActive" ngModel
+                                            <input cInput custom type="checkbox" id="status" name="status" ngModel
                                                 checked>
                                             <label cLabel custom for="status">Is Active</label>
                                         </c-form-check>

@@ -14,8 +14,8 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
 
-  saveCompanyInfo(data):Observable<any[]>{
-    return this.http.post<any>(baseUrl+'getCompanyList',data);
+  saveCompanyInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'addCompanyInfo',data);
   }
    
   getCompanyList(): Observable<CompanyContact[]> {
