@@ -120,7 +120,7 @@
                         <c-card-body>
                             <c-row>
                                 <c-col sm="12">
-                                    <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions">
+                                    <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger">
                                         <!-- <colgroup>
                                             <col class="column-1" />
                                             <col class="column-2" />

@@ -39,3 +39,10 @@ https://github.com/mattlewis92/angularx-flatpickr/blob/master/demo/demo.componen
 
 https://www.tutsmake.com/angular-11-sweetalert2-tutorial-example/
 https://laratutorials.com/angular-12-sweetalert2-tutorial-example/
+
+
+data tatalbe
+
+https://dev.azure.com/techhowdy/_git/NG_Core_Auth?path=/ClientApp/src/app/products/product-list/product-list.component.html
+https://www.youtube.com/watch?v=aMPIznMRaLs&t=159s
+https://stackoverflow.com/questions/49232450/getting-error-in-angular-5-datatables-cannot-reinitialise-datatable

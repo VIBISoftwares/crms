@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit,ViewChild,ViewEncapsulation } from '@angular/core';
+import { Component, OnInit,ViewChild,ViewEncapsulation } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { catchError, timeout, finalize } from 'rxjs/operators';
@@ -19,12 +19,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./company-contact.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CompanyContactComponent implements OnInit , OnDestroy{
+export class CompanyContactComponent implements OnInit {
   cForm:any;
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
   dtOptions: any = {};
   dtTrigger: Subject<any> = new Subject();
-  // dtInstance: Promise<DataTables.Api>;
-  @ViewChild(DataTableDirective)  dtElement: DataTableDirective;
   formData:any;
   tableData = companyData;
   returnedArray:any;// CompanyData[];
@@ -45,7 +45,7 @@ export class CompanyContactComponent implements OnInit , OnDestroy{
   bsValue: Date = new Date();
   bsRangeValue: any = [new Date(2020, 7, 4), new Date(2020, 7, 20)];
 
-  constructor(private service :ServicesService,private globals: Global,private http: HttpClient, private chrf : ChangeDetectorRef) {}
+  constructor(private service :ServicesService,private globals: Global,private http: HttpClient) {}
 
   ngOnInit(): void {
     const that = this;
@@ -60,26 +60,7 @@ export class CompanyContactComponent implements OnInit , OnDestroy{
             'pdf', 'excel', 'print'
         ],
     };
-
-    // this.dtOptions = {
-    //   pagingType: 'full_numbers',
-    //   pageLength: 9,
-    //   autoWidth: true,
-    //   order: [[0, 'desc']]
-    //   };
-
-
     this.getCompanyList();
-}
-
-ngOnDestroy(): void {
- this.dtTrigger.unsubscribe();
-}
-// ngAfterViewInit(): void {
-//   this.dtTrigger.next();
-// }
-ngAfterViewInit(): void {
-  this.dtTrigger.next();
 }
 
 rerender(): void {
@@ -95,20 +76,15 @@ rerender(): void {
     if(result['status']=='success'){
       this.returnedArray = result['company_list'];
       console.log(this.returnedArray);
-    //  this.rerender();
-      //  this.dtTrigger.next();
-      this.chrf.detectChanges();
       this.dtTrigger.next();
     }  
   }),(err) => {
     console.log('err : ', err);
   }
-  
  }
 
   saveCompanyInfo(data:any){ 
     this.formData = data.value;
-    this.formData.status = this.formData.status?'1':'0'; 
     Swal.fire({
       title: 'Are you sure want to save?',
       showCancelButton: true,
@@ -117,13 +93,10 @@ rerender(): void {
         this.service.saveCompanyInfo( this.formData ).subscribe(result => {  // console.log(result); return;
           if (result['status'] == 'success') 
           {
-            this.chrf.detectChanges() ;
             this.getCompanyList();
-            this.rerender();
-            // this.dtTrigger.next();
-          //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-          //  this.dtTrigger.next();
-          //   });       
+            this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+           this.dtTrigger.next();
+            });       
           }
           else if(result['status']=='failure')
           {
@@ -148,9 +121,5 @@ rerender(): void {
     data.reset();
   }
 
-
-  editCompanyInfo(data){
-
-  }
 
 }
