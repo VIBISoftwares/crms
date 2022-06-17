@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
-
 import { usersData, IUsersData } from '../users-data';
 
 @Component({
