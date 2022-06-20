@@ -27,33 +27,25 @@ export class CompanyContactComponent implements OnInit {
   dtTrigger: Subject<any>= new Subject();
   @ViewChild(DataTableDirective) dtElement:DataTableDirective;
 
-	sno:any;
-	company_name:any;
-	office_address:any;
-	contact_person:any;
-	person_contact:any;
-	office_contact:any;
-	email:any;
-	gst_no:any;
-	company_level:any;
-	reference:any;
-	assignto:any;
-	status:any;
-	createdby:any;
-	createddate:any;
-	updatedby:any;
-	updateddate:any;
-
-   update_btn="info rounded-pill px-4 float-right";
-
   constructor(private service :ServicesService,private globals: Global,private http: HttpClient, private chrf : ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getCompanyList();
-  }
+}
 
  getCompanyList(){  
-    this.service.getCompanyList().subscribe((result) => {
+  // this.service.getCompanyList().subscribe((result) => {
+  //   if(result['status']=='success'){
+  //     this.returnedArray = result['company_list'];
+  //     this.chrf.detectChanges();
+  //     // this.dTtTrigger.next();
+  //     this.rerender();
+  //   }  
+  // }),(err) => {
+  //   console.log('err : ', err);
+  // }  
+
+  this.service.getCompanyList().subscribe((result) => {
     if(result['status']=='success'){
       this.returnedArray = result['company_list'];
       this.chrf.detectChanges();
@@ -66,18 +58,13 @@ export class CompanyContactComponent implements OnInit {
 
   saveCompanyInfo(data:any){ 
     this.formData = data.value;
-    this.formData.status = this.formData.status==""?'1':this.formData.status; 
-    var service$ = this.service.saveCompanyInfo( this.formData );
-    if(this.formData.sno){
-      service$ = this.service.updateCompanyInfo( this.formData );
-    }
+    this.formData.status = this.formData.status?'1':'0'; 
     Swal.fire({
       title: 'Are you sure want to save?',
       showCancelButton: true,
     }).then((result) => {
       if (result.value) { 
-
-        service$.subscribe(result => { // console.log(result); return;
+        this.service.saveCompanyInfo( this.formData ).subscribe(result => {  // console.log(result); return;
           if (result['status'] == 'success') 
           {
             this.service.getCompanyList().subscribe((result) => {
@@ -106,35 +93,20 @@ export class CompanyContactComponent implements OnInit {
   rerender(){
       this.dtElement.dtInstance.then((dtInstance : DataTables.Api) => 
     {
+        // Destroy the table first in the current context
         dtInstance.destroy();
-        this.dtTrigger.next();
+
+        // Call the dtTrigger to rerender again
+       this.dtTrigger.next();
+
     });
   }
 
+  editCompanyInfo(data){
 
-  editCompanyInfo(data:any){ console.log(data);
-    this.sno= data.sno  ;
-    this.company_name= data.company_name  ;
-    this.office_address= data.office_address  ;
-    this.contact_person= data.contact_person  ;
-    this.person_contact= data.person_contact  ;
-    this.office_contact= data.office_contact  ;
-    this.email= data.email  ;
-    this.gst_no= data.gst_no  ;
-    this.company_level= data.company_level  ;
-    this.reference= data.reference  ;
-    this.assignto= data.assignto  ;
-    this.status= data.status  ;
-    this.createdby= data.createdby  ;
-    this.createddate= data.createddate  ;
-    this.updatedby= data.updatedby  ;
-    this.updateddate= data.updateddate  ;
-
-    this.update_btn="danger rounded-pill px-4 float-right";
-    return false;
   }
 
- 
+  
   ngOnDestroy() 
   {
       // Do not forget to unsubscribe

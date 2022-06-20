@@ -12,52 +12,51 @@
                                 <c-row>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input hidden id="cname" placeholder=" " name="sno" [(ngModel)]="sno">
-                                            <input cInput id="cname" placeholder=" " name="company_name" [(ngModel)]="company_name">
+                                            <input cInput id="cname" placeholder=" " name="company_name" ngModel>
                                             <span class="floating-label required">Company Name</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="addr" placeholder=" " name="office_address" [(ngModel)]="office_address">
+                                            <input cInput id="addr" placeholder=" " name="office_address" ngModel>
                                             <span class="floating-label required">Office Address</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="personName" placeholder=" " name="contact_person" [(ngModel)]="contact_person">
+                                            <input cInput id="personName" placeholder=" " name="contact_person" ngModel>
                                             <span class="floating-label required">Contact Person</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
                                             <input cInput id="personContact" placeholder=" " name="personContact"
-                                            [(ngModel)]="person_contact">
+                                                ngModel>
                                             <span class="floating-label required">Person Contact</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="officeContact" placeholder=" " name="office_contact"
-                                            [(ngModel)]="office_contact">
+                                            <input cInput id="officeContact" placeholder=" " name="person_contact"
+                                                ngModel>
                                             <span class="floating-label required">Office Contact</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="email" placeholder=" " name="email" [(ngModel)]="email">
+                                            <input cInput id="email" placeholder=" " name="email" ngModel>
                                             <span class="floating-label required">Email</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="gstno" placeholder=" " name="gst_no" [(ngModel)]="gst_no">
+                                            <input cInput id="gstno" placeholder=" " name="gst_no" ngModel>
                                             <span class="floating-label required">GST number</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <select cSelect id="levelOfCompany" name="company_level" [(ngModel)]="company_level">
+                                            <select cSelect id="levelOfCompany" name="company_level" ngModel>
                                                 <option>L1</option>
                                                 <option>L2</option>
                                                 <option>L3</option>
@@ -68,7 +67,7 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <select cSelect id="reference" name="reference" [(ngModel)]="reference">
+                                            <select cSelect id="reference" name="reference" ngModel>
                                                 <option>Social Media</option>
                                                 <option>Advertise</option>
                                                 <option>Employee</option>
@@ -79,7 +78,7 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="assignTo" placeholder=" " name="assignto" [(ngModel)]="assignto">
+                                            <input cInput id="assignTo" placeholder=" " name="assignto" ngModel>
                                             <span class="floating-label required">Assigned to</span>
                                         </c-form-group>
                                     </c-col>
@@ -97,15 +96,15 @@
                                     </c-col> -->
                                     <c-col sm="12">
                                         <c-form-check variant="switch">
-                                            <input cInput custom type="checkbox" id="status" name="status" value="1" [(ngModel)]="status"
+                                            <input cInput custom type="checkbox" id="status" name="status" ngModel
                                                 checked>
                                             <label cLabel custom for="status">Is Active</label>
                                         </c-form-check>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <button type="submit" cButton  [color]="update_btn"
-                                                class="mr-1 mb-1"> {{sno?'Update':'Save' }}</button>
+                                            <button type="submit" cButton color="info rounded-pill px-4 float-right"
+                                                class="mr-1 mb-1">Save</button>
                                         </c-form-group>
                                     </c-col>
                                 </c-row>
@@ -122,6 +121,15 @@
                             <c-row>
                                 <c-col sm="12">
                                     <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger">
+                                        <!-- <colgroup>
+                                            <col class="column-1" />
+                                            <col class="column-2" />
+                                            <col class="column-3" />
+                                            <col class="column-4" />
+                                            <col class="column-5" />
+                                            <col class="column-6" />
+                                            <col class="column-7" />
+                                        </colgroup> -->
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -149,9 +157,17 @@
                                                     <a href="#" onclick=""> <i
                                                             class="fa fa-trash h6 text-danger px-2"></i></a>
                                                 </td>
+                                                <!-- <td>
+                                                    <c-badge [color]="getBadge(user.status)">{{
+                                                        user.status
+                                                        }}</c-badge>
+                                                </td> -->
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <!-- <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
+                                        [itemsPerPage]="5" [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true">
+                                    </pagination> -->
                                 </c-col>
                             </c-row>
                         </c-card-body>

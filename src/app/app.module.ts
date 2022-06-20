@@ -88,6 +88,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import {DataTablesModule } from 'angular-datatables';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -121,7 +122,7 @@ import {DataTablesModule } from 'angular-datatables';
     BsDropdownModule.forRoot(),
     // ToastrModule.forRoot(),
     // ToastContainerModule,
-    FormModule,FormsModule,DataTablesModule,
+    FormModule,FormsModule,DataTablesModule,OverlayModule,
     // AngularFontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

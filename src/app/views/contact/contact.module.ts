@@ -18,6 +18,7 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 // Datepicker
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Global } from '../../global/global';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 
@@ -38,7 +39,7 @@ import { Global } from '../../global/global';
     ButtonModule,
     FormModule,
     PaginationModule,
-    DataTablesModule,
+    DataTablesModule,OverlayModule,
     TimepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],

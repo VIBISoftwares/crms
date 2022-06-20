@@ -28,6 +28,14 @@ get refreshRequired(){
   saveCompanyInfo(data):Observable<object>{ 
     return this.http.post<object>(baseUrl+'addCompanyInfo',data);
   }
+  
+  updateCompanyInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'updateCompanyInfo',data);
+  }
+
+  deleteCompanyInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'deleteCompanyInfo',data);
+  }
    
   getCompanyList(): Observable<CompanyContact[]> {
     return this.http.get<CompanyContact[]>(baseUrl+"getCompanyList").pipe(
