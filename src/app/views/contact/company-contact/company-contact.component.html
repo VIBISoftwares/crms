@@ -31,15 +31,13 @@
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="personContact" placeholder=" " name="personContact"
-                                            [(ngModel)]="person_contact">
+                                            <input cInput id="personContact" placeholder=" " name="personContact" [(ngModel)]="person_contact">
                                             <span class="floating-label required">Person Contact</span>
                                         </c-form-group>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <input cInput id="officeContact" placeholder=" " name="office_contact"
-                                            [(ngModel)]="office_contact">
+                                            <input cInput id="officeContact" placeholder=" " name="office_contact" [(ngModel)]="office_contact">
                                             <span class="floating-label required">Office Contact</span>
                                         </c-form-group>
                                     </c-col>
@@ -97,15 +95,14 @@
                                     </c-col> -->
                                     <c-col sm="12">
                                         <c-form-check variant="switch">
-                                            <input cInput custom type="checkbox" id="status" name="status" value="1" [(ngModel)]="status"
-                                                checked>
+                                            <input cInput custom type="checkbox" id="status" name="status" value="1" [(ngModel)]="status">
                                             <label cLabel custom for="status">Is Active</label>
                                         </c-form-check>
                                     </c-col>
                                     <c-col sm="12">
                                         <c-form-group>
-                                            <button type="submit" cButton  [color]="update_btn"
-                                                class="mr-1 mb-1"> {{sno?'Update':'Save' }}</button>
+                                            <button type="submit" cButton [color]="update_btn" class="mr-1 mb-1">{{sno?'Update':'Save' }}</button>
+                                            <button type="reset" cButton [color]="reset_btn" class="mr-1 mb-1">Reset</button>
                                         </c-form-group>
                                     </c-col>
                                 </c-row>
@@ -121,7 +118,7 @@
                         <c-card-body>
                             <c-row>
                                 <c-col sm="12">
-                                    <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger">
+                                    <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -131,6 +128,7 @@
                                                 <th>Person Contact</th>
                                                 <th>Office No</th>
                                                 <th>Assigned to</th>
+                                                <th>Status</th>
                                                 <th>Option</th>
                                             </tr>
                                         </thead>
@@ -143,11 +141,10 @@
                                                 <td>{{ data.person_contact }}</td>
                                                 <td>{{ data.office_contact }}</td>
                                                 <td>{{ data.assignto }}</td>
+                                                <td class="text-center" [class]='data.status==1?"text-success":"text-danger"'>{{ data.status==1?"Active":"In-Active" }}</td>
                                                 <td>
-                                                    <a href="#" (click)="editCompanyInfo(data)"> <i
-                                                            class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
-                                                    <a href="#" onclick=""> <i
-                                                            class="fa fa-trash h6 text-danger px-2"></i></a>
+                                                    <a href="#" (click)="editCompanyInfo(data)"> <i class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
+                                                    <a (click)="deleteCompany(data.sno)"> <i class="fa fa-trash h6 text-danger px-2"></i></a>
                                                 </td>
                                             </tr>
                                         </tbody>

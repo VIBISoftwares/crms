@@ -155,12 +155,12 @@
                                     </c-col>
                                 </c-col>
                                 <c-col sm="6">
-                                    <div class="imagePreview"></div>
+                                    <div class="imagePreview" [style.background]="imageSrc"></div>
                                     <input type="hidden" name="uploaded_picture" id="uploaded_picture">
                                     <label class="btn btn-primary w-100">
                                         Upload
                                         <input type="file" class="uploadFile" value="Upload Photo"
-                                            style="width: 0px;height: 0px;overflow: hidden;" accept="image/*">
+                                            style="width: 0px;height: 0px;overflow: hidden;" accept="image/*" (change)="onFileChange($event)">
                                     </label>
                                 </c-col>
 

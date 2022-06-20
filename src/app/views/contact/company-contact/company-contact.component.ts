@@ -38,13 +38,14 @@ export class CompanyContactComponent implements OnInit {
 	company_level:any;
 	reference:any;
 	assignto:any;
-	status:any;
+	status:any="true";
 	createdby:any;
 	createddate:any;
 	updatedby:any;
 	updateddate:any;
 
    update_btn="info rounded-pill px-4 float-right";
+   reset_btn="secondary rounded-pill px-4 float-right";
 
   constructor(private service :ServicesService,private globals: Global,private http: HttpClient, private chrf : ChangeDetectorRef) {}
 
@@ -64,9 +65,9 @@ export class CompanyContactComponent implements OnInit {
   }  
  }
 
-  saveCompanyInfo(data:any){ 
+  saveCompanyInfo(data:any){  
     this.formData = data.value;
-    this.formData.status = this.formData.status==""?'1':this.formData.status; 
+    this.formData.status = (this.formData.status==true || this.formData.status==undefined)?'1':'0'; 
     var service$ = this.service.saveCompanyInfo( this.formData );
     if(this.formData.sno){
       service$ = this.service.updateCompanyInfo( this.formData );
@@ -101,6 +102,7 @@ export class CompanyContactComponent implements OnInit {
       }
     })
     data.reset();
+    this.update_btn="info rounded-pill px-4 float-right";
   }
 
   rerender(){
@@ -124,7 +126,7 @@ export class CompanyContactComponent implements OnInit {
     this.company_level= data.company_level  ;
     this.reference= data.reference  ;
     this.assignto= data.assignto  ;
-    this.status= data.status  ;
+    this.status= (data.status=="1")?'true':'false'; 
     this.createdby= data.createdby  ;
     this.createddate= data.createddate  ;
     this.updatedby= data.updatedby  ;
@@ -134,6 +136,50 @@ export class CompanyContactComponent implements OnInit {
     return false;
   }
 
+  deleteCompany(data:any){  
+    
+    Swal.fire({
+      text: 'Are you sure want to delete this company ?',
+      showCancelButton: true,
+      customClass: {
+        confirmButton: 'btn btn-sm px-3',
+        cancelButton: 'btn btn-sm',
+      }
+    }).then((result) => {
+      if (result.value) { 
+        this.service.deleteCompanyInfo( {'sno':data} ).subscribe(result => { 
+          if (result['status'] == 'success') 
+          {
+            this.service.getCompanyList().subscribe((result) => {
+              if(result['status']=='success'){
+                Swal.fire({text:"Company details deleted successfully", customClass: { confirmButton: 'btn btn-sm px-3' }});
+                this.returnedArray = result['company_list'];
+                this.rerender();
+              }  
+            }),(err) => {
+              console.log('err : ', err);
+            }  
+          }
+          else if(result['status']=='failure')
+          {
+            Swal.fire({text:"Unable to delete this company, Please try again later", customClass: {
+              confirmButton: 'btn btn-sm px-3',
+              cancelButton: 'btn btn-sm',
+            }});
+            this.rerender();
+          }
+          (error) => {
+            console.log(error)
+          }
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({text:"Delete process cancelled", customClass: {
+          confirmButton: 'btn btn-sm px-3',
+          cancelButton: 'btn btn-sm',
+        }});
+      }
+    })
+  }
  
   ngOnDestroy() 
   {

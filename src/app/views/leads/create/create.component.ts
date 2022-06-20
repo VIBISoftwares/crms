@@ -44,4 +44,25 @@ export class CreateComponent implements OnInit {
 
   bsValue: Date = new Date();
   bsRangeValue: any = [new Date(2020, 7, 4), new Date(2020, 7, 20)];
+
+  imageSrc:any;
+
+  onFileChange(event){
+    const reader = new FileReader();
+    
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);    
+      reader.onload = () => {
+        this.imageSrc = "url("+reader.result as string+") no-repeat";     
+        // this.myForm.patchValue({
+        //   fileSource: reader.result
+        // });
+   
+      };
+   
+    }
+  }
+
+
 }

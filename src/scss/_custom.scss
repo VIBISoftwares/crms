@@ -9,15 +9,21 @@
     background-image: linear-gradient(177deg, #393F6F, #7F4BA1) !important;
 }
 
+.c-sidebar .c-sidebar-nav-link,
+.c-sidebar .c-sidebar-nav-dropdown-toggle {
+    height: 35px;
+    ;
+}
+
 // data table ui
-.dataTables_length{
+.dataTables_length {
     width: 30% !important;
     position: absolute;
     margin-bottom: 4px;
     margin-top: -4px;
 }
 
-.dataTables_filter{
+.dataTables_filter {
     position: static;
     float: right;
     margin-bottom: 4px;
@@ -25,8 +31,7 @@
 }
 
 .dataTables_length>label>select,
-.dataTables_filter>label>input
-{
+.dataTables_filter>label>input {
     padding: 0.375rem 0.75rem;
     font-size: 0.875rem;
     font-weight: 400;
@@ -40,7 +45,6 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
 .dataTables_length>label>select:focus,
 .dataTables_filter>label>input:focus {
     color: #5c6873;
@@ -50,11 +54,11 @@
     box-shadow: 0 0 0 0.08rem rgb(50 31 219 / 25%) !important;
 }
 
-.dataTable{
+.dataTable {
     font-size: 9.5pt;
 }
 
-.dataTable .table th, 
+.dataTable .table th,
 .dataTable .table td {
     padding: 0.75rem;
     vertical-align: top;
@@ -62,21 +66,21 @@
     border-top-color: #d8dbe0;
 }
 
-.dt-buttons{
+.dt-buttons {
     text-align-last: right;
     position: absolute;
     right: 22%;
 }
 
 .dataTables_wrapper .dataTables_paginate>span>.paginate_button {
-    padding:  0 !important;
+    padding: 0 !important;
 }
 
 .dataTables_wrapper .dataTables_paginate>span>.paginate_button:hover {
     color: white !important;
     border: 1px solid #111 !important;
-    background-color:#7F4BA1 !important;
-    background: linear-gradient(to bottom, #585858 0%, #111 100% ) !important;
+    background-color: #7F4BA1 !important;
+    background: linear-gradient(to bottom, #585858 0%, #111 100%) !important;
 }
 
 .buttons-excel {
@@ -95,7 +99,6 @@
 //     background-image: linear-gradient(177deg, #5e68b6, #c978fd) !important;
 //     color: #ffffff;
 // }
-
 .c-sidebar .c-sidebar-brand {
     color: #fff;
     background: #393F6F;
@@ -106,12 +109,12 @@
     color: #fff;
     background-image: linear-gradient(177deg, #5e68b6, #c978fd) !important;
     border-radius: 35px 0 0 35px;
-    height: 38px;   
+    height: 38px;
 }
 
 .c-sidebar .c-sidebar-nav-link.c-active,
 .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
-    background-image: linear-gradient(180deg, #c978fd,#393F6F) !important;    
+    background-image: linear-gradient(180deg, #c978fd, #393F6F) !important;
     color: #ffffff;
     font-size: 12pt;
     border-radius: 35px 0 0 35px;
@@ -206,11 +209,9 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     }
 }
 
-
 .c-dark-theme .menu-bg {
     background: rgba(0, 0, 21, 0.2) !important;
 }
-
 
 .c-dark-theme input:focus~.floating-label,
 .c-dark-theme input:not(:placeholder-shown):not(:focus)~.floating-label {
