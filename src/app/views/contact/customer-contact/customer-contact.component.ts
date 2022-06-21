@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DataTableDirective } from 'angular-datatables';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { Subject } from 'rxjs';
 import { usersData, IUsersData } from '../users-data';
 
 @Component({
@@ -16,10 +18,37 @@ export class CustomerContactComponent implements OnInit {
   currentPage = 1;
   page: number;
 
+
+  formData:any;
+  // dtElement:any;
+  dtOptions: DataTables.Settings ={};
+  dtTrigger: Subject<any>= new Subject();
+  @ViewChild(DataTableDirective) dtElement:DataTableDirective;
+
+	sno:any;
+  contact_name:any;
+  contact_number:any;
+  alternate_number:any;
+  email_id:any;
+  facebook:any;
+  instagram:any;
+  linked_in:any;
+  others_media_id:any;
+  status:any;
+	createdby:any;
+	createddate:any;
+	updatedby:any;
+	updateddate:any;
+
+  
   constructor() {}
 
   ngOnInit(): void {
     this.returnedArray = this.tableData.slice(0, 5);
+  }
+  
+  saveContact(data){
+
   }
 
   pageChanged(event: PageChangedEvent): void {

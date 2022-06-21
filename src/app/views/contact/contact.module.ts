@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ButtonModule, CardModule, FormModule, GridModule, CollapseModule } from '@coreui/angular';
+import { ButtonModule, CardModule, FormModule, GridModule, CollapseModule, SwitchModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 
 import { ContactRoutingModule } from './contact-routing.module';
@@ -35,6 +35,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     CardModule,
     CollapseModule,
     GridModule,
+    SwitchModule,
     IconModule,
     ButtonModule,
     FormModule,

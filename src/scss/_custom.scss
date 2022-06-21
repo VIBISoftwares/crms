@@ -129,6 +129,11 @@
 
 /* input lable on transition */
 
+
+.content-right{
+    justify-content: right;
+}
+
 .floating-label {
     position: absolute;
     z-index: 1;
@@ -209,6 +214,7 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     }
 }
 
+// dark theme
 .c-dark-theme .menu-bg {
     background: rgba(0, 0, 21, 0.2) !important;
 }
