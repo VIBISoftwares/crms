@@ -6,58 +6,76 @@
                     <strong>Lead</strong><small> Management</small>
                 </c-card-header>
                 <c-card-body>
-                        <table table class="table table-responsive-sm"  datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">                                                                           
-                        <!-- <colgroup>
-                            <col class="column-1" />
-                            <col class="column-2" />
-                            <col class="column-3" />
-                            <col class="column-4" />
-                            <col class="column-5" />
-                            <col class="column-6" />
-                            <col class="column-7" />
-                            <col class="column-8" />
-                            <col class="column-9" />
-                            <col class="column-10" />
-                            <col class="column-11" />
-                        </colgroup> -->
-                        <thead>
-                            <tr>
-                                <th scope="col">SNo</th>
-                                <th>Lead Id</th>
-                                <th>Lead Name</th>
-                                <th>Gender</th>
-                                <th>Contact No</th>
-                                <th>Email Id</th>
-                                <th>Maritial Status</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Status</th>
-                                <th>Option</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let lead of returnedArray; let i = index">
-                                <td scope="row">{{i+1}}</td>
-                                <td>{{ lead.sno }}</td>
-                                <td>{{ lead.firstname + " " +lead.middlename +" " + lead.lastname }}</td>
-                                <td>{{ lead.gender }}</td>
-                                <td><a href="{{'tel:'+lead.contact}}">{{ lead.contact }}</a></td>
-                                <td>{{ lead.email }}</td>
-                                <td>{{ lead.marital_status }}</td>
-                                <td>{{ lead.district }}</td>
-                                <td>{{ lead.state }}</td>
-                                <td class="text-center" [class]='lead.status==1?"text-success":"text-danger"'>{{
-                                    lead.status=="1"?"Active":"In-Active" }}</td>
-                                <td nowrap>
-                                    <a href="#" (click)="editLeadInfo(lead)"> <i
-                                            class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
-                                    <a (click)="deleteLeadInfo(lead.sno)"> <i
-                                            class="fa fa-trash h6 text-danger px-2"></i></a>
-                                </td>
-                            </tr>
+                    <c-row>
+                        <c-col sm="12">
+                            <c-row>
+                                <c-col sm="2" class="pb-3">
+                                    <!-- <input cInput #dp="bsDatepicker" bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue"> -->
+                                    <input cInput #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue">
+                                    <span class="floating-label">Followup Date</span>
+                                </c-col>
+                                <c-col sm="2" class="pb-3">
+                                    <button cButton color="primary" (click)="searchFilter()">Search</button>
+                                </c-col>
+                            </c-row>
+                        </c-col>
+                        <c-col sm="12 ">
+                            <table table class="table table-responsive-sm " datatable="ng " [dtOptions]="dtOptions " [dtTrigger]="dtTrigger ">
+                                <!-- <colgroup>
+                                    <col class="column-1 " />
+                                    <col class="column-2 " />
+                                    <col class="column-3 " />
+                                    <col class="column-4 " />
+                                    <col class="column-5 " />
+                                    <col class="column-6 " />
+                                    <col class="column-7 " />
+                                    <col class="column-8 " />
+                                    <col class="column-9 " />
+                                    <col class="column-10 " />
+                                    <col class="column-11 " />
+                                </colgroup> -->
+                                <thead>
+                                    <tr>
+                                        <th scope="col ">SNo</th>
+                                        <th>Lead Id</th>
+                                        <th>Lead Name</th>
+                                        <th>Gender</th>
+                                        <th>Contact No</th>
+                                        <th>Email Id</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Followup Date</th>
+                                        <th>Status</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let lead of returnedArray; let i=index ">
+                                        <td scope="row ">{{i+1}}</td>
+                                        <td>{{ lead.sno }}</td>
+                                        <td>{{ lead.firstname + " " +lead.middlename +" " + lead.lastname }}</td>
+                                        <td>{{ lead.gender }}</td>
+                                        <td><a href="{{ 'tel:'+lead.contact}} ">{{ lead.contact }}</a></td>
+                                        <td>{{ lead.email }}</td>
+                                        <td>{{ lead.district }}</td>
+                                        <td>{{ lead.state }}</td>
+                                        <td>{{ lead.followupdate | date:'d-M-Y' }}</td>
+                                        <td class="text-center " [class]='lead.status==1?"text-success ":"text-danger "'>{{ lead.status=="1 "?"Active ":"In-Active " }}</td>
+                                        <td nowrap>
+                                            <a href="# " (click)="editLeadInfo(lead) "> <i class="fa fa-edit h6 text-info px-2 mr-1 "></i></a>
+                                            <a (click)="deleteLeadInfo(lead.sno) "> <i class="fa fa-trash h6 text-danger px-2 "></i></a>
+                                        </td>
+                                    </tr>
 
-                        </tbody>
-                    </table>
+                                </tbody>
+                            </table>
+
+                        </c-col>
+                    </c-row>
+
+
+
+
                 </c-card-body>
             </c-card>
         </c-col>

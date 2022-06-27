@@ -77,8 +77,37 @@ export class CreateComponent implements OnInit {
   ];
   area_list = ['Adaiyar', 'Vadapalani', 'Tharamani', 'Thambaram'];
   source_list = ['Facebook', 'Instagram', 'Whatsapp', 'Twitter', 'LinkedIn']
+  
+  // converions datas
+  branch:any='chennai';
+  branch_list=['Chennai','Madurai'];
+  cheque_value:any;
+  product:any;
+  product_list = ['Equity', 'Commodities', 'Plan Type Upgraded', 'Equity NRI','Currency','Equity & Commodities','DailyGong Business Partner'];
+  kyc_number:any;
+  kyc_type:any;
+  kyc_type_list= ['Physical form','EKYC']
+  brokerage_offer:any;
+  brokerage_list= ['Options Rs7 / Per Lot','No offer','Eligible Rs 1','SPLofr Rs1 & Options Rs5 per lot, CU Rs1'];
+  plan_type:any;
+  plany_type_list=['1','999','4999','9999']
+  plan_type_cost:any;
+  gst_val:any;
+  total_cost:any; 
+  trade_amount:any;
+
+  // payment details
+  bank_name:any;
+  account_no:any;
+  payment_date:any=new Date();
+  payment_mode:any;   //cheque/neft
+  trans_id:any;
+  
+    
+  
   minDate = new Date(1991, 1, 1);
   maxDate = new Date();
+  
 
   bsValue: Date = new Date();
   bsRangeValue: any = [new Date(2020, 7, 4), new Date(2020, 7, 20)];

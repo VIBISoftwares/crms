@@ -12,54 +12,43 @@
                                 <c-row class="row mt-3">
                                     <c-col sm="3" class="pb-3">
                                         <input hidden id="sno" placeholder=" " name="sno" [(ngModel)]="sno">
-                                        <select class="form-control title " name="title" id="title" title="Title"
-                                            [(ngModel)]="title" required>
+                                        <select class="form-control title " name="title" id="title" title="Title" [(ngModel)]="title" required>
                                             <option *ngFor="let item of title_list" value="{{item}}">{{item}}</option>
                                         </select>
                                         <span class="floating-label-select required">Title</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input cInput class="form-control " type="text" name="firstname" id="firstname"
-                                            placeholder="  " [(ngModel)]="firstname" title="First Name" required>
+                                        <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " [(ngModel)]="firstname" title="First Name" required>
                                         <span class="floating-label required">First Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="text" name="middlename" id="middlename"
-                                            placeholder=" " [(ngModel)]="middlename" title="Middle Name">
+                                        <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" " [(ngModel)]="middlename" title="Middle Name">
                                         <span class="floating-label">Middle Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="text" name="lastname" id="lastname"
-                                            placeholder=" " [(ngModel)]="lastname" title="Last Name">
+                                        <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " [(ngModel)]="lastname" title="Last Name">
                                         <span class="floating-label">Last Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="radio" class="ml-2" name="gender" id="gender_m"
-                                            [(ngModel)]="gender" title="Male" value="male" checked>
+                                        <input type="radio" class="ml-2" name="gender" id="gender_m" [(ngModel)]="gender" title="Male" value="male" checked>
                                         <label for="gender_m"><i class="fa fa-male px-2" aria-hidden="true"></i></label>
-                                        <input type="radio" class="ml-2" name="gender" id="gender_f"
-                                            [(ngModel)]="gender" title="Female" value="female">
+                                        <input type="radio" class="ml-2" name="gender" id="gender_f" [(ngModel)]="gender" title="Female" value="female">
                                         <label for="gender_f"><i class="fa fa-female px-2"
                                                 aria-hidden="true"></i></label>
-                                        <input type="radio" class="ml-2" name="gender" id="gender_t"
-                                            [(ngModel)]="gender" title="Transgender" value="transgender">
+                                        <input type="radio" class="ml-2" name="gender" id="gender_t" [(ngModel)]="gender" title="Transgender" value="transgender">
                                         <label for="gender_t"><i class="fa fa-transgender px-2"
                                                 aria-hidden="true"></i></label>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="email" name="email" id="email" placeholder=" "
-                                            [(ngModel)]="email" title="Email">
+                                        <input class="form-control" type="email" name="email" id="email" placeholder=" " [(ngModel)]="email" title="Email">
                                         <span class="floating-label required">Email</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="text" name="contact_no" id="contact_no"
-                                            placeholder=" " [(ngModel)]="contact" title="Contact Number"
-                                            onkeypress='return isNumberKey(event);' maxlength="10" required>
+                                        <input class="form-control" type="text" name="contact_no" id="contact_no" placeholder=" " [(ngModel)]="contact" title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
                                         <span class="floating-label required">Contact Number</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="marital_status" name="marital_status"
-                                            [(ngModel)]="marital_status" title="Marital status">
+                                        <select class="form-control" id="marital_status" name="marital_status" [(ngModel)]="marital_status" title="Marital status">
                                             <option value=" "></option>
                                             <option *ngFor="let item of maritial_list" value="{{item}}">{{item}}
                                             </option>
@@ -67,9 +56,7 @@
                                         <span class="floating-label-select required">Marital status</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="guardian_type" name="guardian_type"
-                                            [(ngModel)]="guardian_type" title="Relationship"
-                                            [(ngModel)]="guardian_type">
+                                        <select class="form-control" id="guardian_type" name="guardian_type" [(ngModel)]="guardian_type" title="Relationship" [(ngModel)]="guardian_type">
                                             <option value="">Gurardian</option>
                                             <option *ngFor="let item of guardian_list" value="{{item}}">{{item}}
                                             </option>
@@ -77,20 +64,15 @@
                                         <span class="floating-label-select required">Guardian type</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="guardian_name" name="guardian_name"
-                                            placeholder=" " [(ngModel)]="guardian_name" title="Guardian Name" required>
+                                        <input type="text" class="form-control" id="guardian_name" name="guardian_name" placeholder=" " [(ngModel)]="guardian_name" title="Guardian Name" required>
                                         <span class="floating-label required">{{guardian_type}} Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="guard1_contact_no"
-                                            name="guard1_contact_no" placeholder=" " [(ngModel)]="sno"
-                                            title="Contact Number" onkeypress='return isNumberKey(event);'
-                                            maxlength="10" required>
+                                        <input type="text" class="form-control" id="guard1_contact_no" name="guard1_contact_no" placeholder=" " [(ngModel)]="sno" title="Contact Number" onkeypress='return isNumberKey(event);' maxlength="10" required>
                                         <span class="floating-label required">Contact Number</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="occupation" name="occupation"
-                                            [(ngModel)]="occupation" title="Occupation">
+                                        <select class="form-control" id="occupation" name="occupation" [(ngModel)]="occupation" title="Occupation">
                                             <option value="">Occupation</option>
                                             <option *ngFor="let item of occupation_list" value="{{item}}">{{item}}
                                             </option>
@@ -98,61 +80,49 @@
                                         <span class="floating-label-select required">Occupation</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker"
-                                            bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue">
+                                        <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue">
                                         <span class="floating-label">Date of Birth</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="religion" name="religion"
-                                            placeholder=" " [(ngModel)]="religion" title="Religion">
+                                        <input type="text" class="form-control" id="religion" name="religion" placeholder=" " [(ngModel)]="religion" title="Religion">
                                         <span class="floating-label">Religion</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="community" name="community"
-                                            placeholder=" " [(ngModel)]="community" title="Community">
+                                        <input type="text" class="form-control" id="community" name="community" placeholder=" " [(ngModel)]="community" title="Community">
                                         <span class="floating-label">Community</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="caste" name="caste" placeholder=" "
-                                            [(ngModel)]="caste" title="Caste">
+                                        <input type="text" class="form-control" id="caste" name="caste" placeholder=" " [(ngModel)]="caste" title="Caste">
                                         <span class="floating-label">Caste</span>
                                     </c-col>
                                     <c-col sm="6" class="pb-3">
-                                        <input type="text" class="form-control" id="address1" name="address_line1"
-                                            placeholder=" " [(ngModel)]="address_line1" title="Address Line 1" required>
+                                        <input type="text" class="form-control" id="address1" name="address_line1" placeholder=" " [(ngModel)]="address_line1" title="Address Line 1" required>
                                         <span class="floating-label required">Address Line 1</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="address2" name="address2"
-                                            address_line2=" " [(ngModel)]="address_line2" title="Address Line 2">
+                                        <input type="text" class="form-control" id="address2" name="address2" address_line2=" " [(ngModel)]="address_line2" title="Address Line 2">
                                         <span class="floating-label">Address Line 2</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="text" class="form-control" id="pincode" name="pincode"
-                                            placeholder=" " [(ngModel)]="pincode" title="Pincode"
-                                            onkeypress='return isNumberKey(event);' maxlength="6"
-                                            onchange="getAreaByPincode(this.value)">
+                                        <input type="text" class="form-control" id="pincode" name="pincode" placeholder=" " [(ngModel)]="pincode" title="Pincode" onkeypress='return isNumberKey(event);' maxlength="6" onchange="getAreaByPincode(this.value)">
                                         <span class="floating-label ">Pincode</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="country" name="country" placeholder=" "
-                                            [(ngModel)]="country" title="Country">
+                                        <select class="form-control" id="country" name="country" placeholder=" " [(ngModel)]="country" title="Country">
                                             <option value="">Country</option>
                                             <option *ngFor="let item of country_list" value="{{item}}">{{item}}</option>
                                         </select>
                                         <span class="floating-label-select required">Country</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="state" name="state" placeholder=" "
-                                            [(ngModel)]="state" title="State">
+                                        <select class="form-control" id="state" name="state" placeholder=" " [(ngModel)]="state" title="State">
                                             <option value="">State</option>
                                             <option *ngFor="let item of state_list" value="{{item}}">{{item}}</option>
                                         </select>
                                         <span class="floating-label-select required">State</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="district" name="district" placeholder=" "
-                                            [(ngModel)]="district" title="District">
+                                        <select class="form-control" id="district" name="district" placeholder=" " [(ngModel)]="district" title="District">
                                             <option value="">District</option>
                                             <option *ngFor="let item of district_list" value="{{item}}">{{item}}
                                             </option>
@@ -160,8 +130,7 @@
                                         <span class="floating-label-select required">District</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <select class="form-control" id="area" name="area" placeholder=" "
-                                            [(ngModel)]="area" title="Area">
+                                        <select class="form-control" id="area" name="area" placeholder=" " [(ngModel)]="area" title="Area">
                                             <option value="">Area</option>
                                             <option *ngFor="let item of area_list" value="{{item}}">{{item}}</option>
                                         </select>
@@ -174,14 +143,11 @@
                                     <c-col sm="6">
                                         <c-col sm="12" class="pb-3">
                                             <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " [(ngModel)]="bsValue" [(ngModel)]="sno" title="Followup Date" required> -->
-                                            <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker"
-                                                bsDatepicker id="followup_date" name="followup_date"
-                                                [(ngModel)]="followupdate">
+                                            <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker id="followup_date" name="followup_date" [(ngModel)]="followupdate">
                                             <span class="floating-label required">Followup Date</span>
                                         </c-col>
                                         <c-col sm="12" class="pb-3">
-                                            <select class="form-control" id="source" name="source" value=""
-                                                [(ngModel)]="source" title="Source">
+                                            <select class="form-control" id="source" name="source" value="" [(ngModel)]="source" title="Source">
                                                 <option value="">Source</option>
                                                 <option *ngFor="let item of source" value="{{item}}">{{item}}</option>
                                             </select>
@@ -194,22 +160,19 @@
                                            To Convert
                                         </label> -->
                                             <c-form-check variant="switch">
-                                                <input cInput custom type="checkbox" id="is_convert" name="is_convert" 
-                                                    [(ngModel)]="is_convert" (change)="defaultModal.show()">
-                                                <label cLabel custom for="is_convert"  class="ml-2"> To Convert</label>
+                                                <input cInput custom type="checkbox" id="is_convert" name="is_convert" [(ngModel)]="is_convert" (change)="defaultModal.show()">
+                                                <label cLabel custom for="is_convert" class="ml-2"> To Convert</label>
                                             </c-form-check>
                                         </c-col>
-                                        <c-col sm="12"  class="mt-2"> {{status}}
+                                        <c-col sm="12" class="mt-2">
                                             <c-form-check variant="switch">
-                                                <input cInput custom type="checkbox" id="status" name="status" value="1"
-                                                    [(ngModel)]="status" >
+                                                <input cInput custom type="checkbox" id="status" name="status" value="1" [(ngModel)]="status">
                                                 <label cLabel custom for="status" class="ml-2">Is Active</label>
                                             </c-form-check>
                                         </c-col>
                                     </c-col>
                                     <c-col sm="6">
-                                        <div class="imagePreview" [style.background]="imageSrc"
-                                            [style.background-size]="imagefit" [(ngModel)]="imageSrc"></div>
+                                        <div class="imagePreview" [style.background]="imageSrc" [style.background-size]="imagefit" [(ngModel)]="imageSrc"></div>
                                         <input type="hidden" name="uploaded_picture" id="uploaded_picture">
                                         <label class="btn btn-primary w-100">
                                             Upload
@@ -220,8 +183,7 @@
                                     </c-col>
 
                                     <c-col sm="12" class="mt-5">
-                                        <input class="btn btn-success float-right rounded-pill px-5" type="submit"
-                                            value="Save" />
+                                        <input class="btn btn-success float-right rounded-pill px-5" type="submit" value="Save" />
                                     </c-col>
                                 </c-row>
                             </c-col>
@@ -298,13 +260,10 @@
                                 <td>{{ lead.district }}</td>
                                 <td>{{ lead.state }}</td>
                                 <td>{{ lead.is_convert }}</td>
-                                <td class="text-center" [class]='lead.status==1?"text-success":"text-danger"'>{{
-                                    lead.status=="1"?"Active":"In-Active" }}</td>
+                                <td class="text-center" [class]='lead.status==1?"text-success":"text-danger"'>{{ lead.status=="1"?"Active":"In-Active" }}</td>
                                 <td nowrap>
-                                    <a href="#" (click)="editLeadInfo(lead)"> <i
-                                            class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
-                                    <a (click)="deleteLeadInfo(lead.sno)"> <i
-                                            class="fa fa-trash h6 text-danger px-2"></i></a>
+                                    <a href="#" (click)="editLeadInfo(lead)"> <i class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
+                                    <a (click)="deleteLeadInfo(lead.sno)"> <i class="fa fa-trash h6 text-danger px-2"></i></a>
                                 </td>
                             </tr>
 
@@ -319,13 +278,93 @@
 
 <c-modal #defaultModal [closeOnBackdrop]="false" size="lg">
     <ng-template #modalHeader>
-        <h4 class="c-modal-title">Convertion</h4>
+        <strong>Trade Details</strong><small> (Conversion)</small>
     </ng-template>
     <ng-template #modalBody>
-        <p>Convert details&hellip;</p>
+        <c-row>
+            <c-col sm="9">
+                <c-row class="row ml-1 p-0 shadow-none  bg-light rounded">
+                    <c-col sm="6" class="pb-3 mr-0 mt-3 ">
+                        <c-col class="pb-3">
+                            <select class="form-control" name="branch" id="branch" title="branch" [(ngModel)]="branch">
+                            <!-- <option *ngFor="let item of branch_list" value="{{item}}">{{item}}</option> -->
+                            <option value="madurai" selected>Madurai</option>
+                            <option value="chennai">chennai</option>
+                        </select>
+                            <span class="floating-label-select ">branch</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="product" id="product" title="product" [(ngModel)]="product">
+                            <option *ngFor="let item of product_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Product</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="kyc_number" id="kyc_number" placeholder="  " [(ngModel)]="kyc_number" title="KYC Number">
+                            <span class="floating-label ">KYC Number</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="branch" id="branch" title="branch" [(ngModel)]="kyc_type">
+                            <option *ngFor="let item of kyc_type_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">KYC Type</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="brokerage_offer" id="brokerage_offer" title="brokerage_offer" [(ngModel)]="brokerage_offer">
+                            <option *ngFor="let item of brokerage_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Brokerage Offer</span>
+                        </c-col>
+                    </c-col>
+                    <c-col sm="6" class="pb-3  ml-0 mt-3">
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="cheque_value" id="cheque_value" placeholder="  " [(ngModel)]="cheque_value" title="cheque_value">
+                            <span class="floating-label ">Cheque Value</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="plan_type" id="plan_type" title="plan_type" [(ngModel)]="plan_type">
+                            <option *ngFor="let item of plany_type_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Plan Type</span>
+                        </c-col>
+
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="gst_val" id="gst_val" placeholder="  " [(ngModel)]="gst_val" title="cheque_value">
+                            <span class="floating-label ">GST %</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="total_cost" id="total_cost" placeholder="  " [(ngModel)]="total_cost" title="total_cost">
+                            <span class="floating-label ">Total Cost</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control disable " type="text" name="trade_amount" id="trade_amount" placeholder="  " [(ngModel)]="cheque_value" title="trade_amount">
+                            <span class="floating-label ">Trade Amount</span>
+                        </c-col>
+                    </c-col>
+                </c-row>
+            </c-col>
+            <c-col sm="3">
+                <c-col class="pb-3 mt-3">
+                    <input cInput [minDate]="minDate" #dp="bsDatepicker" bsDatepicker id="payment_date" name="payment_date" [(ngModel)]="payment_date">
+                    <span class="floating-label ">Payment Date</span>
+                </c-col>
+                <c-col class="pb-3">
+                    <input cInput class="form-control " type="text" name="account_no" id="account_no" placeholder="  " [(ngModel)]="account_no">
+                    <span class="floating-label ">Account Number</span>
+                </c-col>
+                <c-col class="pb-3 ">
+                    <input cInput class="form-control " type="text" name="payment_mode" id="payment_mode" placeholder="  " [(ngModel)]="payment_mode" title="Payment Mode">
+                    <span class="floating-label ">Payment Mode</span>
+                </c-col>
+                <c-col class="pb-3">
+                    <input cInput class="form-control " type="text" name="trans_id" id="trans_id" placeholder="  " [(ngModel)]="trans_id" title="trans_id">
+                    <span class="floating-label ">Trans Id</span>
+                </c-col>
+            </c-col>
+        </c-row>
     </ng-template>
     <ng-template #modalFooter>
         <button cButton color="secondary" (click)="defaultModal.hide()">Close</button>
-        <button cButton color="primary">Save changes</button>
+        <button cButton color="primary">Save</button>
     </ng-template>
 </c-modal>
