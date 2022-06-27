@@ -43,16 +43,16 @@ export const navItems: INavData[] = [
         name: 'Management',
         url: '/leads/management',
       },
-      {
-        name: 'KYC Documents',
-        url: '/leads/documents',
-      },
+      // {
+      //   name: 'KYC Documents',
+      //   url: '/leads/documents',
+      // },
       {
         name: 'Lead Profile',
         url: '/leads/profiles',
       },
       {
-        name: 'Bulk Transfer',
+        name: 'Lead Transfer',
         url: '/leads/transfer',
       },
     ],
@@ -72,7 +72,7 @@ export const navItems: INavData[] = [
     url: '/escalation',
     icon: 'cil-calendar-check',
   },
-  {
+/*  {
     name: 'Tickets',
     url: '/tickets',
     icon: 'cil-send',
@@ -121,7 +121,7 @@ export const navItems: INavData[] = [
         name: 'Holidays',
         url: '/notification/holidays',
       },]
-  },
+  }, */
   {
     name: 'Masters',
     title: true,
@@ -153,7 +153,7 @@ export const navItems: INavData[] = [
       },
     ],
   },
-  {
+ /* {
     name: 'Location',
     url: '/location',
     icon: 'cil-compass',
@@ -170,7 +170,7 @@ export const navItems: INavData[] = [
         name: 'Area',
         url: '/location/area',
       }]
-  },
+  },*/
   {
     name: 'Reports',
     title: true,

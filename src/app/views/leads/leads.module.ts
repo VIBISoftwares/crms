@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ButtonModule, CardModule, FormModule, GridModule, CollapseModule } from '@coreui/angular';
+import { ButtonModule, CardModule, FormModule, GridModule, CollapseModule,ModalModule,SwitchModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 
 import { LeadsRoutingModule } from './leads-routing.module';
@@ -17,6 +17,12 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 // Datepicker
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+import { Global } from '../../global/global';
+import { OverlayModule } from '@angular/cdk/overlay';
+
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -36,10 +42,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     CollapseModule,
     GridModule,
     IconModule,
-    ButtonModule,
-    FormModule,
+    SwitchModule,
+    ModalModule,
+    ButtonModule,PaginationModule,DataTablesModule,
+    FormModule,OverlayModule,
     TimepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
-  ]
+  ],
+  providers:[Global]
 })
 export class LeadsModule { }

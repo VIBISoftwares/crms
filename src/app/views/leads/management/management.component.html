@@ -6,8 +6,8 @@
                     <strong>Lead</strong><small> Management</small>
                 </c-card-header>
                 <c-card-body>
-                    <table class="table table-responsive-sm">
-                        <colgroup>
+                        <table table class="table table-responsive-sm"  datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">                                                                           
+                        <!-- <colgroup>
                             <col class="column-1" />
                             <col class="column-2" />
                             <col class="column-3" />
@@ -19,7 +19,7 @@
                             <col class="column-9" />
                             <col class="column-10" />
                             <col class="column-11" />
-                        </colgroup>
+                        </colgroup> -->
                         <thead>
                             <tr>
                                 <th scope="col">SNo</th>
@@ -31,94 +31,28 @@
                                 <th>Maritial Status</th>
                                 <th>City</th>
                                 <th>State</th>
-                                <th>Is Converted</th>
+                                <th>Status</th>
                                 <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>10005</td>
-                                <td>Vishwa</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>Vishwa@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-success mr-2">Edit</button>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                    <button class="btn-sm btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>10004</td>
-                                <td>Rani</td>
-                                <td>Female</td>
-                                <td>987587485</td>
-                                <td>Rani@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-success mr-2">Edit</button>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                    <button class="btn-sm btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>10003</td>
-                                <td>Joseph</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>Joseph@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-success mr-2">Edit</button>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                    <button class="btn-sm btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>10002</td>
-                                <td>Fathima</td>
-                                <td>Female</td>
-                                <td>987587485</td>
-                                <td>Fathima@mail.com</td>
-                                <td>Married</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>Yes</td>
-                                <td>
-                                    <button class="btn-sm btn-success mr-2">Edit</button>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                    <button class="btn-sm btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>10001</td>
-                                <td>RamKumar</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>ram@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>Yes</td>
-                                <td>
-                                    <button class="btn-sm btn-success mr-2">Edit</button>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                    <button class="btn-sm btn-danger">Delete</button>
+                            <tr *ngFor="let lead of returnedArray; let i = index">
+                                <td scope="row">{{i+1}}</td>
+                                <td>{{ lead.sno }}</td>
+                                <td>{{ lead.firstname + " " +lead.middlename +" " + lead.lastname }}</td>
+                                <td>{{ lead.gender }}</td>
+                                <td><a href="{{'tel:'+lead.contact}}">{{ lead.contact }}</a></td>
+                                <td>{{ lead.email }}</td>
+                                <td>{{ lead.marital_status }}</td>
+                                <td>{{ lead.district }}</td>
+                                <td>{{ lead.state }}</td>
+                                <td class="text-center" [class]='lead.status==1?"text-success":"text-danger"'>{{
+                                    lead.status=="1"?"Active":"In-Active" }}</td>
+                                <td nowrap>
+                                    <a href="#" (click)="editLeadInfo(lead)"> <i
+                                            class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
+                                    <a (click)="deleteLeadInfo(lead.sno)"> <i
+                                            class="fa fa-trash h6 text-danger px-2"></i></a>
                                 </td>
                             </tr>
 

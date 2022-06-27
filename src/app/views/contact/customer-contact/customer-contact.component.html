@@ -2,93 +2,77 @@
     <c-row>
         <c-col sm="12">
             <c-row>
-                <c-col sm="3">
+                <c-col sm="3" class="pr-0">
                     <c-card>
                         <c-card-header>
                             <strong>Client contact</strong><small> Creation</small>
                         </c-card-header>
                         <c-card-body>
-                            <form #cForm="ngForm" (submit)="saveContact(cForm)">
-                            <c-row>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput id="name" placeholder=" " name="contact_name" [(ngModel)]="contact_name">
-                                        <span class="floating-label required">Contact Name</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="contact_number" placeholder=" " [(ngModel)]="contact_number">
-                                        <span class="floating-label required">Contact Number</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="alternate_number" placeholder=" " [(ngModel)]="alternate_number">
-                                        <span class="floating-label required">Alternate Contact</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="email_id" placeholder=" " [(ngModel)]="email_id">
-                                        <span class="floating-label required">Email</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="facebook" placeholder=" " [(ngModel)]="facebook">
-                                        <span class="floating-label required">Facebook</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="instagram" placeholder=" " [(ngModel)]="instagram">
-                                        <span class="floating-label required">Instagram</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="linked_in" placeholder=" " [(ngModel)]="linked_in">
-                                        <span class="floating-label required">Linked In</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput name="others_media_id" placeholder=" " [(ngModel)]="others_media_id">
-                                        <span class="floating-label required">Other's</span>
-                                    </c-form-group>
-                                </c-col>
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <span >Status</span>
-                                        <c-switch size="sm" shape="pill" color="primary" checked class="ml-3 mt-2" [(ngModel)]="status"></c-switch>
-                                    </c-form-group>
-                                </c-col>
-                                <!-- <c-col sm="12">
-                                    <c-form-group>
-                                        <select cSelect id="ccmonth">
-                                            <option>Social Media</option>
-                                            <option value="1">Advertise</option>
-                                            <option value="2">Employee</option>
-                                            <option value="3">Others</option>
-                                        </select>
-                                        <span class="floating-label-select required">Reference</span>
-                                    </c-form-group>
-                                </c-col> 
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <input cInput id="name" placeholder=" ">
-                                        <span class="floating-label required">Assigned to</span>
-                                    </c-form-group>
-                                </c-col>-->
-                                <c-col sm="12">
-                                    <c-form-group>
-                                        <button cButton color="info rounded-pill px-4 float-right"
-                                            class="mr-1 mb-1">Save</button>
-                                    </c-form-group>
-                                </c-col>
-                            </c-row>
-                            </form>
+                            <form #cForm="ngForm" (submit)="addClientInfo(cForm)">
+                                <c-row>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input hidden id="sno" placeholder=" " name="sno" [(ngModel)]="sno">
+                                            <input cInput id="name" placeholder=" " name="contact_name" [(ngModel)]="contact_name">
+                                            <span class="floating-label required">Company Name</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="contact_number" placeholder=" " [(ngModel)]="contact_number">
+                                            <span class="floating-label required">Contact Number</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="alternate_number" placeholder=" " [(ngModel)]="alternate_number">
+                                            <span class="floating-label required">Alternate Contact</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="email_id" placeholder=" " [(ngModel)]="email_id">
+                                            <span class="floating-label required">Email</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="facebook" placeholder=" " [(ngModel)]="facebook">
+                                            <span class="floating-label required">Facebook</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="instagram" placeholder=" " [(ngModel)]="instagram">
+                                            <span class="floating-label required">Instagram</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="linked_in" placeholder=" " [(ngModel)]="linked_in">
+                                            <span class="floating-label required">Linked In</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput name="others_media_id" placeholder=" " [(ngModel)]="others_media_id">
+                                            <span class="floating-label required">Other's</span>
+                                        </c-form-group>
+                                    </c-col>                                  
+                                    <c-col sm="12">
+                                        <c-form-check variant="switch">
+                                            <input cInput custom type="checkbox" id="status" name="status" value="1" [(ngModel)]="status">
+                                            <label cLabel custom for="status">Is Active</label>
+                                        </c-form-check>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <button type="submit" cButton [color]="update_btn" class="mr-1 mb-1">{{sno?'Update':'Save' }}</button>
+                                            <button type="reset" cButton [color]="reset_btn" class="mr-1 mb-1">Reset</button>
+                                        </c-form-group>
+                                    </c-col>
+                                </c-row>
+                            </form>                           
                         </c-card-body>
                     </c-card>
                 </c-col>
@@ -123,7 +107,7 @@
                                         </colgroup> -->
                                         <thead>
                                             <tr>
-                                                <th scope="col">id</th>
+                                                <th scope="col">#</th>
                                                 <th>Contact Name</th>
                                                 <th>Contact No</th>
                                                 <th>Altername No</th>
@@ -132,25 +116,25 @@
                                                 <th>Instagram</th>
                                                 <th>linked In</th>
                                                 <th>others ID's</th>
-                                                <th>Descrition</th>
+                                                <th>Status</th>
                                                 <th>Option</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let user of returnedArray">
-                                                <th scope="row">{{ user.id }}</th>
-                                                <td>{{ user.name }}</td>
-                                                <td>{{ user.contactno }}</td>
-                                                <td>{{ user.alternateno }}</td>
-                                                <td>{{ user.email }}</td>
-                                                <td>{{ user.referral }}</td>
-                                                <td>{{ user.assignto }}</td>
-                                                <td>{{ user.assignto }}</td>
-                                                <td>{{ user.assignto }}</td>
-                                                <td>{{ user.assignto }}</td>
+                                            <tr *ngFor="let user of returnedArray; let i = index">
+                                                <td scope="row">{{i+1}}</td>
+                                                <td>{{ user.contact_name }}</td>
+                                                <td>{{ user.contact_number }}</td>
+                                                <td>{{ user.alternate_number }}</td>
+                                                <td>{{ user.email_id }}</td>
+                                                <td>{{ user.facebook }}</td>
+                                                <td>{{ user.instagram }}</td>
+                                                <td>{{ user.linked_in }}</td>
+                                                <td>{{ user.others_media_id }}</td>
+                                                <td class="text-center" [class]='user.status==1?"text-success":"text-danger"'>{{ user.status==1?"Active":"In-Active" }}</td>
                                                 <td nowrap>
-                                                    <a href="#" (click)="editCompanyInfo(data)"> <i class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
-                                                    <a (click)="deleteCompany(data.sno)"> <i class="fa fa-trash h6 text-danger px-2"></i></a>
+                                                    <a href="#" (click)="editClientInfo(user)"> <i class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
+                                                    <a (click)="deleteClientInfo(user.sno)"> <i class="fa fa-trash h6 text-danger px-2"></i></a>
                                                 </td>
                                                 <!-- <td>
                                                     <c-badge [color]="getBadge(user.status)">{{

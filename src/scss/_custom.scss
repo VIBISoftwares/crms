@@ -172,6 +172,7 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     height: 158px;
     background-position: center center;
     background: url("../assets/img/default.jpg");
+    background-size: 100% 100%;
     background-color: #fff;
     background-size: contain;
     background-repeat: no-repeat;

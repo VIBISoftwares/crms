@@ -12,3 +12,20 @@
 
 // If you want to add something do it here
 @import "custom";
+
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0.75;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+.fadeIn {
+    animation-name: fadeIn 3s ease-in-out;
+    animation-duration: 3s;
+  }

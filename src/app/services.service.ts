@@ -46,6 +46,54 @@ get refreshRequired(){
     )
   }
 
+
+  // Client API
+
+  addClientInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'addClientInfo',data);
+  }
+   
+  updateClientInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'updateClientInfo',data);
+  }
+
+  deleteClientInfo(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'deleteClientInfo',data);
+  }
+   
+  getAllClientList(): Observable<object[]> {
+    return this.http.get<object[]>(baseUrl+"getAllClientList").pipe(
+      tap(()=>{
+        this.refreshment.next();
+        
+      })
+    )
+  }
   
+// lead API  
+addLeadInfo(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'addLeadInfo',data);
+}
+ 
+updateLeadInfo(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'updateLeadInfo',data);
+}
+
+deleteLeadInfo(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'deleteLeadInfo',data);
+}
+ 
+getAllLeadInfo(): Observable<object[]> {
+  return this.http.get<object[]>(baseUrl+"getAllLeadInfo").pipe(
+    tap(()=>{
+      this.refreshment.next();      
+    })
+  )
+}
+
+findLeadInfo(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'findLeadInfo',data);
+}
+
 
 }
