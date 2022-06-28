@@ -3,131 +3,207 @@
         <c-col sm="12">
             <c-card>
                 <c-card-header>
-                    <strong>Follow-up</strong>
+                    <strong>Lead Follow-up</strong>
                 </c-card-header>
                 <c-card-body>
                     <c-row>
-                        <c-col sm="3" class="pb-3">
-                            <input class="form-control" cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker
-                                [(bsValue)]="bsValue">
-                            <span class="floating-label required">Followup Date</span>
+                        <c-col sm="12">
+                            <c-row>
+                                <c-col sm="2" class="pb-3">
+                                    <!-- <input cInput #dp="bsDatepicker" bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue"> -->
+                                    <input cInput #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue">
+                                    <span class="floating-label">Followup Date</span>
+                                </c-col>
+                                <c-col sm="1" class="pb-3">
+                                    <button cButton color="primary" (click)="searchFilter()">Search</button>
+                                </c-col>
+                                <c-col sm="2" class="pb-3" *ngIf="showButton">
+                                    <button cButton color="info" (click)="changeFollowup()">Change Followup</button>
+                                </c-col>
+                            </c-row>
                         </c-col>
-                        <c-col sm="2" class="pb-3">
-                            <input class="btn btn-info float-right px-4" type="submit" value="Submit" />
+                        <c-col sm="12 ">
+                            <table table class="table table-responsive-sm" datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                                <!-- <colgroup>
+                                    <col class="column-1 " />
+                                    <col class="column-2 " />
+                                    <col class="column-3 " />
+                                    <col class="column-4 " />
+                                    <col class="column-5 " />
+                                    <col class="column-6 " />
+                                    <col class="column-7 " />
+                                    <col class="column-8 " />
+                                    <col class="column-9 " />
+                                    <col class="column-10 " />
+                                    <col class="column-11 " />
+                                </colgroup> -->
+                                <thead>
+                                    <tr>
+                                        <th>#<input class="form-check-input ml-2" type="checkbox" style="transform: scale(1.35);" [(ngModel)]="selectedAll" (change)="selectAll();"> </th>
+                                        <th>Lead Id</th>
+                                        <th>Lead Name</th>
+                                        <th>Gender</th>
+                                        <th>Contact No</th>
+                                        <th>Email Id</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Followup Date</th>
+                                        <th>Status</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let lead of returnedArray; let i=index ">
+                                        <td scope="row "><input class="form-check-input ml-2" type="checkbox" [(ngModel)]="lead.selected" (change)="deSelect()" title="Select all"></td>
+                                        <td>{{ lead.sno }}</td>
+                                        <td>{{ lead.firstname + " " +lead.middlename +" " + lead.lastname }}</td>
+                                        <td>{{ lead.gender }}</td>
+                                        <td><a href="{{ 'tel:'+lead.contact}} ">{{ lead.contact }}</a></td>
+                                        <td>{{ lead.email }}</td>
+                                        <td>{{ lead.district }}</td>
+                                        <td>{{ lead.state }}</td>
+                                        <td>{{ lead.followupdate | date:'d-M-Y' }}</td>
+                                        <td class="text-center " [class]='lead.status==1?"text-success ":"text-danger "'>
+                                            {{ lead.status=="1"?"Active ":"In-Active " }}</td>
+                                        <td nowrap>
+                                            <a (click)="editLeadInfo(lead);leadViewModal.show()"> <i class="fa fa-eye h6  px-2 mr-1 "></i></a>
+                                            <a (click)="deleteLeadInfo(lead.sno) "> <i class="fa fa-trash h6 text-danger px-2 "></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </c-col>
                     </c-row>
-
-
-                    <table class="table table-responsive-sm">
-                        <colgroup>
-                            <col class="column-1" />
-                            <col class="column-2" />
-                            <col class="column-3" />
-                            <col class="column-4" />
-                            <col class="column-5" />
-                            <col class="column-6" />
-                            <col class="column-7" />
-                            <col class="column-8" />
-                            <col class="column-9" />
-                            <col class="column-10" />
-                            <col class="column-11" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">Select <input class="form-check-input ml-2" type="checkbox"></th>
-                                <th>Lead Id</th>
-                                <th>Lead Name</th>
-                                <th>Gender</th>
-                                <th>Contact No</th>
-                                <th>Email Id</th>
-                                <th>Maritial Status</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Is Converted</th>
-                                <th>Option</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
-                                <td>10005</td>
-                                <td>Vishwa</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>Vishwa@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
-                                <td>10004</td>
-                                <td>Rani</td>
-                                <td>Female</td>
-                                <td>987587485</td>
-                                <td>Rani@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
-                                <td>10003</td>
-                                <td>Joseph</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>Joseph@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>No</td>
-                                <td>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
-                                <td>10002</td>
-                                <td>Fathima</td>
-                                <td>Female</td>
-                                <td>987587485</td>
-                                <td>Fathima@mail.com</td>
-                                <td>Married</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>Yes</td>
-                                <td>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> <input class="form-check-input ml-2" type="checkbox"></td>
-                                <td>10001</td>
-                                <td>RamKumar</td>
-                                <td>Male</td>
-                                <td>987587485</td>
-                                <td>ram@mail.com</td>
-                                <td>Single</td>
-                                <td>Madurai</td>
-                                <td>Tamilnadu</td>
-                                <td>Yes</td>
-                                <td>
-                                    <button class="btn-sm btn-info mr-2">View</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
                 </c-card-body>
             </c-card>
         </c-col>
     </c-row>
 </div>
+
+
+
+
+<!-- Profile view -->
+<c-modal #leadViewModal [closeOnBackdrop]="true" size="xl">
+    <ng-template #modalHeader>
+        <strong>Lead Details</strong>
+    </ng-template>
+    <ng-template #modalBody>
+        <c-row>
+            <c-col sm="3">
+                <div class="imagePreview-demo text-center"></div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Lead ID</strong>
+                            <span class="text-primary">{{sno}}  </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Name</strong>
+                            <span class="text-primary">{{ fullname |uppercase }}
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Contact No.</strong>
+                            <span class="text-primary">{{ contact }}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Email</strong>
+                            <span class="text-primary">{{ email }}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Address </strong>
+                            <span class="text-primary">{{ address_line1+", "+ address_line2+ ", "+area+", "+state   }}</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Reference</strong>
+                            <span class="text-primary">{{ fullname }}</span>
+                        </div>
+                    </li>
+                </ul>
+            </c-col>
+            <c-col sm="9">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th class="h4" colspan="4">{{ fullname }}</th>
+                        </tr>
+                        <tr>
+                            <td><strong> Gender </strong></td>
+                            <td>{{ gender }}</td>
+                            <td><strong> Father name </strong></td>
+                            <td>{{ guardian_name }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong> DOB </strong></td>
+                            <td>{{ dob }}</td>
+                            <td><strong>Contact number</strong></td>
+                            <td>{{ contact }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maritial Status</strong></td>
+                            <td>{{ marital_status }}</td>
+                            <td><strong>Religion</strong></td>
+                            <td>{{ religion }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Occupation</strong></td>
+                            <td>{{ occupation }}</td>
+                            <td><strong>Community</strong></td>
+                            <td>{{ community }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table mt-2">
+                    <tbody>
+                        <tr>
+                            <th class="h4" colspan="4">Trade Details (Conversion) </th>
+                        </tr>
+                        <tr>
+                            <td><strong> Product</strong></td>
+                            <td>{{ fullname }}</td>
+                            <td><strong>Plan Type</strong></td>
+                            <td>{{ firstname }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong> KYC Number</strong></td>
+                            <td>{{ fullname }}</td>
+                            <td><strong>GST</strong></td>
+                            <td>{{ fullname }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong> KYC Type</strong></td>
+                            <td>{{ fullname }}</td>
+                            <td><strong>Total Cost</strong></td>
+                            <td>{{ firstname }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brokerage Offer</strong></td>
+                            <td>{{ fullname }}</td>
+                            <td><strong>Cheque Value</strong></td>
+                            <td>{{ fullname }}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Trade Amount</strong></td>
+                            <td><strong class="h4">{{ firstname }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </c-col>
+        </c-row>
+
+
+    </ng-template>
+</c-modal>

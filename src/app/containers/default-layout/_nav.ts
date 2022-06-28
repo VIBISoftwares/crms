@@ -47,10 +47,10 @@ export const navItems: INavData[] = [
       //   name: 'KYC Documents',
       //   url: '/leads/documents',
       // },
-      {
-        name: 'Lead Profile',
-        url: '/leads/profiles',
-      },
+      // {
+      //   name: 'Lead Profile',
+      //   url: '/leads/profiles',
+      // },
       {
         name: 'Lead Transfer',
         url: '/leads/transfer',
