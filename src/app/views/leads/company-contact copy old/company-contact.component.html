@@ -1,0 +1,179 @@
+<div class="pulse">
+    <c-row>
+        <c-col sm="12">
+            <c-row>
+                <c-col sm="3" class="pr-0">
+                    <c-card>
+                        <c-card-header>
+                            <strong>Company contact</strong><small> Creation</small>
+                        </c-card-header>
+                        <c-card-body>
+                            <form #cForm="ngForm" (submit)="saveCompanyInfo(cForm)">
+                                <c-row>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="cname" placeholder=" " name="company_name" ngModel>
+                                            <span class="floating-label required">Company Name</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="addr" placeholder=" " name="office_address" ngModel>
+                                            <span class="floating-label required">Office Address</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="personName" placeholder=" " name="contact_person" ngModel>
+                                            <span class="floating-label required">Contact Person</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="personContact" placeholder=" " name="personContact"
+                                                ngModel>
+                                            <span class="floating-label required">Person Contact</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="officeContact" placeholder=" " name="person_contact"
+                                                ngModel>
+                                            <span class="floating-label required">Office Contact</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="email" placeholder=" " name="email" ngModel>
+                                            <span class="floating-label required">Email</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="gstno" placeholder=" " name="gst_no" ngModel>
+                                            <span class="floating-label required">GST number</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <select cSelect id="levelOfCompany" name="company_level" ngModel>
+                                                <option>L1</option>
+                                                <option>L2</option>
+                                                <option>L3</option>
+                                                <option>L4</option>
+                                            </select>
+                                            <span class="floating-label-select required">Company Size</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <select cSelect id="reference" name="reference" ngModel>
+                                                <option>Social Media</option>
+                                                <option>Advertise</option>
+                                                <option>Employee</option>
+                                                <option>Others</option>
+                                            </select>
+                                            <span class="floating-label-select required">Reference</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput id="assignTo" placeholder=" " name="assignto" ngModel>
+                                            <span class="floating-label required">Assigned to</span>
+                                        </c-form-group>
+                                    </c-col>
+                                    <!-- <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker"
+                                                bsDatepicker [(bsValue)]="bsValue">
+                                        </c-form-group>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <input cInput #drp="bsDaterangepicker" bsDaterangepicker
+                                                [(ngModel)]="bsRangeValue">
+                                        </c-form-group>
+                                    </c-col> -->
+                                    <c-col sm="12">
+                                        <c-form-check variant="switch">
+                                            <input cInput custom type="checkbox" id="status" name="status" ngModel
+                                                checked>
+                                            <label cLabel custom for="status">Is Active</label>
+                                        </c-form-check>
+                                    </c-col>
+                                    <c-col sm="12">
+                                        <c-form-group>
+                                            <button type="submit" cButton color="info rounded-pill px-4 float-right"
+                                                class="mr-1 mb-1">Save</button>
+                                        </c-form-group>
+                                    </c-col>
+                                </c-row>
+                            </form>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+                <c-col sm="9">
+                    <c-card>
+                        <c-card-header>
+                            <strong>Company Contact</strong><small> Management</small>
+                        </c-card-header>
+                        <c-card-body>
+                            <c-row>
+                                <c-col sm="12">
+                                    <table class="table table-responsive-sm" *ngIf="returnedArray" datatable="ng" [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger">
+                                        <!-- <colgroup>
+                                            <col class="column-1" />
+                                            <col class="column-2" />
+                                            <col class="column-3" />
+                                            <col class="column-4" />
+                                            <col class="column-5" />
+                                            <col class="column-6" />
+                                            <col class="column-7" />
+                                        </colgroup> -->
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th>Company Name</th>
+                                                <th>Location</th>
+                                                <th>Contact Person </th>
+                                                <th>Person Contact</th>
+                                                <th>Office No</th>
+                                                <th>Assigned to</th>
+                                                <th>Option</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let data of returnedArray; let i = index">
+                                                <td scope="row">{{i+1}}</td>
+                                                <td>{{ data.company_name }}</td>
+                                                <td>{{ data.office_address }}</td>
+                                                <td>{{ data.contact_person }}</td>
+                                                <td>{{ data.person_contact }}</td>
+                                                <td>{{ data.office_contact }}</td>
+                                                <td>{{ data.assignto }}</td>
+                                                <td>
+                                                    <a href="#" (click)="editCompanyInfo(data)"> <i
+                                                            class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
+                                                    <a href="#" onclick=""> <i
+                                                            class="fa fa-trash h6 text-danger px-2"></i></a>
+                                                </td>
+                                                <!-- <td>
+                                                    <c-badge [color]="getBadge(user.status)">{{
+                                                        user.status
+                                                        }}</c-badge>
+                                                </td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- <pagination [totalItems]="tableData.length" (pageChanged)="pageChanged($event)"
+                                        [itemsPerPage]="5" [(ngModel)]="currentPage" [maxSize]="4" [rotate]="true">
+                                    </pagination> -->
+                                </c-col>
+                            </c-row>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+            </c-row>
+        </c-col>
+    </c-row>
+</div>

@@ -20,7 +20,8 @@
                             </c-row>
                         </c-col>
                         <c-col sm="12 ">
-                            <table table class="table table-responsive-sm " datatable="ng " [dtOptions]="dtOptions " [dtTrigger]="dtTrigger ">
+                            <table table class="table table-responsive-sm " datatable="ng " [dtOptions]="dtOptions "
+                                [dtTrigger]="dtTrigger ">
                                 <!-- <colgroup>
                                     <col class="column-1 " />
                                     <col class="column-2 " />
@@ -60,24 +61,356 @@
                                         <td>{{ lead.district }}</td>
                                         <td>{{ lead.state }}</td>
                                         <td>{{ lead.followupdate | date:'d-M-Y' }}</td>
-                                        <td class="text-center " [class]='lead.status==1?"text-success ":"text-danger "'>{{ lead.status=="1 "?"Active ":"In-Active " }}</td>
+                                        <td class="text-center "
+                                            [class]='lead.status==1?"text-success ":"text-danger "'>
+                                            {{ lead.status=="1"?"Active ":"In-Active " }}</td>
                                         <td nowrap>
-                                            <a href="# " (click)="editLeadInfo(lead) "> <i class="fa fa-edit h6 text-info px-2 mr-1 "></i></a>
-                                            <a (click)="deleteLeadInfo(lead.sno) "> <i class="fa fa-trash h6 text-danger px-2 "></i></a>
+                                            <a (click)="editLeadInfo(lead);defaultModal.show()"> <i
+                                                    class="fa fa-edit h6  px-2 mr-1 "></i></a>
+                                            <a (click)="editLeadInfo(lead);leadViewModal.show()"> <i
+                                                    class="fa fa-eye h6  px-2 mr-1 "></i></a>
+                                            <a (click)="deleteLeadInfo(lead.sno) "> <i
+                                                    class="fa fa-trash h6 text-danger px-2 "></i></a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
-
                         </c-col>
                     </c-row>
-
-
-
-
                 </c-card-body>
             </c-card>
         </c-col>
     </c-row>
 </div>
+
+
+
+<c-modal #defaultModal [closeOnBackdrop]="false" size="xl">
+    <ng-template #modalHeader>
+        <strong>Edit Lead</strong>
+    </ng-template>
+    <ng-template #modalBody>
+        <form #cForm="ngForm" (submit)="addLeadInfo(cForm);defaultModal.hide()">
+        <c-row>
+            <c-col sm="8">
+                <c-row class="row mt-3">
+                    <c-col sm="3" class="pb-3">
+                        <input hidden id="sno" placeholder=" " name="sno" [(ngModel)]="sno">
+                        <select class="form-control title " name="title" id="title" title="Title" [(ngModel)]="title"
+                            required>
+                            <option *ngFor="let item of title_list" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span class="floating-label-select required">Title</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  "
+                            [(ngModel)]="firstname" title="First Name" required>
+                        <span class="floating-label required">First Name</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" "
+                            [(ngModel)]="middlename" title="Middle Name">
+                        <span class="floating-label">Middle Name</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" "
+                            [(ngModel)]="lastname" title="Last Name">
+                        <span class="floating-label">Last Name</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="radio" class="ml-2" name="gender" id="gender_m" [(ngModel)]="gender" title="Male"
+                            value="male" checked>
+                        <label for="gender_m"><i class="fa fa-male px-2" aria-hidden="true"></i></label>
+                        <input type="radio" class="ml-2" name="gender" id="gender_f" [(ngModel)]="gender" title="Female"
+                            value="female">
+                        <label for="gender_f"><i class="fa fa-female px-2" aria-hidden="true"></i></label>
+                        <input type="radio" class="ml-2" name="gender" id="gender_t" [(ngModel)]="gender"
+                            title="Transgender" value="transgender">
+                        <label for="gender_t"><i class="fa fa-transgender px-2" aria-hidden="true"></i></label>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input class="form-control" type="email" name="email" id="email" placeholder=" "
+                            [(ngModel)]="email" title="Email">
+                        <span class="floating-label required">Email</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input class="form-control" type="text" name="contact_no" id="contact_no" placeholder=" "
+                            [(ngModel)]="contact" title="Contact Number" onkeypress='return isNumberKey(event);'
+                            maxlength="10" required>
+                        <span class="floating-label required">Contact Number</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="marital_status" name="marital_status"
+                            [(ngModel)]="marital_status" title="Marital status">
+                            <option value=" "></option>
+                            <option *ngFor="let item of maritial_list" value="{{item}}">{{item}}
+                            </option>
+                        </select>
+                        <span class="floating-label-select required">Marital status</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="guardian_type" name="guardian_type" [(ngModel)]="guardian_type"
+                            title="Relationship" [(ngModel)]="guardian_type">
+                            <option value="">Gurardian</option>
+                            <option *ngFor="let item of guardian_list" value="{{item}}">{{item}}
+                            </option>
+                        </select>
+                        <span class="floating-label-select required">Guardian type</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="guardian_name" name="guardian_name" placeholder=" "
+                            [(ngModel)]="guardian_name" title="Guardian Name" required>
+                        <span class="floating-label required">{{guardian_type}} Name</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="guard1_contact_no" name="guard1_contact_no"
+                            placeholder=" " [(ngModel)]="sno" title="Contact Number"
+                            onkeypress='return isNumberKey(event);' maxlength="10" required>
+                        <span class="floating-label required">Contact Number</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="occupation" name="occupation" [(ngModel)]="occupation"
+                            title="Occupation">
+                            <option value="">Occupation</option>
+                            <option *ngFor="let item of occupation_list" value="{{item}}">{{item}}
+                            </option>
+                        </select>
+                        <span class="floating-label-select required">Occupation</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker id="dob"
+                            name="dob" [(ngModel)]="bsValue">
+                        <span class="floating-label">Date of Birth</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="religion" name="religion" placeholder=" "
+                            [(ngModel)]="religion" title="Religion">
+                        <span class="floating-label">Religion</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="community" name="community" placeholder=" "
+                            [(ngModel)]="community" title="Community">
+                        <span class="floating-label">Community</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="caste" name="caste" placeholder=" "
+                            [(ngModel)]="caste" title="Caste">
+                        <span class="floating-label">Caste</span>
+                    </c-col>
+                    <c-col sm="6" class="pb-3">
+                        <input type="text" class="form-control" id="address1" name="address_line1" placeholder=" "
+                            [(ngModel)]="address_line1" title="Address Line 1" required>
+                        <span class="floating-label required">Address Line 1</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="address2" name="address2" address_line2=" "
+                            [(ngModel)]="address_line2" title="Address Line 2">
+                        <span class="floating-label">Address Line 2</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <input type="text" class="form-control" id="pincode" name="pincode" placeholder=" "
+                            [(ngModel)]="pincode" title="Pincode" onkeypress='return isNumberKey(event);' maxlength="6"
+                            onchange="getAreaByPincode(this.value)">
+                        <span class="floating-label ">Pincode</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="country" name="country" placeholder=" " [(ngModel)]="country"
+                            title="Country">
+                            <option value="">Country</option>
+                            <option *ngFor="let item of country_list" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span class="floating-label-select required">Country</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="state" name="state" placeholder=" " [(ngModel)]="state"
+                            title="State">
+                            <option value="">State</option>
+                            <option *ngFor="let item of state_list" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span class="floating-label-select required">State</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="district" name="district" placeholder=" "
+                            [(ngModel)]="district" title="District">
+                            <option value="">District</option>
+                            <option *ngFor="let item of district_list" value="{{item}}">{{item}}
+                            </option>
+                        </select>
+                        <span class="floating-label-select required">District</span>
+                    </c-col>
+                    <c-col sm="3" class="pb-3">
+                        <select class="form-control" id="area" name="area" placeholder=" " [(ngModel)]="area"
+                            title="Area">
+                            <option value="">Area</option>
+                            <option *ngFor="let item of area_list" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span class="floating-label-select required">Area </span>
+                    </c-col>
+                </c-row>
+            </c-col>
+            <c-col sm="4">
+                <c-row class="row mt-3">
+                    <c-col sm="6">
+                        <c-col sm="12" class="pb-3">
+                            <!-- <input type="text" class="form-control" id="followup_date" name="followup_date" value="" placeholder=" " [(ngModel)]="bsValue" [(ngModel)]="sno" title="Followup Date" required> -->
+                            <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker
+                                id="followup_date" name="followup_date" [(ngModel)]="followupdate">
+                            <span class="floating-label required">Followup Date</span>
+                        </c-col>
+                        <c-col sm="12" class="pb-3">
+                            <select class="form-control" id="source" name="source" value="" [(ngModel)]="source"
+                                title="Source">
+                                <option value="">Source</option>
+                                <option *ngFor="let item of source" value="{{item}}">{{item}}</option>
+                            </select>
+                            <span class="floating-label-select required">Source</span>
+                        </c-col>
+
+                        <c-col sm="12" class="mt-2">
+                            <!-- <input class="form-check-input ml-2" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="is_convert" >
+                        <label class="form-check-label ml-4 " for="flexCheckDefault">
+                           To Convert
+                        </label> -->
+                            <!-- <c-form-check variant="switch">
+                                <input cInput custom type="checkbox" id="is_convert" name="is_convert" [(ngModel)]="is_convert" (change)="defaultModal.show()">
+                                <label cLabel custom for="is_convert" class="ml-2"> To Convert</label>
+                            </c-form-check>
+                        -->
+                        </c-col>
+                            <c-col sm="12" class="mt-2">
+                                <!-- <c-form-check variant="switch">
+                                    <input cInput custom type="checkbox" id="status" name="status" value="1"
+                                        [(ngModel)]="status">
+                                    <label cLabel custom for="status" class="ml-2">Is Active</label>
+                                </c-form-check> -->
+                            </c-col>
+                        </c-col>
+                        <c-col sm="6">
+                            <div class="imagePreview" [style.background]="imageSrc" [style.background-size]="imagefit"
+                                [(ngModel)]="imageSrc"></div>
+                            <input type="hidden" name="uploaded_picture" id="uploaded_picture">
+                            <label class="btn btn-primary w-100">
+                                Upload
+                                <input type="file" class="uploadFile" value="Upload Photo"
+                                    style="width: 0px;height: 0px;overflow: hidden;" accept="image/*"
+                                    (change)="onFileChange($event)">
+                            </label>
+                        </c-col>
+
+                        <c-col sm="12" class="mt-5">
+                            <input class="btn btn-info float-right rounded-pill px-5" type="submit" value="Update" />
+                        </c-col>
+                </c-row>
+            </c-col>
+        </c-row>
+    </form>
+    </ng-template>
+</c-modal>
+
+<c-modal #leadViewModal [closeOnBackdrop]="false" size="xl">
+    <ng-template #modalHeader>
+        <strong>Lead Details</strong>
+    </ng-template>
+    <ng-template #modalBody>
+
+        <c-row>
+            <c-col sm="3">
+                <div class="imagePreview-demo text-center"></div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Lead ID</strong>
+                            <span class="text-primary">{{sno}}  </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Name</strong>
+                            <span
+                                class="text-primary">{{ fullname |uppercase }}
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Contact No.</strong>
+                            <span class="text-primary">980987898</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Email</strong>
+                            <span class="text-primary">ram@gmai.com</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Address </strong>
+                            <span class="text-primary">#1,Vetri Street madurai, Tamilnadu</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-1">
+                        <div class="d-flex justify-content-between">
+                            <strong>Reference</strong>
+                            <span class="text-primary">AnuPriya</span>
+                        </div>
+                    </li>
+                </ul>
+            </c-col>
+            <c-col sm="9">
+                <table class="table ">
+                    <tbody>
+                        <tr>                                      
+                            <th class="h4" colspan="4">Personal Details</th>
+                        </tr>
+                        <tr>
+                            <td><strong> Gender </strong></td>
+                            <td>Male</td>
+                            <td><strong> Father name </strong></td>
+                            <td>Arumugam</td>
+                        </tr>
+                        <tr>
+                            <td><strong> DOB </strong></td>
+                            <td>09-11-1990</td>
+                            <td><strong> Mother Name </strong></td>
+                            <td>Dhatchayani</td>
+                        </tr>
+                        <tr>
+                            <td><strong> Aathar Card </strong></td>
+                            <td>1212 1212 1212</td>                                   
+                            <td></td>
+                            <td></td>
+                        </tr>                                                                                                   
+                        <tr>
+                            <td><strong> Pan Card </strong></td>
+                            <td>ATCP3793N</td>                                   
+                            <td></td>
+                            <td></td>
+                        </tr>                                                                                                   
+                    </tbody>                                      
+                </table>
+                <table class="table mt-2">
+                    <tbody>
+                        <tr>                                      
+                            <th class="h4" colspan="4">Bank Account Details</th>
+                        </tr>
+                        <tr>
+                            <td><strong> Account number </strong></td>
+                            <td>1212 3232 3232</td>
+                            <td><strong> Account Type </strong></td>
+                            <td>Saving</td>
+                        </tr>
+                        <tr>
+                            <td><strong> IFSC </strong></td>
+                            <td>SC00100</td>                                   
+                            <td><strong> Location </strong></td>
+                            <td>Anna nager , Chennai</td>
+                        </tr>                                                                                          
+                    </tbody>                                      
+                </table>
+            </c-col>
+        </c-row>
+
+
+    </ng-template>
+</c-modal>

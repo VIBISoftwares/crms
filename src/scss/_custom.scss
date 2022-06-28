@@ -83,6 +83,9 @@
     background: linear-gradient(to bottom, #585858 0%, #111 100%) !important;
 }
 
+.buttons-copy, .buttons-csv  {
+    display: none;
+}
 .buttons-excel {
     color: #fff;
     background-color: #00834d;
