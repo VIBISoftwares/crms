@@ -202,7 +202,7 @@ editLeadInfo(data: any) {  console.log(data);
   this.district = data.district  ;
   this.area = data.area  ;
   this.source = data.source  ;
-  this.followupdate = data.followupdate;
+  this.followupdate = data.appointment_datetime;
   this.is_convert = data.is_convert  ;
   this.status= (data.status=="1")?'true':'false'; 
 

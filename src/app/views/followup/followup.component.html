@@ -11,14 +11,14 @@
                             <c-row>
                                 <c-col sm="2" class="pb-3">
                                     <!-- <input cInput #dp="bsDatepicker" bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue"> -->
-                                    <input cInput #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue">
+                                    <input cInput #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue" (click)="followupModal.show()">
                                     <span class="floating-label">Followup Date</span>
                                 </c-col>
                                 <c-col sm="1" class="pb-3">
                                     <button cButton color="primary" (click)="searchFilter()">Search</button>
                                 </c-col>
                                 <c-col sm="2" class="pb-3" *ngIf="showButton">
-                                    <button cButton color="info" (click)="changeFollowup()">Change Followup</button>
+                                    <button cButton color="info" (click)="followupModal.show()">Change Followup</button>
                                 </c-col>
                             </c-row>
                         </c-col>
@@ -62,7 +62,7 @@
                                         <td>{{ lead.email }}</td>
                                         <td>{{ lead.district }}</td>
                                         <td>{{ lead.state }}</td>
-                                        <td>{{ lead.followupdate | date:'d-M-Y' }}</td>
+                                        <td>{{ lead.appointment_datetime | date:'d-M-Y' }}</td>
                                         <td class="text-center " [class]='lead.status==1?"text-success ":"text-danger "'>
                                             {{ lead.status=="1"?"Active ":"In-Active " }}</td>
                                         <td nowrap>
@@ -205,5 +205,24 @@
         </c-row>
 
 
+    </ng-template>
+</c-modal>
+
+<!-- follow up date -->
+<c-modal #followupModal [closeOnBackdrop]="false" size="sm">
+    <ng-template #modalHeader>
+        <strong>Change Followup Date</strong>
+    </ng-template>
+    <ng-template #modalBody>
+        <c-row>
+            <c-col >
+                <input cInput [minDate]="minDate" [maxDate]="maxDate" #dp="bsDatepicker" bsDatepicker id="new_followup" name="new_followup" [(ngModel)]="new_followup">
+                <span class="floating-label">Followup Date</span>
+            </c-col>
+        </c-row>
+    </ng-template>
+    <ng-template #modalFooter>
+        <button cButton color="secondary" (click)="followupModal.hide()">Close</button>
+        <button cButton color="primary" (click)="changeFollowup();followupModal.hide()">Confirm</button>
     </ng-template>
 </c-modal>

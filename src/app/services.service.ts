@@ -95,5 +95,10 @@ findLeadInfo(data):Observable<object>{
   return this.http.post<object>(baseUrl+'findLeadInfo',data);
 }
 
+// Lead Followup's
+
+changeFollowupDate(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'changeFollowupDate',data);
+}
 
 }

@@ -28,7 +28,7 @@ export class FollowupComponent implements OnInit {
   defaultModal:any;
   filter_data = {
     status:"1",
-    order_by: " followupdate DESC"
+    order_by: " appointment_datetime DESC"
   }
 
     
@@ -67,7 +67,7 @@ export class FollowupComponent implements OnInit {
   district: any;
   area: any;
   source: any;
-  followupdate = new Date();
+  appointment_datetime = new Date();
   is_convert: any;
   status:any="true";
   created_by: any;
@@ -101,7 +101,10 @@ export class FollowupComponent implements OnInit {
   area_list = ['Adaiyar', 'Vadapalani', 'Tharamani', 'Thambaram'];
   source_list = ['Facebook', 'Instagram', 'Whatsapp', 'Twitter', 'LinkedIn']
   
-
+  selectedAll:any;
+  showButton:any;
+  selectedRow:any=[];
+  new_followup:any= new Date();
 
 
   constructor(private service: ServicesService, private globals: Global, private http: HttpClient, private chrf: ChangeDetectorRef) { }
@@ -202,7 +205,7 @@ editLeadInfo(data: any) {  console.log(data);
   this.district = data.district  ;
   this.area = data.area  ;
   this.source = data.source  ;
-  this.followupdate = data.followupdate;
+  this.appointment_datetime = data.appointment_datetime;
   this.is_convert = data.is_convert  ;
   this.status= (data.status=="1")?'true':'false'; 
 
@@ -226,8 +229,7 @@ addLeadInfo(data: any) {
     }
   }).then((result) => {
     if (result.value) {
-
-      service$.subscribe(result => { // console.log(result); return;
+      service$.subscribe(result => { 
         if (result['status'] == 'success') {
           var data={
             limit:"5",
@@ -316,36 +318,96 @@ onFileChange(event) {
       // this.myForm.patchValue({
       //   fileSource: reader.result
       // });
-
     };
-
   }
 }
-
-selectedAll:any;
-showButton:any;
 
 selectAll(){
   for (var i = 0; i < this.returnedArray.length; i++) {
     this.returnedArray[i].selected = this.selectedAll;
     this.showButton = this.selectedAll;
+    if(this.returnedArray[i].selected){
+      this.showButton = this.returnedArray[i].selected;   
+    } 
+
+  if (this.selectedAll){
+    if (!this.selectedRow.includes(this.returnedArray[i]['sno'])){
+      this.selectedRow.push(this.returnedArray[i]['sno']);  
   }
+  }else{
+    this.selectedRow.pop(this.returnedArray[i]['sno']);  
+  }
+}  
+  //  console.log(this.selectedRow);
 }
 
-deSelect(){
-  for (var i = 0; i < this.returnedArray.length; i++) {
-    if(!this.returnedArray[i].selected){
-      this.selectedAll = this.returnedArray[i].selected;
+deSelect(){ 
+  for (var i = 0; i < this.returnedArray.length; i++) {  
+    if(this.returnedArray[i].selected ){     
+      this.showButton = true;
+      if (!this.selectedRow.includes(this.returnedArray[i]['sno'])){
+          this.selectedRow.push(this.returnedArray[i]['sno']);  
+      }
     }
-    if(this.returnedArray[i].selected){
-      this.showButton = this.returnedArray[i].selected;
+    
+    if( !this.returnedArray[i].selected ){ 
+      if (this.selectedRow.includes(this.returnedArray[i]['sno'])){  
+        this.selectedRow.pop(this.returnedArray[i]['sno']); 
+      }
     }
+  }
+  if(this.selectedRow.length==0){
+    this.showButton = false;
   }
 }
 
 changeFollowup(){
-    
-}
+  let data={
+    "appointment_datetime":  this.formatDate(this.new_followup),
+    "lead_sno":this.selectedRow  }   
+    Swal.fire({
+      text: 'Are you sure want to change this follow up dates?',
+      showCancelButton: true,
+      customClass: {
+        confirmButton: 'btn btn-sm px-3',
+        cancelButton: 'btn btn-sm',
+      }
+    }).then((result) => {
+      if (result.value) { 
+        this.service.changeFollowupDate( {'data':data} ).subscribe(result => { 
+          if (result['status'] == 'success') 
+          {
+            var data={ }
+            this.service.findLeadInfo(data).subscribe((result) => {
+              if(result['status']=='success'){
+                Swal.fire({text:"Followup date updated successfully", customClass: { confirmButton: 'btn btn-sm px-3' }});
+                this.returnedArray = result['company_list'];
+                this.rerender();
+              }  
+            }),(err) => {
+              console.log('err : ', err);
+            }  
+          }
+          else if(result['status']=='failure')
+          {
+            Swal.fire({text:"Unable to change followup date, Please try again later", customClass: {
+              confirmButton: 'btn btn-sm px-3',
+              cancelButton: 'btn btn-sm',
+            }});
+            this.rerender();
+          }
+          (error) => {
+            console.log(error)
+          }
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({text:"Delete process cancelled", customClass: {
+          confirmButton: 'btn btn-sm px-3',
+          cancelButton: 'btn btn-sm',
+        }});
+      }
+    })
+  }
 
 
 

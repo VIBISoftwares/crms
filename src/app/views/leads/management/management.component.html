@@ -60,7 +60,7 @@
                                         <td>{{ lead.email }}</td>
                                         <td>{{ lead.district }}</td>
                                         <td>{{ lead.state }}</td>
-                                        <td>{{ lead.followupdate | date:'d-M-Y' }}</td>
+                                        <td>{{ lead.appointment_datetime | date:'d-M-Y' }}</td>
                                         <td class="text-center "
                                             [class]='lead.status==1?"text-success ":"text-danger "'>
                                             {{ lead.status=="1"?"Active ":"In-Active " }}</td>
