@@ -307,12 +307,13 @@
     </ng-template>
 </c-modal>
 
-<c-modal #leadViewModal [closeOnBackdrop]="false" size="xl">
+
+<!-- Profile view -->
+<c-modal #leadViewModal [closeOnBackdrop]="true" size="xl">
     <ng-template #modalHeader>
         <strong>Lead Details</strong>
     </ng-template>
     <ng-template #modalBody>
-
         <c-row>
             <c-col sm="3">
                 <div class="imagePreview-demo text-center"></div>
@@ -326,87 +327,104 @@
                     <li class="list-group-item py-1">
                         <div class="d-flex justify-content-between">
                             <strong>Name</strong>
-                            <span
-                                class="text-primary">{{ fullname |uppercase }}
+                            <span class="text-primary">{{ fullname |uppercase }}
                             </span>
                         </div>
                     </li>
                     <li class="list-group-item py-1">
                         <div class="d-flex justify-content-between">
                             <strong>Contact No.</strong>
-                            <span class="text-primary">980987898</span>
+                            <span class="text-primary">{{ contact }}</span>
                         </div>
                     </li>
                     <li class="list-group-item py-1">
                         <div class="d-flex justify-content-between">
                             <strong>Email</strong>
-                            <span class="text-primary">ram@gmai.com</span>
+                            <span class="text-primary">{{ email }}</span>
                         </div>
                     </li>
                     <li class="list-group-item py-1">
                         <div class="d-flex justify-content-between">
                             <strong>Address </strong>
-                            <span class="text-primary">#1,Vetri Street madurai, Tamilnadu</span>
+                            <span class="text-primary">{{ address_line1+", "+ address_line2+ ", "+area+", "+state   }}</span>
                         </div>
                     </li>
                     <li class="list-group-item py-1">
                         <div class="d-flex justify-content-between">
                             <strong>Reference</strong>
-                            <span class="text-primary">AnuPriya</span>
+                            <span class="text-primary">{{ fullname }}</span>
                         </div>
                     </li>
                 </ul>
             </c-col>
             <c-col sm="9">
-                <table class="table ">
+                <table class="table">
                     <tbody>
-                        <tr>                                      
-                            <th class="h4" colspan="4">Personal Details</th>
+                        <tr>
+                            <th class="h4" colspan="4">{{ fullname }}</th>
                         </tr>
                         <tr>
                             <td><strong> Gender </strong></td>
-                            <td>Male</td>
+                            <td>{{ gender }}</td>
                             <td><strong> Father name </strong></td>
-                            <td>Arumugam</td>
+                            <td>{{ guardian_name }}</td>
                         </tr>
                         <tr>
                             <td><strong> DOB </strong></td>
-                            <td>09-11-1990</td>
-                            <td><strong> Mother Name </strong></td>
-                            <td>Dhatchayani</td>
+                            <td>{{ dob }}</td>
+                            <td><strong>Contact number</strong></td>
+                            <td>{{ contact }}</td>
                         </tr>
                         <tr>
-                            <td><strong> Aathar Card </strong></td>
-                            <td>1212 1212 1212</td>                                   
-                            <td></td>
-                            <td></td>
-                        </tr>                                                                                                   
+                            <td><strong>Maritial Status</strong></td>
+                            <td>{{ marital_status }}</td>
+                            <td><strong>Religion</strong></td>
+                            <td>{{ religion }}</td>
+                        </tr>
                         <tr>
-                            <td><strong> Pan Card </strong></td>
-                            <td>ATCP3793N</td>                                   
-                            <td></td>
-                            <td></td>
-                        </tr>                                                                                                   
-                    </tbody>                                      
+                            <td><strong>Occupation</strong></td>
+                            <td>{{ occupation }}</td>
+                            <td><strong>Community</strong></td>
+                            <td>{{ community }}</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <table class="table mt-2">
                     <tbody>
-                        <tr>                                      
-                            <th class="h4" colspan="4">Bank Account Details</th>
+                        <tr>
+                            <th class="h4" colspan="4">Trade Details (Conversion) </th>
                         </tr>
                         <tr>
-                            <td><strong> Account number </strong></td>
-                            <td>1212 3232 3232</td>
-                            <td><strong> Account Type </strong></td>
-                            <td>Saving</td>
+                            <td><strong> Product</strong></td>
+                            <td>Equity</td>
+                            <td><strong>Plan Type</strong></td>
+                            <td>9999</td>
                         </tr>
                         <tr>
-                            <td><strong> IFSC </strong></td>
-                            <td>SC00100</td>                                   
-                            <td><strong> Location </strong></td>
-                            <td>Anna nager , Chennai</td>
-                        </tr>                                                                                          
-                    </tbody>                                      
+                            <td><strong> KYC Number</strong></td>
+                            <td>100001</td>
+                            <td><strong>GST</strong></td>
+                            <td>18%</td>
+                        </tr>
+                        <tr>
+                            <td><strong> KYC Type</strong></td>
+                            <td>EKYC</td>
+                            <td><strong>Total Cost</strong></td>
+                            <td>10180</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brokerage Offer</strong></td>
+                            <td>Nill</td>
+                            <td><strong>Cheque Value</strong></td>
+                            <td>30000</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Trade Amount</strong></td>
+                            <td><strong class="h4">28880</strong></td>
+                        </tr>
+                    </tbody>
                 </table>
             </c-col>
         </c-row>

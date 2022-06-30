@@ -24,6 +24,10 @@ export const navItems: INavData[] = [
         name: 'Client Contact',
         url: '/contact/client-contact',
       },
+      {
+        name: 'Assign Contact',
+        url: '/contact/client-contact',
+      },
     ]
   },
   // {
@@ -121,7 +125,7 @@ export const navItems: INavData[] = [
         name: 'Holidays',
         url: '/notification/holidays',
       },]
-  }, */
+  }, 
   {
     name: 'Masters',
     title: true,
@@ -192,6 +196,11 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Employee Performance',
+    url: '/reports/employee-performance',
+    icon: 'cil-graph',
+  },
+  {
+    name: 'Salary Report',
     url: '/reports/employee-performance',
     icon: 'cil-graph',
   },

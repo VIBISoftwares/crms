@@ -115,7 +115,7 @@ export class FollowupComponent implements OnInit {
     //   pageLength: 10,
     //   dom: 'Bfrtip',
     // };    
-    this.findLeadInfo();
+    this.getTodayFollowups();
   }
 
   getAllClientList() {
@@ -142,6 +142,19 @@ export class FollowupComponent implements OnInit {
       console.log('err : ', err);
     }
   }
+
+  getTodayFollowups() {
+    this.service.getTodayFollowups().subscribe((result) => {
+      if (result['status'] == 'success') {
+        this.returnedArray = result['company_list'];
+        this.chrf.detectChanges();
+        this.dtTrigger.next();
+      }
+    }), (err) => {
+      console.log('err : ', err);
+    }
+  }
+
 
   rerender() {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
@@ -364,7 +377,9 @@ deSelect(){
 changeFollowup(){
   let data={
     "appointment_datetime":  this.formatDate(this.new_followup),
-    "lead_sno":this.selectedRow  }   
+    "lead_sno":JSON.stringify(this.selectedRow)  
+  };
+   //  console.log(data); return;
     Swal.fire({
       text: 'Are you sure want to change this follow up dates?',
       showCancelButton: true,
@@ -374,11 +389,11 @@ changeFollowup(){
       }
     }).then((result) => {
       if (result.value) { 
-        this.service.changeFollowupDate( {'data':data} ).subscribe(result => { 
+        this.service.changeFollowupDate(data).subscribe(result => {  console.log(result);
           if (result['status'] == 'success') 
           {
-            var data={ }
-            this.service.findLeadInfo(data).subscribe((result) => {
+            var data={  }
+            this.service.getTodayFollowups().subscribe((result) => {
               if(result['status']=='success'){
                 Swal.fire({text:"Followup date updated successfully", customClass: { confirmButton: 'btn btn-sm px-3' }});
                 this.returnedArray = result['company_list'];

@@ -188,7 +188,8 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     width: 100%;
     height: 260px;
     background-position: center center;
-    background: url("../assets/img/avatars/demo-user.jpg");
+    // background: url("../assets/img/avatars/demo-user.jpg");
+    background: url("../assets/img/default.jpg");
     background-color: #fff;
     background-size: contain;
     background-repeat: no-repeat;
@@ -204,6 +205,13 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     outline: 0;
     box-shadow: 0 0 0 0.08rem rgb(50 31 219 / 25%) !important;
 }
+// Button Color
+.btn-save{
+    background-image: linear-gradient(180deg, #c978fd, #393F6F) !important;
+}
+
+
+
 
 @media (min-width: 768px) {
     .c-main>.container-fluid,

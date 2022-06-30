@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject , Observable } from 'rxjs';
+import { Subject , Observable, throwError } from 'rxjs';
 import { CompanyContact } from './model/company-contact';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 
 const baseUrl = 'http://localhost:8080/crm/api/';
@@ -96,9 +96,37 @@ findLeadInfo(data):Observable<object>{
 }
 
 // Lead Followup's
-
 changeFollowupDate(data):Observable<object>{ 
-  return this.http.post<object>(baseUrl+'changeFollowupDate',data);
+  return this.http.post<object>(baseUrl+'changeFollowupDate',data).pipe(
+    catchError((err) => {
+      console.log('error caught in service')
+      console.error(err);
+
+      //Handle the error here
+
+      return throwError(err);    //Rethrow it back to component
+    })
+  )
 }
+
+getTodayFollowups(): Observable<CompanyContact[]> {
+  return this.http.get<CompanyContact[]>(baseUrl+"getTodayFollowups").pipe(
+    tap(()=>{
+      this.refreshment.next();
+      
+    })
+  )
+}
+
+
+getEsclationInfo(): Observable<CompanyContact[]> {
+  return this.http.get<CompanyContact[]>(baseUrl+"getEsclationInfo").pipe(
+    tap(()=>{
+      this.refreshment.next();
+      
+    })
+  )
+}
+
 
 }
