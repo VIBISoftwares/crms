@@ -142,15 +142,15 @@ export class DailyLeadsComponent implements OnInit {
     //   pageLength: 10,
     //   dom: 'Bfrtip',
     // };    
-    this.getAllLeadInfo();
+    this.getLeadsReport();
   }
 
   ifUndefined() {
     return "a";//v.filter(val => !!val).join('')
   }
 
-  getAllLeadInfo() {
-    this.service.getAllLeadInfo().subscribe((result) => {
+  getLeadsReport() {
+    this.service.getLeadsReport(this.filter_data).subscribe((result) => {
       console.log(result)
       if (result['status'] == 'success') {
         this.returnedArray = result['company_list'];

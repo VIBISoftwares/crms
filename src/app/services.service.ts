@@ -133,5 +133,12 @@ addLeadTrade(data):Observable<object>{
 }
  
 
+// Report
+
+  getLeadsReport(data):Observable<object>{ 
+    return this.http.post<object>(baseUrl+'getLeadsReport',data);
+  }
+
+
 
 }
