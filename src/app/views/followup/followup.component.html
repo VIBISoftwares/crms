@@ -48,7 +48,7 @@
                                         <th>City</th>
                                         <th>State</th>
                                         <th>Followup Date</th>
-                                        <!-- <th>Status</th> -->
+                                        <th>Convert</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
@@ -63,6 +63,7 @@
                                         <td>{{ lead.district }}</td>
                                         <td>{{ lead.state }}</td>
                                         <td>{{ lead.appointment_datetime | date:'d-M-Y' }}</td>
+                                        <td><button class="btn btn-sm btn-success rounded-pill px-2" (click)="defaultModal.show();lead_sno=lead.sno" >Convert</button></td>
                                         <!-- <td class="text-center " [class]='lead.status==1?"text-success ":"text-danger "'>
                                             {{ lead.status=="1"?"Active ":"In-Active " }}</td> -->
                                         <td nowrap>
@@ -224,5 +225,111 @@
     <ng-template #modalFooter>
         <button cButton color="secondary" (click)="followupModal.hide()">Close</button>
         <button cButton color="primary" (click)="changeFollowup();followupModal.hide()">Confirm</button>
+    </ng-template>
+</c-modal>
+
+<!-- Trade information -->
+
+<c-modal #defaultModal [closeOnBackdrop]="false" size="lg">
+    <ng-template #modalHeader>
+        <strong>Trade Details</strong><small> (Conversion)</small>
+    </ng-template>
+    <ng-template #modalBody>
+        <c-row>
+            <c-col sm="9">
+                <c-row class="row ml-1 p-0 shadow-none  bg-light rounded">
+                    <c-col sm="6" class="pb-3 mr-0 mt-3 ">
+                        <c-col class="pb-3">
+                            <input cInput class="form-control d-none " type="text" name="lead_sno" id="lead_sno" placeholder="  " [(ngModel)]="lead_sno" title="lead_sno">
+
+                            <select class="form-control" name="branch" id="branch" title="branch" [(ngModel)]="branch">
+                            <!-- <option *ngFor="let item of branch_list" value="{{item}}">{{item}}</option> -->
+                            <option value="madurai" selected>Madurai</option> 
+                            <option value="chennai">chennai</option>
+                        </select>
+                            <span class="floating-label-select ">branch</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="product" id="product" title="product" [(ngModel)]="product">
+                            <option *ngFor="let item of product_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Product</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="kyc_number" id="kyc_number" placeholder="  " [(ngModel)]="kyc_number" title="KYC Number">
+                            <span class="floating-label ">KYC Number</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="branch" id="branch" title="branch" [(ngModel)]="kyc_type">
+                            <option *ngFor="let item of kyc_type_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">KYC Type</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="brokerage_offer" id="brokerage_offer" title="brokerage_offer" [(ngModel)]="brokerage_offer">
+                            <option *ngFor="let item of brokerage_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Brokerage Offer</span>
+                        </c-col>
+                    </c-col>
+                    <c-col sm="6" class="pb-3  ml-0 mt-3">
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="cheque_value" id="cheque_value" placeholder="  " [(ngModel)]="cheque_value" title="cheque_value">
+                            <span class="floating-label ">Cheque Value</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <select class="form-control" name="plan_type" id="plan_type" title="plan_type" [(ngModel)]="plan_type">
+                            <option *ngFor="let item of plany_type_list" value="{{item}}">{{item}}</option>
+                        </select>
+                            <span class="floating-label-select ">Plan Type</span>
+                        </c-col>
+
+                        <c-col class="pb-3">
+                            <!-- <input cInput class="form-control " type="text" name="gst_val" id="gst_val" placeholder="  " (change)="total_cost=plan_type+(plan_type*gst_val/100)" [(ngModel)]="gst_val" title="cheque_value">
+                            <span class="floating-label ">GST %</span> -->
+                            <select class="form-control" name="gst_val" id="gst_val" title="gst_val" [(ngModel)]="gst_val" (change)="totalCalc()">
+                                <option value="0">Exception</option>
+                                <option value="5">5 %</option>
+                                <option value="12">12 %</option>
+                                <option value="18">18 %</option>
+                                <option value="28">28 %</option>
+                                <option value="40">40 %</option>
+                            </select>
+                            <span class="floating-label-select ">GST %</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control " type="text" name="total_cost" id="total_cost" placeholder="  "  [(ngModel)]="total_cost" title="total_cost">
+                            <span class="floating-label ">Total Cost</span>
+                        </c-col>
+                        <c-col class="pb-3">
+                            <input cInput class="form-control disable " type="text" name="trade_amount" id="trade_amount" placeholder="  " [(ngModel)]="trade_amount" title="trade_amount">
+                            <span class="floating-label ">Trade Amount</span>
+                        </c-col>
+                    </c-col>
+                </c-row>
+            </c-col>
+            <c-col sm="3">
+                <c-col class="pb-3 mt-3">
+                    <input cInput [minDate]="minDate" #dp="bsDatepicker" bsDatepicker id="payment_date" name="payment_date" [(ngModel)]="payment_date">
+                    <span class="floating-label ">Payment Date</span>
+                </c-col>
+                <c-col class="pb-3">
+                    <input cInput class="form-control " type="text" name="account_no" id="account_no" placeholder="  " [(ngModel)]="account_no">
+                    <span class="floating-label ">Account Number</span>
+                </c-col>
+                <c-col class="pb-3 ">
+                    <input cInput class="form-control " type="text" name="payment_mode" id="payment_mode" placeholder="  " [(ngModel)]="payment_mode" title="Payment Mode">
+                    <span class="floating-label ">Payment Mode</span>
+                </c-col>
+                <c-col class="pb-3">
+                    <input cInput class="form-control " type="text" name="trans_id" id="trans_id" placeholder="  " [(ngModel)]="trans_id" title="trans_id">
+                    <span class="floating-label ">Trans Id</span>
+                </c-col>
+            </c-col>
+        </c-row>
+    </ng-template>
+    <ng-template #modalFooter>
+        <!-- <button cButton color="secondary" (click)="defaultModal.hide()">Close</button> -->
+        <button cButton color="primary" (click)="addLeadTrade();defaultModal.hide()">Save</button>
     </ng-template>
 </c-modal>

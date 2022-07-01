@@ -13,24 +13,24 @@
                                     <c-col sm="3" class="pb-3">
                                         <input hidden id="sno" placeholder=" " name="sno" [(ngModel)]="sno">
                                         <select class="form-control title " name="title" id="title" title="Title" [(ngModel)]="title" required>
-                                            <option *ngFor="let item of title_list" value="{{item}}">{{item}}</option>
+                                            <option *ngFor="let item of title_list" value="{{item}}" [selected]="item=='Mr'">{{item}}</option>
                                         </select>
                                         <span class="floating-label-select required">Title</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " [(ngModel)]="firstname" title="First Name" required>
+                                        <input cInput class="form-control " type="text" name="firstname" id="firstname" placeholder="  " value=" " [(ngModel)]="firstname" title="First Name" required>
                                         <span class="floating-label required">First Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" " [(ngModel)]="middlename" title="Middle Name">
+                                        <input class="form-control" type="text" name="middlename" id="middlename" placeholder=" " value=" " [(ngModel)]="middlename" title="Middle Name">
                                         <span class="floating-label">Middle Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " [(ngModel)]="lastname" title="Last Name">
+                                        <input class="form-control" type="text" name="lastname" id="lastname" placeholder=" " value=" " [(ngModel)]="lastname" title="Last Name">
                                         <span class="floating-label">Last Name</span>
                                     </c-col>
                                     <c-col sm="3" class="pb-3">
-                                        <input type="radio" class="ml-2" name="gender" id="gender_m" [(ngModel)]="gender" title="Male" value="male" checked>
+                                        <input type="radio" class="ml-2" name="gender" id="gender_m" [(ngModel)]="gender" title="Male" value="male" [checked]=true>
                                         <label for="gender_m"><i class="fa fa-male px-2" aria-hidden="true"></i></label>
                                         <input type="radio" class="ml-2" name="gender" id="gender_f" [(ngModel)]="gender" title="Female" value="female">
                                         <label for="gender_f"><i class="fa fa-female px-2"
@@ -259,7 +259,7 @@
                                 <td>{{ lead.marital_status }}</td>
                                 <td>{{ lead.district }}</td>
                                 <td>{{ lead.state }}</td>
-                                <td>{{ lead.is_convert }}</td>
+                                <td class="text-center">{{ lead.is_convert=="0"?"No":"Yes" }}</td>
                                 <td class="text-center" [class]='lead.status==1?"text-success":"text-danger"'>{{ lead.status=="1"?"Active":"In-Active" }}</td>
                                 <td nowrap>
                                     <a href="#" (click)="editLeadInfo(lead)"> <i class="fa fa-edit h6 text-info px-2 mr-1"></i></a>
@@ -288,7 +288,7 @@
                         <c-col class="pb-3">
                             <select class="form-control" name="branch" id="branch" title="branch" [(ngModel)]="branch">
                             <!-- <option *ngFor="let item of branch_list" value="{{item}}">{{item}}</option> -->
-                            <option value="madurai" selected>Madurai</option>
+                            <option value="madurai" selected>Madurai</option> 
                             <option value="chennai">chennai</option>
                         </select>
                             <span class="floating-label-select ">branch</span>
@@ -329,15 +329,24 @@
                         </c-col>
 
                         <c-col class="pb-3">
-                            <input cInput class="form-control " type="text" name="gst_val" id="gst_val" placeholder="  " [(ngModel)]="gst_val" title="cheque_value">
-                            <span class="floating-label ">GST %</span>
+                            <!-- <input cInput class="form-control " type="text" name="gst_val" id="gst_val" placeholder="  " (change)="total_cost=plan_type+(plan_type*gst_val/100)" [(ngModel)]="gst_val" title="cheque_value">
+                            <span class="floating-label ">GST %</span> -->
+                            <select class="form-control" name="gst_val" id="gst_val" title="gst_val" [(ngModel)]="gst_val" (change)="totalCalc()">
+                                <option value="0">Exception</option>
+                                <option value="5">5 %</option>
+                                <option value="12">12 %</option>
+                                <option value="18">18 %</option>
+                                <option value="28">28 %</option>
+                                <option value="40">40 %</option>
+                            </select>
+                            <span class="floating-label-select ">GST %</span>
                         </c-col>
                         <c-col class="pb-3">
-                            <input cInput class="form-control " type="text" name="total_cost" id="total_cost" placeholder="  " [(ngModel)]="total_cost" title="total_cost">
+                            <input cInput class="form-control " type="text" name="total_cost" id="total_cost" placeholder="  "  [(ngModel)]="total_cost" title="total_cost">
                             <span class="floating-label ">Total Cost</span>
                         </c-col>
                         <c-col class="pb-3">
-                            <input cInput class="form-control disable " type="text" name="trade_amount" id="trade_amount" placeholder="  " [(ngModel)]="cheque_value" title="trade_amount">
+                            <input cInput class="form-control disable " type="text" name="trade_amount" id="trade_amount" placeholder="  " [(ngModel)]="trade_amount" title="trade_amount">
                             <span class="floating-label ">Trade Amount</span>
                         </c-col>
                     </c-col>
@@ -364,7 +373,7 @@
         </c-row>
     </ng-template>
     <ng-template #modalFooter>
-        <button cButton color="secondary" (click)="defaultModal.hide()">Close</button>
-        <button cButton color="primary">Save</button>
+        <!-- <button cButton color="secondary" (click)="defaultModal.hide()">Close</button> -->
+        <button cButton color="primary" (click)="defaultModal.hide()">Save</button>
     </ng-template>
 </c-modal>

@@ -172,9 +172,31 @@ export class CreateComponent implements OnInit {
       this.dtTrigger.next();
     });
   }
+
+  totalCalc(){
+    this.total_cost=Number(this.plan_type) + Number(this.plan_type*this.gst_val/100)    
+    this.trade_amount=Number(this.cheque_value-this.total_cost)
+  }
+
+
   addLeadInfo(data: any) {
     this.formData = data.value; 
     this.formData.status = (this.formData.status == true || this.formData.status == undefined) ? '1' : '0';
+    this.formData.is_convert = (this.formData.is_convert == true ) ? '1' : '0';
+    this.formData.branch = this.branch;
+    this.formData.product = this.product;
+    this.formData.kyc_number = this.kyc_number;
+    this.formData.kyc_type = this.kyc_type;
+    this.formData.brokerage_offer = this.brokerage_offer;
+    this.formData.cheque_value = this.cheque_value;
+    this.formData.plan_type = this.plan_type;
+    this.formData.gst_val = this.gst_val;
+    this.formData.total_cost = this.total_cost;
+    this.formData.cheque_value = this.cheque_value;
+    this.formData.payment_date = this.payment_date;
+    this.formData.account_no = this.account_no;
+    this.formData.payment_mode = this.payment_mode;
+    this.formData.trans_id = this.trans_id; console.log(this.formData);
     var service$ = this.service.addLeadInfo(this.formData);
     if (this.formData.sno) {
       service$ = this.service.updateLeadInfo(this.formData);

@@ -1,1 +1,75 @@
-<p>daily-leads works!</p>
+<div class="fade-in">
+    <c-row>
+        <c-col sm="12">
+            <c-card>
+                <c-card-header class="report-header">
+                    <strong>New Leads Report</strong>
+                </c-card-header>
+                <c-card-body>
+                    <c-row>
+                        <c-col sm="12">
+                            <c-row class="justify-content-end">
+                                <c-col sm="2" class="pb-3">
+                                    <!-- <input cInput #dp="bsDatepicker" bsDatepicker id="dob" name="dob" [(ngModel)]="bsValue"> -->
+                                    <input cInput #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue" >
+                                    <span class="floating-label">Created Date</span>
+                                </c-col>
+                                <c-col sm="1" class="pb-3">
+                                    <button cButton color="primary" (click)="searchFilter()">Search</button>
+                                </c-col>
+                            </c-row>
+                        </c-col>
+                        <c-col sm="12 ">
+                            <table table class="table table-responsive-sm" datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                                <!-- <colgroup>
+                                    <col class="column-1 " />
+                                    <col class="column-2 " />
+                                    <col class="column-3 " />
+                                    <col class="column-4 " />
+                                    <col class="column-5 " />
+                                    <col class="column-6 " />
+                                    <col class="column-7 " />
+                                    <col class="column-8 " />
+                                    <col class="column-9 " />
+                                    <col class="column-10 " />
+                                    <col class="column-11 " />
+                                </colgroup> -->
+                                <thead>
+                                    <tr>
+                                         <th>#</th>
+                                        <th>Lead Id</th>
+                                        <th>Lead Name</th>
+                                        <th>Gender</th>
+                                        <th>DOB</th>
+                                        <th>Contact No</th>
+                                        <th>Email Id</th>
+                                        <th>Address</th>
+                                        <th>Has convert</th>
+                                        <th>Convert Details</th>
+                                        <th>Created by</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let lead of returnedArray; let i=index ">
+                                         <td>{{ i+1 }}</td>
+                                        <td>{{ lead.sno }}</td>
+                                        <td>{{ lead.firstname + " " + lead.middlename + " " + lead.lastname }}</td>
+                                        <td>{{ lead.gender }}</td>
+                                        <td><a href="{{ 'tel:'+lead.contact}} ">{{ lead.contact }}</a></td>
+                                        <td>{{ lead.email }}</td>
+                                        <td>{{ lead.district }}</td>
+                                        <td>{{ lead.state }}</td>
+                                        <td>{{ lead.appointment_datetime | date:'d-M-Y' }}</td>
+                                        <td nowrap>Admin  </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </c-col>
+                    </c-row>
+                </c-card-body>
+            </c-card>
+        </c-col>
+    </c-row>
+</div>
+
+

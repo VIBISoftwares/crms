@@ -106,6 +106,33 @@ export class FollowupComponent implements OnInit {
   selectedRow:any=[];
   new_followup:any= new Date();
 
+  
+  // converions datas
+  lead_sno:any;
+  branch:any='chennai';
+  branch_list=['Chennai','Madurai'];
+  cheque_value:any;
+  product:any;
+  product_list = ['Equity', 'Commodities', 'Plan Type Upgraded', 'Equity NRI','Currency','Equity & Commodities','DailyGong Business Partner'];
+  kyc_number:any;
+  kyc_type:any;
+  kyc_type_list= ['Physical form','EKYC']
+  brokerage_offer:any;
+  brokerage_list= ['Options Rs7 / Per Lot','No offer','Eligible Rs 1','SPLofr Rs1 & Options Rs5 per lot, CU Rs1'];
+  plan_type:number;
+  plany_type_list=['1','999','4999','9999']
+  plan_type_cost:any;
+  gst_val:any;
+  total_cost:any; 
+  trade_amount:any;
+
+    // payment details
+    bank_name:any;
+    account_no:any;
+    payment_date:any=new Date();
+    payment_mode:any;   //cheque/neft
+    trans_id:any;
+    
 
   constructor(private service: ServicesService, private globals: Global, private http: HttpClient, private chrf: ChangeDetectorRef) { }
 
@@ -162,6 +189,12 @@ export class FollowupComponent implements OnInit {
       this.dtTrigger.next();
     });
   }
+
+  totalCalc(){
+    this.total_cost=Number(this.plan_type) + Number(this.plan_type*this.gst_val/100)
+    this.trade_amount=Number(this.cheque_value-this.total_cost)
+  }
+
 
   formatDate(date) {
     var d = new Date(date),
@@ -424,6 +457,60 @@ changeFollowup(){
     })
   }
 
+  addLeadTrade() {
+    this.formData={};
+    this.formData.lead_sno = this.lead_sno;
+    this.formData.branch = this.branch;
+    this.formData.product = this.product;
+    this.formData.kyc_number = this.kyc_number;
+    this.formData.kyc_type = this.kyc_type;
+    this.formData.brokerage_offer = this.brokerage_offer;
+    this.formData.cheque_value = this.cheque_value;
+    this.formData.plan_type = this.plan_type;
+    this.formData.gst_val = this.gst_val;
+    this.formData.total_cost = this.total_cost;
+    this.formData.cheque_value = this.cheque_value;
+    this.formData.payment_date = this.payment_date;
+    this.formData.account_no = this.account_no;
+    this.formData.payment_mode = this.payment_mode;
+    this.formData.trans_id = this.trans_id; 
+    console.log(this.formData);
 
+    var service$ = this.service.addLeadTrade(this.formData);
+    Swal.fire({
+      text: 'Are you sure want to save?',
+      showCancelButton: true,
+      customClass: {
+        confirmButton: 'btn btn-sm px-3',
+        cancelButton: 'btn btn-sm',
+      }
+    }).then((result) => {
+      if (result.value) {
+        service$.subscribe(result => { 
+          if (result['status'] == 'success') {
+            var data={
+              order_by:" sno DESC"
+            }
+            this.service.findLeadInfo(data).subscribe((result) => {
+              if (result['status'] == 'success') {
+                this.returnedArray = result['company_list'];
+                this.rerender();
+              }
+            }), (err) => {
+              console.log('err : ', err);
+            }
+          }
+          else if (result['status'] == 'failure') {
+          }
+          (error) => {
+            console.log(error)
+          }
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+  
+      }
+    })
+  }
+  
 
 }

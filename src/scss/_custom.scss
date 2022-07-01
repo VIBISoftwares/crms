@@ -211,6 +211,12 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
 }
 
 
+.report-header{
+    // background-image: linear-gradient(180deg, #7c4b9a, #5d4d93) !important;
+    color: #ffffff;
+    background-color: #9563ca;
+}
+
 
 
 @media (min-width: 768px) {
@@ -252,4 +258,9 @@ input:not(:placeholder-shown):not(:focus)~.floating-label {
     padding-left: 6px;
     transition: 0.3s ease all;
     font-weight: 500;
+}
+
+.c-dark-theme .report-header{
+    // background-image: linear-gradient(180deg, #7c4b9a, #5d4d93) !important;
+    color: #ffffff;
 }

@@ -128,5 +128,10 @@ getEsclationInfo(): Observable<CompanyContact[]> {
   )
 }
 
+addLeadTrade(data):Observable<object>{ 
+  return this.http.post<object>(baseUrl+'addLeadTrade',data);
+}
+ 
+
 
 }
